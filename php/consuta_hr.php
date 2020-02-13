@@ -2,31 +2,13 @@
 
 if (isset($_POST["codigo"])) {
     if ($_POST["codigo"] != "" || $_POST["codigo"] != null) {
-        $codigo = "CODIGO = '" . $_POST["codigo"] . "'";
+        $codigo = $_POST["codigo"];
     }else{
         $codigo = "";
     }
 }else{
     $codigo = "";
 }
-
-if (isset($_POST["id_persona"])) {
-    if ($_POST["id_persona"] != "" || $_POST["id_persona"] != null) {
-        $id_persona = "PERSONA_ID = '" . $_POST["id_persona"] . "'";
-    }else{
-        $id_persona = "";
-    }
-}else{
-    $id_persona = "";
-}
-
-if ($codigo != "" && $id_persona != "" || $codigo != null && $id_persona != null) {
-    $condiciones = "$codigo && $id_persona";
-}else{
-    $condiciones = $codigo.$id_persona;
-}
-
-
 
 //SE ESTABLECE COMO JSON EL HEADER
 header('Content-Type: application/json');
@@ -43,7 +25,9 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTA SQL
-$sql = "SELECT * FROM pr_fija WHERE $condiciones";
+$sql = "SELECT hr2_fija.*, datos_variables_hr1.*
+FROM hr2_fija  
+INNER JOIN datos_variables_hr1 ON hr2_fija.persona_id = $codigo && hr2_fija.persona_id = datos_variables_hr1.ID_AUXILIAR";
 
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
