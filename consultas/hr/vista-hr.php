@@ -27,12 +27,6 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="form-group">
-                        <label for="ìd_persona">ID Persona</label>
-                        <input type="text" name="ìd_persona" id="ìd_persona" class="form-control" placeholder="">
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </div>
             </div>
@@ -42,7 +36,12 @@
             <div class="col-12">
                 <div id="contHR">
                     <img src="../../img/hr.png" alt="HR" class="img img-fluid">
-                    <div class="items"></div>
+                    <div class="items"> <!-- DATOS DE DB --> </div>
+                    <table>
+                        <tbody>
+                            <!-- DATOS DE DB -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

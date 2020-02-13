@@ -6,6 +6,7 @@ $("#buscarHR").submit(function(e){
     e.preventDefault();
 
     var items;
+    var fila_tabla;
 
     $.ajax({
         type: "POST",
@@ -18,18 +19,50 @@ $("#buscarHR").submit(function(e){
 
             $(data).each(function(index, data) {
 
+                index +=1;
+
                 if(data.error == true){
                     alert(data.valor);
                 }else{
-                    items = "<span class='id_auxiliar'>"+ data.ID_AUXILIAR +"</span>";
-                    items += "<span class='presona_id'>"+ data.PERSONA_ID +"</span>";
-                    items += "<span class='fecha_emision'>"+ data.FECHA_EMISION +"</span>";
-                    items += "<span class='determinacion_id'>"+ data.DETERMINACION_ID +"</span>";
-                    items += "<span class='codigo'>"+ data.CODIGO +"</span>";
-                    items += "<span class='apellidos_nombres'>"+ data.APELLIDOS_NOMBRES +"</span>";
-                    items += "<span class='conyugue'>"+ data.CONYUGUE +"</span>";
-                    items += "<span class='emision_id'>"+ data.EMISION_ID +"</span>";
-                    $("#contHR .items").append(items);
+
+                    if(index == 1){
+                        items = "<span class='ID_AUXILIAR'>"                + data.ID_AUXILIAR               +"</span>";
+                        items += "<span class='persona_id'>"                + data.persona_id                +"</span>";
+                        items += "<span class='fecha_de_emision_1'>"        + data.fecha_de_emision_1        +"</span>";
+                        items += "<span class='determinacion_id'>"          + data.determinacion_id          +"</span>";
+                        items += "<span class='emision'>"                   + data.emision                   +"</span>";
+                        items += "<span class='tipo_contribuyente'>"        + data.tipo_contribuyente        +"</span>";
+                        items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad        +"</span>";
+                        items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres         +"</span>";
+                        items += "<span class='direccion_completa'>"        + data.direccion_completa        +"</span>";
+                        items += "<span class='base_imponible'>"            + data.base_imponible            +"</span>";
+                        items += "<span class='base_afecta'>"               + data.base_afecta               +"</span>";
+                        items += "<span class='impuesto'>"                  + data.impuesto                  +"</span>";
+                        items += "<span class='monto_de_la_cuota'>"         + data.monto_de_la_cuota         +"</span>";
+                        $("#contHR .items").append(items);
+                    }
+                    
+
+                    fila_tabla = "<tr>"
+                                    + "<td>"    + data.item                      +"</td>"
+                                    //+ "<td>"    + data.predio_id                 +"</td>"
+                                    //+ "<td>"    + data.cod_manzana               +"</td>"
+                                    + "<td>"    + data.direccion_predial         +"</td>"
+                                    + "<td>"    + data.fecha_adquisicion         +"</td>"
+                                    + "<td>"    + data.valor_predio              +"</td>"
+                                    + "<td>"    + data.porc_propiedad            +"</td>"
+                                    + "<td>"    + data.monto_inafecto            +"</td>"
+
+                                    //+ "<td>"    + data.referencia                +"</td>"
+                                    
+                                    
+                                    + "<td>"    + data.base_imponible_variable   +"</td>"
+                                    
+                                    
+                                +"<tr>";
+
+                    
+                    $("#contHR table tbody").append(fila_tabla);
                 }
             });
                 

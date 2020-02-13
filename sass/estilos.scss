@@ -1,43 +1,82 @@
 #contHR{
+    table{
+        tbody{
+            position: absolute;
+            top: 42%;
+            left: 13%;
+            font-weight: bold;
+        }
+    }
     .items{
+        font-size: 14pt;
+        font-family: Arial;
+        font-weight: bold;
+
         .determinacion_id{
             position: absolute;
-            top: 16.63%;
+            top: 12%;
             left: 59.1%;
-            font-size: 14pt;
-            font-family: Arial;
         }
-        .fecha_emision{
+        .fecha_de_emision_1{
             position: absolute;
             top: 19.75%;
             right: 9%;
             font-size: 12pt;
-            font-family: Arial;
-            font-weight: bold;
         }
-        .emision_id{
+        .emision{
             position: absolute;
-            top: 17.95%;
-            right: 9%;
+            top: 15%;
+            right: 7%;
             font-size: 12pt;
-            font-family: Arial;
-            font-weight: bold;
         }
-        .presona_id{
+        .persona_id{
             position: absolute;
-            top: 21.85%;
-            left: 16%;
-            font-size: 14pt;
-            font-family: Arial;
-            font-weight: bold;
+            top: 19.1%;
+            left: 18%;
         }
         .apellidos_nombres{
             position: absolute;
-            top: 31.55%;
-            left: 10%;
-            font-size: 14pt;
-            font-family: Arial;
-            font-weight: bold;
+            top: 21.1%;
+            left: 18%;
+        }
+        .nro_docu_identidad{
+            position: absolute;
+            right: 23%;
+            top: 19.1%;
+        }
+        .tipo_contribuyente{
+            display: none;
+        }
+        .direccion_completa{
+            position: absolute;
+            top: 22.7%;
+            left: 25%;
+            width: 66%;
+            font-size: 12pt;
+        }
+        .base_imponible{
+            position: absolute;
+            top: 70%;
+            left: 22%;
+            font-size: 12pt;
+        }
+        .base_afecta{
+            position: absolute;
+            left: 40%;
+            top: 70%;
+            font-size: 12pt;
+        }
+        .impuesto{
+            position: absolute;
+            left: 63%;
+            top: 70%;
+            font-size: 12pt;
+        }
+        .monto_de_la_cuota{
+            position: absolute;
+            top: 70%;
+            right: 10%;
+            font-size: 12pt;
         }
     }
 }
