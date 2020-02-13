@@ -10,7 +10,7 @@ $("#buscarHR").submit(function(e){
     $.ajax({
         type: "POST",
         data: $(this).serialize(),
-        url: '/php/consuta_hr.php', 
+        url: 'consuta_hr.php', 
         dataType: "json",
         success: function(data){
             //SE LIMPIA LA TABLA

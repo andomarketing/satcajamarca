@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="css/estilos.css">
+=======
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/estilos.css">
+>>>>>>> 5da4a5ba4aac7475deb3649413a969c11054dd17
 </head>
 <body>
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -22,6 +26,12 @@
         <hr>
 
         <div class="row">
+<<<<<<< HEAD
+            <div class="col-12">
+                <div id="contHR">
+                    <img src="img/hr.png" alt="HR" class="img img-fluid">
+                    <div class="items"></div>
+=======
             <div class="col-12 col-sm-12">
                 <table class="table table-hover" id="tabla_personas">
                     <thead>
@@ -47,19 +57,25 @@
                             </ul>
                         </nav>
                     </div>
+>>>>>>> 5da4a5ba4aac7475deb3649413a969c11054dd17
                 </div>
             </div>
         </div>
 
     </div>
-
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<<<<<<< HEAD
+    <script src="funciones.js"></script>
+=======
     <script src="/js/funciones.js"></script>
 
     <script>
         obtener_personas(1);
     </script>
+>>>>>>> 5da4a5ba4aac7475deb3649413a969c11054dd17
 </body>
 </html>
+
+    
