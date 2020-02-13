@@ -43,7 +43,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTA SQL
-$sql = "SELECT * FROM predial_data_fija WHERE $condiciones";
+$sql = "SELECT * FROM pr_fija WHERE $condiciones";
 
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
