@@ -27,7 +27,7 @@ if ($mysqli->connect_errno) {
 //CONSULTA SQL
 $sql = "SELECT hr2_fija.*, datos_variables_hr1.*
 FROM hr2_fija  
-INNER JOIN datos_variables_hr1 ON hr2_fija.persona_id = $codigo && hr2_fija.persona_id = datos_variables_hr1.ID_AUXILIAR";
+INNER JOIN datos_variables_hr1 ON hr2_fija.persona_id = '$codigo' && hr2_fija.persona_id = datos_variables_hr1.ID_AUXILIAR";
 
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
@@ -46,15 +46,33 @@ if ($resultado->num_rows === 0) {
 //GUARDAR CONSULTA EN ARRAY
 while ($x = $resultado->fetch_array()) {
     $temp = array(  
-                    "error"             => false,
-                    "ID_AUXILIAR"       => $x["ID_AUXILIAR"],
-                    "PERSONA_ID"        => $x["PERSONA_ID"],
-                    "FECHA_EMISION"     => $x["FECHA_EMISION"],
-                    "DETERMINACION_ID"  => $x["DETERMINACION_ID"],
-                    "CODIGO"            => $x["CODIGO"],
-                    "APELLIDOS_NOMBRES" => $x["APELLIDOS_NOMBRES"],
-                    "CONYUGUE"          => $x["CONYUGUE"],
-                    "EMISION_ID"        => $x["EMISION_ID"],
+                    "error"                 => false,
+                    //FIJOS
+                    "ID_AUXILIAR"           => $x["ID_AUXILIAR"],
+                    "persona_id"            => $x["persona_id"],
+                    "fecha_de_emision_1"    => $x["fecha_de_emision_1"],
+                    "determinacion_id"      => $x["determinacion_id"],
+                    "emision"               => $x["emision"],
+                    "tipo_contribuyente"    => $x["tipo_contribuyente"],
+                    "nro_docu_identidad"    => $x["nro_docu_identidad"],
+                    "apellidos_nombres"     => $x["apellidos_nombres"],
+                    "direccion_completa"    => $x["direccion_completa"],
+                    "base_imponible"        => $x["base_imponible"],
+                    "base_afecta"           => $x["base_afecta"],
+                    "impuesto"              => $x["impuesto"],
+                    "monto_de_la_cuota"     => $x["monto_de_la_cuota"],
+                    "fecha_de_emision"      => $x["fecha_de_emision"],
+                    //VARIABLES
+                    "item"                  => $x["item"],
+                    "predio_id"             => $x["predio_id"],
+                    "cod_manzana"           => $x["cod_manzana"],
+                    "direccion_predial"     => $x["direccion_predial"],
+                    "referencia"            => $x["referencia"],
+                    "porc_propiedad"        => $x["porc_propiedad"],
+                    "valor_predio"          => $x["valor_predio"],
+                    "base_imponible_variable" => $x["base_imponible"],
+                    "monto_inafecto"        => $x["monto_inafecto"],
+                    "fecha_adquisicion"     => $x["fecha_adquisicion"],
                 );
     array_push($data, $temp);
 }
