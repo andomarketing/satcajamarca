@@ -1,0 +1,43 @@
+#contHR{
+    .items{
+        .determinacion_id{
+            position: absolute;
+            top: 16.63%;
+            left: 59.1%;
+            font-size: 14pt;
+            font-family: Arial;
+        }
+        .fecha_emision{
+            position: absolute;
+            top: 19.75%;
+            right: 9%;
+            font-size: 12pt;
+            font-family: Arial;
+            font-weight: bold;
+        }
+        .emision_id{
+            position: absolute;
+            top: 17.95%;
+            right: 9%;
+            font-size: 12pt;
+            font-family: Arial;
+            font-weight: bold;
+        }
+        .presona_id{
+            position: absolute;
+            top: 21.85%;
+            left: 16%;
+            font-size: 14pt;
+            font-family: Arial;
+            font-weight: bold;
+        }
+        .apellidos_nombres{
+            position: absolute;
+            top: 31.55%;
+            left: 10%;
+            font-size: 14pt;
+            font-family: Arial;
+            font-weight: bold;
+        }
+    }
+}
