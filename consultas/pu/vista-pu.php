@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Declaración Tributaria</h1>
+                <h1>Declaración Tributaria asss</h1>
             </div>
         </div>
 
