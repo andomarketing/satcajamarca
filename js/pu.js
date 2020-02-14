@@ -33,6 +33,7 @@ $("#buscarHR").submit(function(e){
                    items += "<span class='valor_arancel_pu'>"+ data.VALOR_ARANCEL +"</span>";
                    items += "<span class='valor_terreno_pu'>"+ data.VALOR_TERRENO +"</span>";
                    items += "<span class='direccion_pu'>"+ data.DIRECCION +"</span>";
+                   items += "<span class='item_pu'>"+ data.ITEM +"</span>";
                     $("#contHR .items").append(items);
                 }
             });

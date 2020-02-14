@@ -44,7 +44,9 @@ if ($mysqli->connect_errno) {
 
 //CONSULTA SQL
 
-$sql = "SELECT * FROM pu_fija INNER JOIN datos_variables_pu_predio ON pu_fija.persona_id  = datos_variables_pu_predio.AUXILIAR_ID  WHERE $condiciones";
+$sql = "SELECT * FROM pu_fija 
+INNER JOIN datos_variables_pu_predio ON pu_fija.persona_id = datos_variables_pu_predio.AUXILIAR_ID 
+INNER JOIN datos_variables_pu ON datos_variables_pu_predio.predio_id = datos_variables_pu.ID_AUXILIAR_COD_PREDIO WHERE $condiciones ";
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
     $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
@@ -78,9 +80,16 @@ while ($x = $resultado->fetch_array()) {
                     "AREA_TERRENO" => $x["area_terreno"],
                     "VALOR_ARANCEL" => $x["valor_arancel"],
                     "VALOR_TERRENO" => $x["valor_terreno"],
-
                     "DIRECCION" => $x["direccion_completa"],
 
+                    //tercera tabbla
+                    "ITEM"                     =>  $x["item"],
+                    "DENTIPONIVEL"             =>  $x["dentiponivel"],
+                    "NIVEL"                    =>  $x["nivel"],
+                    "ANTIGUEDAD"               =>  $x["antiguedad"],
+                    "MAT_PREDOMINANTE_ID"      =>  $x["mat_predominante_id"],
+                    "CONSERVACION_ID"          =>  $x["conservation_id"],
+                    "CLASI_DEPRECIACION_ID"    =>  $x["clasi_depreciacion_id"],
 
                 );
     array_push($data, $temp);
