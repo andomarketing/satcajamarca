@@ -43,7 +43,8 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTA SQL
-$sql = "SELECT * FROM pu_fija WHERE $condiciones";
+
+$sql = "SELECT * FROM pu_fija INNER JOIN datos_variables_pu_predio ON pu_fija.persona_id  = datos_variables_pu_predio.AUXILIAR_ID";
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
     $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
@@ -64,12 +65,14 @@ while ($x = $resultado->fetch_array()) {
                     "error"             => false,
                     "ID_AUXILIAR"       => $x["ID_AUXILIAR"],
                     "PERSONA_ID"        => $x["persona_id"],
-                    "FECHA_EMISION"     => $x["fecha_de_emision"],
+                    "FECHA_EMISION"     => date_format(date_create($x["fecha_de_emision"]), 'd-m-Y'),
                     "DETERMINACION_ID"  => $x["determinacion_id"],
                     "CODIGO"            => $x["codigo"],
                     "APELLIDOS_NOMBRES" => $x["apellidos_nombres"],
                     "CONYUGUE"          => $x["conyuge"],
                     "EMISION_ID"        => $x["emision_id"],
+                    "ESTADO_CONSTRUCCION" => $x["estado"],
+
                 );
     array_push($data, $temp);
 }

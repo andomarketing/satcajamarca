@@ -21,14 +21,12 @@ $("#buscarHR").submit(function(e){
                 if(data.error == true){
                     alert(data.valor);
                 }else{
-                    //items = "<span class='id_auxiliar_pu'>"+ data.ID_AUXILIAR +"</span>";
                     items += "<span class='presona_id_pu'>"+ data.PERSONA_ID +"</span>";
                     items += "<span class='fecha_emision_pu'>"+ data.FECHA_EMISION +"</span>";
                     items += "<span class='determinacion_id_pu'>"+ data.DETERMINACION_ID +"</span>";
                     items += "<span class='codigo_pu'>"+ data.CODIGO +"</span>";
                     items += "<span class='apellidos_nombres_pu'>"+ data.APELLIDOS_NOMBRES +"</span>";
-                   // items += "<span class='conyugue_pu'>"+ data.CONYUGUE +"</span>";
-                   // items += "<span class='emision_id_pu'>"+ data.EMISION_ID +"</span>";
+                   items += "<span class='estado'>"+ data.ESTADO_CONSTRUCCION +"</span>";
                     $("#contHR .items").append(items);
                 }
             });
