@@ -43,8 +43,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTA SQL
-$sql = "SELECT * FROM pr_fija WHERE $condiciones";
-
+$sql = "SELECT * FROM pu_fija WHERE $condiciones";
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
     $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
@@ -64,13 +63,13 @@ while ($x = $resultado->fetch_array()) {
     $temp = array(  
                     "error"             => false,
                     "ID_AUXILIAR"       => $x["ID_AUXILIAR"],
-                    "PERSONA_ID"        => $x["PERSONA_ID"],
-                    "FECHA_EMISION"     => $x["FECHA_EMISION"],
-                    "DETERMINACION_ID"  => $x["DETERMINACION_ID"],
-                    "CODIGO"            => $x["CODIGO"],
-                    "APELLIDOS_NOMBRES" => $x["APELLIDOS_NOMBRES"],
-                    "CONYUGUE"          => $x["CONYUGUE"],
-                    "EMISION_ID"        => $x["EMISION_ID"],
+                    "PERSONA_ID"        => $x["persona_id"],
+                    "FECHA_EMISION"     => $x["fecha_de_emision"],
+                    "DETERMINACION_ID"  => $x["determinacion_id"],
+                    "CODIGO"            => $x["codigo"],
+                    "APELLIDOS_NOMBRES" => $x["apellidos_nombres"],
+                    "CONYUGUE"          => $x["conyuge"],
+                    "EMISION_ID"        => $x["emision_id"],
                 );
     array_push($data, $temp);
 }
