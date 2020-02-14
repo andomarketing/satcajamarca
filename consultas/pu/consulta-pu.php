@@ -44,7 +44,7 @@ if ($mysqli->connect_errno) {
 
 //CONSULTA SQL
 
-$sql = "SELECT * FROM pu_fija INNER JOIN datos_variables_pu_predio ON pu_fija.persona_id  = datos_variables_pu_predio.AUXILIAR_ID";
+$sql = "SELECT * FROM pu_fija INNER JOIN datos_variables_pu_predio ON pu_fija.persona_id  = datos_variables_pu_predio.AUXILIAR_ID  WHERE $condiciones";
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
     $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
@@ -71,7 +71,16 @@ while ($x = $resultado->fetch_array()) {
                     "APELLIDOS_NOMBRES" => $x["apellidos_nombres"],
                     "CONYUGUE"          => $x["conyuge"],
                     "EMISION_ID"        => $x["emision_id"],
-                    "ESTADO_CONSTRUCCION" => $x["estado"],
+
+                    "ESTADO_CONSTRUCCCION" => $x["estado"],
+                    "DESCRIPCION" => $x["descripcion"],
+                    "PORC_PROPIEDAD" => $x["porc_propiedad"],
+                    "AREA_TERRENO" => $x["area_terreno"],
+                    "VALOR_ARANCEL" => $x["valor_arancel"],
+                    "VALOR_TERRENO" => $x["valor_terreno"],
+
+                    "DIRECCION" => $x["direccion_completa"],
+
 
                 );
     array_push($data, $temp);

@@ -30,6 +30,7 @@ FROM hr2_fija
 INNER JOIN datos_variables_hr1 ON hr2_fija.persona_id = '$codigo' && hr2_fija.persona_id = datos_variables_hr1.ID_AUXILIAR";
 
 //FALLO LA CONSULTA SQL
+
 if (!$resultado = $mysqli->query($sql)) {
     $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
     echo json_encode($data);

@@ -26,7 +26,13 @@ $("#buscarHR").submit(function(e){
                     items += "<span class='determinacion_id_pu'>"+ data.DETERMINACION_ID +"</span>";
                     items += "<span class='codigo_pu'>"+ data.CODIGO +"</span>";
                     items += "<span class='apellidos_nombres_pu'>"+ data.APELLIDOS_NOMBRES +"</span>";
-                   items += "<span class='estado'>"+ data.ESTADO_CONSTRUCCION +"</span>";
+                   items += "<span class='estado_construccion_pu'>"+ data.ESTADO_CONSTRUCCCION +"</span>";
+                   items += "<span class='descripcion_pu'>"+ data.DESCRIPCION +"</span>";
+                   items += "<span class='porc_propiedad_pu'>"+ data.PORC_PROPIEDAD +"</span>";
+                   items += "<span class='area_terreno_pu'>"+ data.AREA_TERRENO +"</span>";
+                   items += "<span class='valor_arancel_pu'>"+ data.VALOR_ARANCEL +"</span>";
+                   items += "<span class='valor_terreno_pu'>"+ data.VALOR_TERRENO +"</span>";
+                   items += "<span class='direccion_pu'>"+ data.DIRECCION +"</span>";
                     $("#contHR .items").append(items);
                 }
             });
