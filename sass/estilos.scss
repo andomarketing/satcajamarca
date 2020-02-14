@@ -2,9 +2,32 @@
     table{
         tbody{
             position: absolute;
+            width: 100%;
             top: 42%;
             left: 13%;
             font-weight: bold;
+            .item{
+                width: 6%;
+            }
+            .direccion_predial{
+                width: 34%;
+            }
+            .fecha_adquisicion{
+                width: 10%;
+            }
+            .valor_predio{
+                width: 10%;
+            }
+            .porc_propiedad{
+                width: 10%;
+            }
+            .monto_inafecto{
+                width: 4%;
+            }
+            .base_imponible_variable{
+                width: 10%;
+                text-align: right;
+            }
         }
     }
     .items{
@@ -14,7 +37,7 @@
 
         .determinacion_id{
             position: absolute;
-            top: 12%;
+            top: 13%;
             left: 59.1%;
         }
         .fecha_de_emision_1{
@@ -31,50 +54,50 @@
         }
         .persona_id{
             position: absolute;
-            top: 19.1%;
+            top: 20.5%;
             left: 18%;
         }
         .apellidos_nombres{
             position: absolute;
-            top: 21.1%;
+            top: 22.5%;
             left: 18%;
         }
         .nro_docu_identidad{
             position: absolute;
             right: 23%;
-            top: 19.1%;
+            top: 20.5%;
         }
         .tipo_contribuyente{
             display: none;
         }
         .direccion_completa{
             position: absolute;
-            top: 22.7%;
+            top: 24.2%;
             left: 25%;
             width: 66%;
             font-size: 12pt;
         }
         .base_imponible{
             position: absolute;
-            top: 70%;
+            top: 71.6%;
             left: 22%;
             font-size: 12pt;
         }
         .base_afecta{
             position: absolute;
             left: 40%;
-            top: 70%;
+            top: 71.6%;
             font-size: 12pt;
         }
         .impuesto{
             position: absolute;
             left: 63%;
-            top: 70%;
+            top: 71.6%;
             font-size: 12pt;
         }
         .monto_de_la_cuota{
             position: absolute;
-            top: 70%;
+            top: 71.6%;
             right: 10%;
             font-size: 12pt;
         }

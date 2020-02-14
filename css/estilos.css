@@ -1,15 +1,31 @@
 #contHR table tbody {
   position: absolute;
+  width: 100%;
   top: 42%;
   left: 13%;
   font-weight: bold; }
+  #contHR table tbody .item {
+    width: 6%; }
+  #contHR table tbody .direccion_predial {
+    width: 34%; }
+  #contHR table tbody .fecha_adquisicion {
+    width: 10%; }
+  #contHR table tbody .valor_predio {
+    width: 10%; }
+  #contHR table tbody .porc_propiedad {
+    width: 10%; }
+  #contHR table tbody .monto_inafecto {
+    width: 4%; }
+  #contHR table tbody .base_imponible_variable {
+    width: 10%;
+    text-align: right; }
 #contHR .items {
   font-size: 14pt;
   font-family: Arial;
   font-weight: bold; }
   #contHR .items .determinacion_id {
     position: absolute;
-    top: 12%;
+    top: 13%;
     left: 59.1%; }
   #contHR .items .fecha_de_emision_1 {
     position: absolute;
@@ -23,42 +39,42 @@
     font-size: 12pt; }
   #contHR .items .persona_id {
     position: absolute;
-    top: 19.1%;
+    top: 20.5%;
     left: 18%; }
   #contHR .items .apellidos_nombres {
     position: absolute;
-    top: 21.1%;
+    top: 22.5%;
     left: 18%; }
   #contHR .items .nro_docu_identidad {
     position: absolute;
     right: 23%;
-    top: 19.1%; }
+    top: 20.5%; }
   #contHR .items .tipo_contribuyente {
     display: none; }
   #contHR .items .direccion_completa {
     position: absolute;
-    top: 22.7%;
+    top: 24.2%;
     left: 25%;
     width: 66%;
     font-size: 12pt; }
   #contHR .items .base_imponible {
     position: absolute;
-    top: 70%;
+    top: 71.6%;
     left: 22%;
     font-size: 12pt; }
   #contHR .items .base_afecta {
     position: absolute;
     left: 40%;
-    top: 70%;
+    top: 71.6%;
     font-size: 12pt; }
   #contHR .items .impuesto {
     position: absolute;
     left: 63%;
-    top: 70%;
+    top: 71.6%;
     font-size: 12pt; }
   #contHR .items .monto_de_la_cuota {
     position: absolute;
-    top: 70%;
+    top: 71.6%;
     right: 10%;
     font-size: 12pt; }
 

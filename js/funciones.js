@@ -44,21 +44,13 @@ $("#buscarHR").submit(function(e){
                     
 
                     fila_tabla = "<tr>"
-                                    + "<td>"    + data.item                      +"</td>"
-                                    //+ "<td>"    + data.predio_id                 +"</td>"
-                                    //+ "<td>"    + data.cod_manzana               +"</td>"
-                                    + "<td>"    + data.direccion_predial         +"</td>"
-                                    + "<td>"    + data.fecha_adquisicion         +"</td>"
-                                    + "<td>"    + data.valor_predio              +"</td>"
-                                    + "<td>"    + data.porc_propiedad            +"</td>"
-                                    + "<td>"    + data.monto_inafecto            +"</td>"
-
-                                    //+ "<td>"    + data.referencia                +"</td>"
-                                    
-                                    
-                                    + "<td>"    + data.base_imponible_variable   +"</td>"
-                                    
-                                    
+                                    + "<td class='item'>"               + data.item                      +"</td>"
+                                    + "<td class='direccion_predial'>"  + data.direccion_predial         +"</td>"
+                                    + "<td class='fecha_adquisicion'>"  + data.fecha_adquisicion         +"</td>"
+                                    + "<td class='valor_predio'>"       + data.valor_predio              +"</td>"
+                                    + "<td class='porc_propiedad'>"     + data.porc_propiedad            +"</td>"
+                                    + "<td class='monto_inafecto'>"     + data.monto_inafecto            +"</td>"
+                                    + "<td class='base_imponible_variable'>"    + data.base_imponible_variable   +"</td>"
                                 +"<tr>";
 
                     

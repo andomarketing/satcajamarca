@@ -43,8 +43,11 @@ if ($resultado->num_rows === 0) {
     exit;
 }
 
+$item = "";
+
 //GUARDAR CONSULTA EN ARRAY
 while ($x = $resultado->fetch_array()) {
+
     $temp = array(  
                     "error"                 => false,
                     //FIJOS
