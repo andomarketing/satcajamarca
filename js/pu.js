@@ -54,6 +54,9 @@ $("#buscarHR").submit(function(e){
                    items += "<span class='area_construida_pu'>"+ data.AREA_CONSTRUIDA +"</span>";
                    items += "<span class='a_const_m2_pu'>"+ data.A_CONST_M2 +"</span>";
                    items += "<span class='a_const_pu'>"+ data.A_CONST +"</span>";
+
+                   items += "<span class='valor_area_construida_pu'>"+ data.VALOR_AREA_CONSTRUIDA +"</span>";
+                   items += "<span class='valor_de_construccion_pu'>"+ data.VALOR_DE_CONSTRUCCION +"</span>";
                     $("#contHR .items").append(items);
                 }
             });

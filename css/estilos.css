@@ -385,6 +385,26 @@
     font-family: Arial;
     font-weight: bold;
   }
+
+  #contHR .items .valor_area_construida_pu {
+    position: absolute;
+    top: 56%;
+    left: 66%;
+    line-height: 66px;
+    font-size: 13pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .valor_de_construccion_pu {
+    position: absolute;
+    top: 56%;
+    left: 87%;
+    line-height: 66px;
+    font-size: 13pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
   
 
 /*FIN CSS ESTILOS PU */

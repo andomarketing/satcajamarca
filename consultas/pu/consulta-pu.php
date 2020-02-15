@@ -81,6 +81,8 @@ while ($x = $resultado->fetch_array()) {
                     "VALOR_ARANCEL"        => $x["valor_arancel"],
                     "VALOR_TERRENO"        => $x["valor_terreno"],
                     "DIRECCION"            => $x["direccion_completa"],
+                    "VALOR_AREA_CONSTRUIDA" => $x["valor_area_construida"],
+                    "VALOR_DE_CONSTRUCCION" => $x["valor_de_construccion"],
 
                     //tercera tabbla
                     "ITEM"                     =>  $x["item"],
