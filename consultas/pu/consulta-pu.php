@@ -75,12 +75,12 @@ while ($x = $resultado->fetch_array()) {
                     "EMISION_ID"        => $x["emision_id"],
 
                     "ESTADO_CONSTRUCCCION" => $x["estado"],
-                    "DESCRIPCION" => $x["descripcion"],
-                    "PORC_PROPIEDAD" => $x["porc_propiedad"],
-                    "AREA_TERRENO" => $x["area_terreno"],
-                    "VALOR_ARANCEL" => $x["valor_arancel"],
-                    "VALOR_TERRENO" => $x["valor_terreno"],
-                    "DIRECCION" => $x["direccion_completa"],
+                    "DESCRIPCION"          => $x["descripcion"],
+                    "PORC_PROPIEDAD"       => $x["porc_propiedad"],
+                    "AREA_TERRENO"         => $x["area_terreno"],
+                    "VALOR_ARANCEL"        => $x["valor_arancel"],
+                    "VALOR_TERRENO"        => $x["valor_terreno"],
+                    "DIRECCION"            => $x["direccion_completa"],
 
                     //tercera tabbla
                     "ITEM"                     =>  $x["item"],
@@ -88,8 +88,24 @@ while ($x = $resultado->fetch_array()) {
                     "NIVEL"                    =>  $x["nivel"],
                     "ANTIGUEDAD"               =>  $x["antiguedad"],
                     "MAT_PREDOMINANTE_ID"      =>  $x["mat_predominante_id"],
-                    "CONSERVACION_ID"          =>  $x["conservation_id"],
+                    "CONSERVACION_ID"          =>  $x["conservacion_id"],
                     "CLASI_DEPRECIACION_ID"    =>  $x["clasi_depreciacion_id"],
+                    "DENMUROS"                 =>  $x["denmuros"],
+                    "DENTECHO"                 =>  $x["dentecho"],
+                    "DENPISOS"                 =>  $x["denpisos"],
+                    "DENPUERTAS"               =>  $x["denpuertas"],
+                    "DENREVESTIMIENTO"         =>  $x["denrevestimiento"],
+                    "DENBANNOS"                =>  $x["denbannos"],
+                    "DENELECTRICO"             =>  $x["denelectrico"],
+                    "VALOR_UNITARIO"           =>  $x["valor_unitario"],
+                    "VALOR_INCREMENTO"         =>  $x["valor_incremento"],
+                    "PORC_DEPRECIACION"        =>  $x["porc_depreciacion"],
+                    "VALOR_DEPRECIACION"       =>  $x["valor_depreciacion"],
+                    "AREA_CONSTRUIDA"          =>  $x["area_construida"],
+                    "A_CONST_M2"               =>  $x["a_const_m2"],
+                    "A_CONST"                  =>  $x["a_const"],
+
+                    
 
                 );
     array_push($data, $temp);

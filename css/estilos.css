@@ -188,6 +188,203 @@
     font-family: Arial;
     font-weight: bold;
   }
+
+  #contHR .items .item_pu {
+    position: absolute;
+    top: 63%;
+    left: 11%;
+    line-height: 60px;
+    font-size: 14pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .dentiponnivel_pu {
+    position: absolute;
+    top: 49%;
+    left: 10%;
+    font-size: 8pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .antiguedad_pu {
+    position: absolute;
+    top: 48%;
+    left: 18%;
+    line-height: 55px;
+    font-size: 12pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .mat_predominante_pu {
+    position: absolute;
+    top: 48%;
+    left: 21%;
+    line-height: 55px;
+    font-size: 12pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .conservacion_pu {
+    position: absolute;
+    top: 48%;
+    left: 23%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .nivel_pu {
+    position: absolute;
+    top: 48%;
+    left: 13%;
+    line-height: 55px;
+    font-size: 10pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .clasi_depreciacion_pu {
+    position: absolute;
+    top: 48%;
+    left: 66%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .denmuros_pu {
+    position: absolute;
+    top: 48%;
+    left: 26%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .dentecho_pu {
+    position: absolute;
+    top: 48%;
+    left: 29%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .denpisos_pu {
+    position: absolute;
+    top: 48%;
+    left: 31%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .denpuertas_pu {
+    position: absolute;
+    top: 48%;
+    left: 34%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .denrevestimiento_pu {
+    position: absolute;
+    top: 48%;
+    left: 37%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .denbannos_pu {
+    position: absolute;
+    top: 48%;
+    left: 39%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .denelectrico_pu {
+    position: absolute;
+    top: 48%;
+    left: 42%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .valor_unitario_pu {
+    position: absolute;
+    top: 49%;
+    left: 44%;
+    line-height: 15px;
+    font-size: 10pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .valor_incremento_pu {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .porc_depreciacion_pu {
+    position: absolute;
+    top: 48%;
+    left: 54%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .valor_depreciacion_pu {
+    position: absolute;
+    top: 48%;
+    left: 59%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .area_construida_pu {
+    position: absolute;
+    top: 48%;
+    left: 70%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  #contHR .items .a_const_m2_pu {
+    position: absolute;
+    top: 48%;
+    left: 78%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
+
+  #contHR .items .a_const_pu {
+    position: absolute;
+    top: 48%;
+    left: 87%;
+    line-height: 55px;
+    font-size: 11pt;
+    font-family: Arial;
+    font-weight: bold;
+  }
   
 
 /*FIN CSS ESTILOS PU */
