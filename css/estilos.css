@@ -319,3 +319,155 @@
       width: 5%; }
 
 /*# sourceMappingURL=estilos.css.map */
+
+/* ESTILOS HR */
+.estilos{
+  font-weight: bold;
+}
+.persona_id_pr{
+  position: absolute;
+  top: 19%;
+  left: 28%;
+  line-height: 10px;
+}
+
+.apellidos_nombres_pr{
+  position: absolute;
+  top: 20%;
+  left: 17%;
+  line-height: 37px;
+}
+
+.direccion_completa_pr{
+  position: absolute;
+  top: 24%;
+  left: 27%;
+  line-height: 10px;
+}
+.nro_declaracion_id_pr{
+  position: absolute;
+  top: 14%;
+  left: 59%;
+  line-height: 30px;
+}
+.nro_docu_identidad_pr{
+  position: absolute;
+  top: 20%;
+  left: 27%;
+  line-height: 54px;
+}
+.emision_pr{
+  position: absolute;
+  top: 15%;
+  left: 79%;
+  line-height: 54px;
+}
+
+.codigo_predio_pr{
+  position: absolute;
+  top: 22%;
+  left: 22%;
+  line-height: 23px;
+}
+.codigo_catastral_pr{
+  position: absolute;
+  top: 16%;
+  left: 87%;
+  line-height: 54px;
+}
+
+.condicion_propiedad_pr{
+  position: absolute;
+  top: 26%;
+  left: 22%;
+  line-height: 37px;
+}
+.condicion_propiedad2_pr{
+  position: absolute;
+  top: 30%;
+  left: 26%;
+  line-height: 21px;
+}
+
+.altitud_pr{
+  position: absolute;
+  top: 28%;
+  left: 16%;
+  line-height: 22px;
+}
+
+.porc_propiedad_pr{
+  position: absolute;
+  top: 26%;
+  left: 52%;
+  line-height: 33px;
+}
+
+.categoria_rustico_pr{
+  position: absolute;
+  top: 28%;
+  left: 47%;
+  line-height: 23px;
+}
+
+.tipo_tierra_pr{
+  position: absolute;
+  top: 26%;
+  left: 77%;
+  line-height: 13px;
+  width: 16%;
+  font-size: 12px;
+  padding-top: 4px;
+  font-weight: bold;
+}
+
+.uso_pr{
+  position: absolute;
+  top: 28%;
+  left: 71%;
+  line-height: 23px;
+}
+.area_pr{
+  position: absolute;
+  top: 34%;
+  left: 22%;
+  line-height: 31px;
+}
+.arancel_pr{
+  position: absolute;
+  top: 34%;
+  left: 49%;
+  line-height: 31px;
+}
+.valor_terreno_pr{
+  position: absolute;
+  top: 34%;
+  left: 76%;
+  line-height: 31px;
+}
+
+.item_pr{
+  position: absolute;
+  top: 34%;
+  left: 76%;
+  line-height: 31px;
+}
+
+.tipo_nivel_pr{
+  position: absolute;
+  top: 34%;
+  left: 76%;
+  line-height: 31px;
+}
+
+.nronivel_pr{
+  position: absolute;
+  top: 34%;
+  left: 76%;
+  line-height: 31px;
+}
+
+
+
+
+/* FIN ESTILOS HR */
