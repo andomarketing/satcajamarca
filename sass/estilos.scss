@@ -286,68 +286,95 @@
     }
     .construcciones{
         position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
+        width: 90%;
+        top: 47%;
+        left: 4.3%;
+        text-align: center;
+        tr{
+            display: flex;
+        }
         .item{
-            width:5%;
+            width:4%;
         }
         .tipo_nivel{
-            width:5%;
+            width: 3.5%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
         }
         .nro_nivel{
-            width:5%;
+            width:3%;
         }
         .seccion{
-            width:5%;
+            width:3%;
         }
         .anno_construccion{
-            width:5%;
+            width:3%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
         }
         .material_predominante{
-            width:5%;
+            width:3%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
         }
         .estado_conservacion{
-            width:5%;
+            width:3%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
         }
         .muros{
-            width:5%;
+            width:3%;
         }
         .techo{
-            width:5%;
+            width:3%;
         }
         .pisos{
-            width:5%;
+            width:3%;
         }
         .puertas{
-            width:5%;
+            width:3%;
         }
         .revestimiento{
-            width:5%;
+            width:3%;
         }
         .bannos{
-            width:5%;
+            width:3%;
         }
         .electrico{
-            width:5%;
+            width:3%;
         }
         .valor_unitario{
             width:5%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            padding-left: 2%;
         }
         .valor_incremento{
-            width:5%;
+            width:4%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            padding-left: 1%;
         }
         .porc_depreciacion{
-            width:5%;
+            width:7%;
+        }
+        .valor_depreciacion{
+            width:7%;
         }
         .valor_unitario_depre{
-            width:5%;
+            width: 6%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            padding-left: 2%;
         }
         .valor_area_construida{
-            width:5%;
+            width:9%;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            padding-left: 3%;
         }
         .valor_construccion{
-            width:5%;
+            width:12%;
         }
     }
     .instalaciones{
@@ -356,6 +383,7 @@
         top: 65%;
         left: 8.5%;
         font-size: 10pt;
+        text-align: center;
         td{
             padding: 0 1%;
         }

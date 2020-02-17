@@ -143,22 +143,24 @@ $("#consultarPU").submit(function(e){
 
                                 items = "<tr>"
                                             +"<td class='item'>"                    + construccion.item                  +"</td>"
-                                            +"<td class='tipo_nivel'>"              + construccion.tipo_nivel            +"</td>"
+                                            +"<td class='tipo_nivel'>"              + construccion.TipoNivel             +"</td>"
                                             +"<td class='nro_nivel'>"               + construccion.nro_nivel             +"</td>"
                                             +"<td class='seccion'>"                 + construccion.seccion               +"</td>"
                                             +"<td class='anno_construccion'>"       + construccion.anno_construccion     +"</td>"
                                             +"<td class='material_predominante'>"   + construccion.material_predominante +"</td>"
-                                            +"<td class='estado_conservacion'>"     + construccion.estado_conservacion   +"</td>"
+                                            +"<td class='estado_conservacion'>"     + construccion.estado_concervacion   +"</td>"
                                             +"<td class='muros'>"                   + construccion.muros                 +"</td>"
                                             +"<td class='techo'>"                   + construccion.techo                 +"</td>"
                                             +"<td class='pisos'>"                   + construccion.pisos                 +"</td>"
                                             +"<td class='puertas'>"                 + construccion.puertas               +"</td>"
-                                            +"<td class='revestimiento'>"           + construccion.revestimiento         +"</td>"
+                                            +"<td class='revestimiento'>"           + construccion.revestimientos        +"</td>"
                                             +"<td class='bannos'>"                  + construccion.bannos                +"</td>"
-                                            +"<td class='electrico'>"               + construccion.electrico             +"</td>"
+                                            +"<td class='electrico'>"               + construccion.electricos            +"</td>"
                                             +"<td class='valor_unitario'>"          + construccion.valor_unitario        +"</td>"
                                             +"<td class='valor_incremento'>"        + construccion.valor_incremento      +"</td>"
                                             +"<td class='porc_depreciacion'>"       + construccion.porc_depreciacion     +"</td>"
+                                            +"<td class='valor_depreciacion'>"      + construccion.valor_depreciacion    +"</td>"
+                                            +"<td class='valor_unitario_depre'>"    + construccion.valor_unitario_depre  +"</td>"
                                             +"<td class='valor_unitario_depre'>"    + construccion.valor_unitario_depre  +"</td>"
                                             +"<td class='valor_area_construida'>"   + construccion.valor_area_construida +"</td>"
                                             +"<td class='valor_construccion'>"      + construccion.valor_construccion    +"</td>"
@@ -183,10 +185,10 @@ $("#consultarPU").submit(function(e){
                                             +"<td class='descripcion'>"         + instalaciones.descripcion          +"</td>"
                                             +"<td class='anno_instalacion'>"    + instalaciones.anno_instalacion     +"</td>"
                                             +"<td class='medida'>"              + instalaciones.medida               +"</td>"
-                                            +"<td class='inidad_medida'>"       + instalaciones.inidad_medida        +"</td>"
+                                            +"<td class='inidad_medida'>"       + instalaciones.unidad_medida        +"</td>"
                                             +"<td class='valor_unitario'>"      + instalaciones.valor_unitario       +"</td>"
                                             +"<td class='valor_instalacion'>"   + instalaciones.valor_instalacion    +"</td>"
-                                            +"<td class='fact_oficializacion'>" + instalaciones.fact_oficializacion  +"</td>"
+                                            +"<td class='fact_oficializacion'>" + instalaciones.factor_oficializacion  +"</td>"
                                             +"<td class='valor_total'>"         + instalaciones.valor_total          +"</td>"
                                         +"</tr>";
                                 
@@ -341,7 +343,7 @@ function format(xNumero)
         num = num.split('').reverse().join('').replace(/^[\.]/,'');
         xNumero = num;
     }else{ 
-        alert('Solo se permiten numeros');
+        //alert('Solo se permiten numeros');
         xNumero = xNumero;
     }
 }
