@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-12">
                 <div id="contPU">
-                    <img src="../../img/pu.png" alt="HR" class="img img-fluid">
+                    <img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">
                     <div class="items"></div>
                 </div>
             </div>
