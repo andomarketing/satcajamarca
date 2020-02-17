@@ -40,60 +40,118 @@
     width: 11%; }
   #contHR #datosHR tbody .base_imponible_variable {
     width: 11%; }
-#contHR .items {
+#contHR #contHR .items {
   font-size: 14pt;
   font-family: Arial;
   font-weight: bold; }
-  #contHR .items .determinacion_id {
+  #contHR #contHR .items .determinacion_id {
     position: absolute;
     top: 13%;
     left: 59.1%; }
-  #contHR .items .fecha_de_emision_1 {
+  #contHR #contHR .items .fecha_de_emision_1 {
     position: absolute;
     top: 19.75%;
     right: 9%;
     font-size: 12pt; }
-  #contHR .items .emision {
+  #contHR #contHR .items .emision {
     position: absolute;
     top: 15%;
     right: 7%;
     font-size: 12pt; }
-  #contHR .items .persona_id {
+  #contHR #contHR .items .persona_id {
     position: absolute;
     top: 20.5%;
     left: 18%; }
-  #contHR .items .apellidos_nombres {
+  #contHR #contHR .items .apellidos_nombres {
     position: absolute;
     top: 22.5%;
     left: 18%; }
-  #contHR .items .nro_docu_identidad {
+  #contHR #contHR .items .nro_docu_identidad {
     position: absolute;
     right: 23%;
     top: 20.5%; }
-  #contHR .items .tipo_contribuyente {
+  #contHR #contHR .items .tipo_contribuyente {
     display: none; }
-  #contHR .items .direccion_completa {
+  #contHR #contHR .items .direccion_completa {
     position: absolute;
     top: 24.2%;
     left: 25%;
     width: 66%;
     font-size: 12pt; }
-  #contHR .items .base_imponible {
+  #contHR #contHR .items .base_imponible {
     position: absolute;
     top: 71.6%;
     left: 22%;
     font-size: 12pt; }
-  #contHR .items .base_afecta {
+  #contHR #contHR .items .base_afecta {
     position: absolute;
     left: 40%;
     top: 71.6%;
     font-size: 12pt; }
-  #contHR .items .impuesto {
+  #contHR #contHR .items .impuesto {
     position: absolute;
     left: 63%;
     top: 71.6%;
     font-size: 12pt; }
-  #contHR .items .monto_de_la_cuota {
+  #contHR #contHR .items .monto_de_la_cuota {
+    position: absolute;
+    top: 71.6%;
+    right: 10%;
+    font-size: 12pt; }
+#contHR #contPU .items {
+  font-size: 14pt;
+  font-family: Arial;
+  font-weight: bold; }
+  #contHR #contPU .items .determinacion_id {
+    position: absolute;
+    top: 13%;
+    left: 59.1%; }
+  #contHR #contPU .items .fecha_de_emision_1 {
+    position: absolute;
+    top: 19.75%;
+    right: 9%;
+    font-size: 12pt; }
+  #contHR #contPU .items .emision {
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    font-size: 12pt; }
+  #contHR #contPU .items .persona_id {
+    position: absolute;
+    top: 20.5%;
+    left: 18%; }
+  #contHR #contPU .items .apellidos_nombres {
+    position: absolute;
+    top: 22.5%;
+    left: 18%; }
+  #contHR #contPU .items .nro_docu_identidad {
+    position: absolute;
+    right: 23%;
+    top: 20.5%; }
+  #contHR #contPU .items .tipo_contribuyente {
+    display: none; }
+  #contHR #contPU .items .direccion_completa {
+    position: absolute;
+    top: 24.2%;
+    left: 25%;
+    width: 66%;
+    font-size: 12pt; }
+  #contHR #contPU .items .base_imponible {
+    position: absolute;
+    top: 71.6%;
+    left: 22%;
+    font-size: 12pt; }
+  #contHR #contPU .items .base_afecta {
+    position: absolute;
+    left: 40%;
+    top: 71.6%;
+    font-size: 12pt; }
+  #contHR #contPU .items .impuesto {
+    position: absolute;
+    left: 63%;
+    top: 71.6%;
+    font-size: 12pt; }
+  #contHR #contPU .items .monto_de_la_cuota {
     position: absolute;
     top: 71.6%;
     right: 10%;
