@@ -105,13 +105,19 @@ $("#consultarPU").submit(function(e){
                 }else{
 
                     if(index == 1){
-                        items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
-                        items += "<span class='determinacion_id'>"          + data.NroDeclaracionJurada     +"</span>";
+                        //items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
+                        items =  "<span class='determinacion_id'>"          + data.NroDeclaracionJurada     +"</span>";
                         items += "<span class='emision'>"                   + data.emision                  +"</span>";
                         items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
-                        items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad       +"</span>";
+                        //items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad       +"</span>";
                         items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
                         items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";
+                        items += "<span class='area_construida'>"           + data.area_construida          +"</span>";
+                        items += "<span class='valor_construccion'>"        + data.valor_construccion       +"</span>";
+                        items += "<span class='base_imponible'>"            + data.base_imponible        +"</span>";
+                        items += "<span class='domicilio_completo'>"        + data.domicilio_completo       +"</span>";
+                        items += "<span class='area_construida'>"           + data.area_construida          +"</span>";
+                        items += "<span class='valor_construccion'>"        + data.valor_construccion       +"</span>";
                         $("#contPU .items").append(items);
                     }
                     
@@ -129,27 +135,49 @@ $("#consultarPU").submit(function(e){
                         items += "<span class=''>" + PU.porc_participacion  +"</span>";
                         items += "<span class=''>" + PU.valor_terreno       +"</span>";
 
-                        $(data.construcciones).each(function(index3, contruccion){
+                        $(data.construcciones).each(function(index3, construccion){
 
-                            if(PU.predio_id == contruccion.predio_id){
-                                items += "<span class=''>" + construccion.item                  +"</span>";
+                            if(PU.predio_id == construccion.predio_id){
+
+                                items = "<span class=''>" + construccion.item                  +"</span>";
                                 items += "<span class=''>" + construccion.tipo_nivel            +"</span>";
                                 items += "<span class=''>" + construccion.nro_nivel             +"</span>";
                                 items += "<span class=''>" + construccion.seccion               +"</span>";
-                                items += "<span class=''>" + construccion.anno_contruccion      +"</span>";
+                                items += "<span class=''>" + construccion.anno_construccion     +"</span>";
                                 items += "<span class=''>" + construccion.material_predominante +"</span>";
                                 items += "<span class=''>" + construccion.estado_conservacion   +"</span>";
                                 items += "<span class=''>" + construccion.muros                 +"</span>";
                                 items += "<span class=''>" + construccion.techo                 +"</span>";
                                 items += "<span class=''>" + construccion.pisos                 +"</span>";
                                 items += "<span class=''>" + construccion.puertas               +"</span>";
+                                items += "<span class=''>" + construccion.revestimiento         +"</span>";
+                                items += "<span class=''>" + construccion.bannos                +"</span>";
+                                items += "<span class=''>" + construccion.electrico             +"</span>";
+                                items += "<span class=''>" + construccion.valor_unitario        +"</span>";
+                                items += "<span class=''>" + construccion.valor_incremento      +"</span>";
+                                items += "<span class=''>" + construccion.porc_depreciacion     +"</span>";
+                                items += "<span class=''>" + construccion.valor_unitario_depre  +"</span>";
+                                items += "<span class=''>" + construccion.valor_area_construida +"</span>";
+                                items += "<span class=''>" + construccion.valor_construccion    +"</span>";
+                                $("#contPU .items").append(items);
                             }
 
                         });
 
                         $(data.instalaciones).each(function(index4, instalaciones){
                             if(PU.predio_id == instalaciones.predio_id){
+                                items =  "<span class=''>" + instalaciones.item                 +"</span>";
+                                items += "<span class=''>" + instalaciones.tipo_obra_id         +"</span>";
+                                items += "<span class=''>" + instalaciones.descripcion          +"</span>";
+                                items += "<span class=''>" + instalaciones.anno_instalacion     +"</span>";
+                                items += "<span class=''>" + instalaciones.medida               +"</span>";
+                                items += "<span class=''>" + instalaciones.inidad_medida        +"</span>";
+                                items += "<span class=''>" + instalaciones.valor_unitario       +"</span>";
+                                items += "<span class=''>" + instalaciones.valor_instalacion    +"</span>";
+                                items += "<span class=''>" + instalaciones.fact_oficializacion  +"</span>";
+                                items += "<span class=''>" + instalaciones.valor_total          +"</span>";
                                 
+                                $("#contPU .items").append(items);
                             }
                         })
                         
