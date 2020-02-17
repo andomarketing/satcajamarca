@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-12">
                 <div id="contHR">
-                    <img src="../../img/hr.png" alt="HR" class="img img-fluid">
+                    <img src="../../img/CuponeraFINAL5 CONTORNOS-04.png" alt="HR" class="img img-fluid">
                     <div class="items"> <!-- DATOS DE DB --> </div>
                     <table id="datosHR">
                         <tbody>

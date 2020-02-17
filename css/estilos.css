@@ -40,60 +40,60 @@
     width: 11%; }
   #contHR #datosHR tbody .base_imponible_variable {
     width: 11%; }
-#contHR #contHR .items {
+#contHR .items {
   font-size: 14pt;
   font-family: Arial;
   font-weight: bold; }
-  #contHR #contHR .items .determinacion_id {
+  #contHR .items .determinacion_id {
     position: absolute;
     top: 13%;
     left: 59.1%; }
-  #contHR #contHR .items .fecha_de_emision_1 {
+  #contHR .items .fecha_de_emision_1 {
     position: absolute;
     top: 19.75%;
     right: 9%;
     font-size: 12pt; }
-  #contHR #contHR .items .emision {
+  #contHR .items .emision {
     position: absolute;
     top: 15%;
     right: 7%;
     font-size: 12pt; }
-  #contHR #contHR .items .persona_id {
+  #contHR .items .persona_id {
     position: absolute;
     top: 20.5%;
     left: 18%; }
-  #contHR #contHR .items .apellidos_nombres {
+  #contHR .items .apellidos_nombres {
     position: absolute;
     top: 22.5%;
     left: 18%; }
-  #contHR #contHR .items .nro_docu_identidad {
+  #contHR .items .nro_docu_identidad {
     position: absolute;
     right: 23%;
     top: 20.5%; }
-  #contHR #contHR .items .tipo_contribuyente {
+  #contHR .items .tipo_contribuyente {
     display: none; }
-  #contHR #contHR .items .direccion_completa {
+  #contHR .items .direccion_completa {
     position: absolute;
     top: 24.2%;
     left: 25%;
     width: 66%;
     font-size: 12pt; }
-  #contHR #contHR .items .base_imponible {
+  #contHR .items .base_imponible {
     position: absolute;
     top: 71.6%;
     left: 22%;
     font-size: 12pt; }
-  #contHR #contHR .items .base_afecta {
+  #contHR .items .base_afecta {
     position: absolute;
     left: 40%;
     top: 71.6%;
     font-size: 12pt; }
-  #contHR #contHR .items .impuesto {
+  #contHR .items .impuesto {
     position: absolute;
     left: 63%;
     top: 71.6%;
     font-size: 12pt; }
-  #contHR #contHR .items .monto_de_la_cuota {
+  #contHR .items .monto_de_la_cuota {
     position: absolute;
     top: 71.6%;
     right: 10%;
@@ -107,26 +107,25 @@
     font-weight: bold; }
     #contPU .items .determinacion_id {
       position: absolute;
-      top: 12.6%;
+      top: 13.6%;
       left: 59.1%; }
-    #contPU .items .fecha_de_emision_1 {
-      position: absolute;
-      top: 19.75%;
-      right: 9%;
-      font-size: 12pt; }
     #contPU .items .emision {
       position: absolute;
-      top: 14.5%;
-      right: 7%;
+      top: 15.4%;
+      right: 16%;
       font-size: 12pt; }
     #contPU .items .persona_id {
       position: absolute;
-      top: 20.5%;
-      left: 18%; }
+      top: 19%;
+      left: 28%; }
+    #contPU .items .codigoCatastral {
+      position: absolute;
+      top: 22.1%;
+      left: 62%; }
     #contPU .items .apellidos_nombres {
       position: absolute;
-      top: 22.6%;
-      left: 18%; }
+      top: 20.5%;
+      left: 17%; }
     #contPU .items .nro_docu_identidad {
       position: absolute;
       right: 23%;
@@ -135,7 +134,7 @@
       display: none; }
     #contPU .items .direccion_completa {
       position: absolute;
-      top: 19%;
+      top: 23.3%;
       left: 27%;
       width: 66%;
       font-size: 12pt; }
@@ -159,56 +158,138 @@
       top: 71.6%;
       right: 10%;
       font-size: 12pt; }
-
-
-  
+    #contPU .items .predio_id {
+      position: absolute;
+      top: 22.1%;
+      left: 22%; }
+    #contPU .items .lugar {
+      position: absolute;
+      top: 25.2%;
+      left: 16%; }
+    #contPU .items .sector {
+      position: absolute;
+      top: 26.7%;
+      left: 17%; }
+    #contPU .items .ubicacion_predio {
+      position: absolute;
+      top: 29%;
+      left: 20%; }
+    #contPU .items .area_terreno {
+      position: absolute;
+      top: 33%;
+      left: 22%; }
+    #contPU .items .condicion_propiedad {
+      position: absolute;
+      top: 29%;
+      left: 53%; }
+    #contPU .items .arancel {
+      position: absolute;
+      top: 33%;
+      left: 50%; }
+    #contPU .items .porc_participacion {
+      position: absolute;
+      top: 29%;
+      left: 80%; }
+    #contPU .items .valor_terreno {
+      position: absolute;
+      top: 33%;
+      left: 81%; }
+    #contPU .items .valor_construccion {
+      position: absolute;
+      left: 84%;
+      top: 58%; }
+    #contPU .items .area_construida {
+      position: absolute;
+      top: 58%;
+      left: 66%; }
+    #contPU .items .PU_valor_terreno {
+      position: absolute;
+      top: 74%;
+      left: 84%; }
+    #contPU .items .PU_valor_construccion {
+      position: absolute;
+      top: 72.5%;
+      left: 84%; }
+    #contPU .items .PU_valor_instalacion {
+      position: absolute;
+      top: 75.5%;
+      left: 84%; }
+    #contPU .items .PU_base_imponible {
+      position: absolute;
+      top: 76.8%;
+      left: 84%; }
+  #contPU .construcciones {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0; }
+    #contPU .construcciones .item {
+      width: 5%; }
+    #contPU .construcciones .tipo_nivel {
+      width: 5%; }
+    #contPU .construcciones .nro_nivel {
+      width: 5%; }
+    #contPU .construcciones .seccion {
+      width: 5%; }
+    #contPU .construcciones .anno_construccion {
+      width: 5%; }
+    #contPU .construcciones .material_predominante {
+      width: 5%; }
+    #contPU .construcciones .estado_conservacion {
+      width: 5%; }
+    #contPU .construcciones .muros {
+      width: 5%; }
+    #contPU .construcciones .techo {
+      width: 5%; }
+    #contPU .construcciones .pisos {
+      width: 5%; }
+    #contPU .construcciones .puertas {
+      width: 5%; }
+    #contPU .construcciones .revestimiento {
+      width: 5%; }
+    #contPU .construcciones .bannos {
+      width: 5%; }
+    #contPU .construcciones .electrico {
+      width: 5%; }
+    #contPU .construcciones .valor_unitario {
+      width: 5%; }
+    #contPU .construcciones .valor_incremento {
+      width: 5%; }
+    #contPU .construcciones .porc_depreciacion {
+      width: 5%; }
+    #contPU .construcciones .valor_unitario_depre {
+      width: 5%; }
+    #contPU .construcciones .valor_area_construida {
+      width: 5%; }
+    #contPU .construcciones .valor_construccion {
+      width: 5%; }
+  #contPU .instalaciones {
+    position: absolute;
+    width: 85%;
+    top: 65%;
+    left: 8.5%;
+    font-size: 10pt; }
+    #contPU .instalaciones td {
+      padding: 0 1%; }
+    #contPU .instalaciones .item {
+      width: 3%; }
+    #contPU .instalaciones .tipo_obra_id {
+      width: 5%; }
+    #contPU .instalaciones .descripcion {
+      width: 16%; }
+    #contPU .instalaciones .anno_instalacion {
+      width: 9%; }
+    #contPU .instalaciones .medida {
+      width: 5%; }
+    #contPU .instalaciones .inidad_medida {
+      width: 5%; }
+    #contPU .instalaciones .valor_unitario {
+      width: 5%; }
+    #contPU .instalaciones .valor_instalacion {
+      width: 7%; }
+    #contPU .instalaciones .fact_oficializacion {
+      width: 5%; }
+    #contPU .instalaciones .valor_total {
+      width: 5%; }
 
 /*# sourceMappingURL=estilos.css.map */
-
-/* ESTILOS HR */
-.estilos{
-  font-weight: bold;
-}
-.persona_id_pr{
-  position: absolute;
-  top: 20%;
-  left: 23%;
-  line-height: 0px;
-}
-
-.apellidos_nombres_pr{
-  position: absolute;
-  top: 25%;
-  left: 18%;
-  line-height: 0px;
-}
-
-.direccion_completa_pr{
-  position: absolute;
-  top: 21%;
-  left: 27%;
-  line-height: 28px;
-}
-.nro_declaracion_id_pr{
-  position: absolute;
-  top: 14%;
-  left: 59%;
-  line-height: 30px;
-}
-.nro_docu_identidad_pr{
-  position: absolute;
-  top: 20%;
-  left: 27%;
-  line-height: 54px;
-}
-.emision_pr{
-  position: absolute;
-  top: 16%;
-  left: 87%;
-  line-height: 54px;
-}
-
-
-
-
-/* FIN ESTILOS HR */

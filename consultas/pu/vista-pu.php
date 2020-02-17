@@ -36,7 +36,18 @@
             <div class="col-12">
                 <div id="contPU">
                     <img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">
-                    <div class="items"></div>
+                    <div class="items"><!-- DATOS DE DB --></div>
+                    <table class="construcciones">
+                        <tbody>
+                            <!-- DATOS DE DB -->
+                        </tbody>
+                    </table>
+
+                    <table class="instalaciones">
+                        <tbody>
+                            <!-- DATOS DE DB -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

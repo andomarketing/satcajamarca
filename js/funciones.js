@@ -105,83 +105,98 @@ $("#consultarPU").submit(function(e){
                 }else{
 
                     if(index == 1){
-                        //items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
-                        items =  "<span class='determinacion_id'>"          + data.NroDeclaracionJurada     +"</span>";
+                        items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
+                        items +=  "<span class='determinacion_id'>"         + data.NroDeclaracionJurada     +"</span>";
                         items += "<span class='emision'>"                   + data.emision                  +"</span>";
                         items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
-                        //items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad       +"</span>";
                         items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
-                        items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";
-                        items += "<span class='area_construida'>"           + data.area_construida          +"</span>";
-                        items += "<span class='valor_construccion'>"        + data.valor_construccion       +"</span>";
-                        items += "<span class='base_imponible'>"            + data.base_imponible        +"</span>";
-                        items += "<span class='domicilio_completo'>"        + data.domicilio_completo       +"</span>";
-                        items += "<span class='area_construida'>"           + data.area_construida          +"</span>";
-                        items += "<span class='valor_construccion'>"        + data.valor_construccion       +"</span>";
+                        items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";                        
                         $("#contPU .items").append(items);
                     }
                     
                     $(data.PU).each(function(index, PU) {
 
-                        items = "<span class=''>"  + PU.predio_id           +"</span>";
-                        items += "<span class=''>" + PU.codigoCatastral     +"</span>";
-                        items += "<span class=''>" + PU.lugar               +"</span>";
-                        items += "<span class=''>" + PU.sector              +"</span>";
-                        items += "<span class=''>" + PU.direccion_completa  +"</span>";
-                        items += "<span class=''>" + PU.ubicacion_predio    +"</span>";
-                        items += "<span class=''>" + PU.area_terreno        +"</span>";
-                        items += "<span class=''>" + PU.condicion_propiedad +"</span>";
-                        items += "<span class=''>" + PU.arancel             +"</span>";
-                        items += "<span class=''>" + PU.porc_participacion  +"</span>";
-                        items += "<span class=''>" + PU.valor_terreno       +"</span>";
+                        items = "<span class='predio_id'>"              + PU.predio_id           +"</span>";
+                        items += "<span class='codigoCatastral'>"       + PU.codigoCatastral     +"</span>";
+                        items += "<span class='lugar'>"                 + PU.lugar               +"</span>";
+                        items += "<span class='sector'>"                + PU.sector              +"</span>";
+                        items += "<span class='ubicacion_predio'>"      + PU.ubicacion_predio    +"</span>";
+                        items += "<span class='area_terreno'>"          + PU.area_terreno        +"</span>";
+                        items += "<span class='condicion_propiedad'>"   + PU.condicion_propiedad +"</span>";
+                        items += "<span class='arancel'>"               + PU.arancel             +"</span>";
+                        items += "<span class='porc_participacion'>"    + PU.porc_paticipacion   +"</span>";
+                        items += "<span class='valor_terreno'>"         + PU.valor_terreno       +"</span>";
+                        items += "<span class='valor_construccion'>"    + PU.valor_construccion  +"</span>";
+                        items += "<span class='area_construida'>"       + PU.area_construida     +"</span>";
+
+                        //VALOR PRESIO SECCION
+                        items += "<span class='PU_valor_terreno'>"         + PU.valor_terreno       +"</span>";
+                        items += "<span class='PU_valor_construccion'>"    + PU.valor_construccion  +"</span>";
+                        items += "<span class='PU_valor_instalacion'>"     + PU.valor_instalacion   +"</span>";
+                        items += "<span class='PU_base_imponible'>"        + PU.base_imponible      +"</span>";
+
+                        $("#contPU .items").append(items);
 
                         $(data.construcciones).each(function(index3, construccion){
 
                             if(PU.predio_id == construccion.predio_id){
 
-                                items = "<span class=''>" + construccion.item                  +"</span>";
-                                items += "<span class=''>" + construccion.tipo_nivel            +"</span>";
-                                items += "<span class=''>" + construccion.nro_nivel             +"</span>";
-                                items += "<span class=''>" + construccion.seccion               +"</span>";
-                                items += "<span class=''>" + construccion.anno_construccion     +"</span>";
-                                items += "<span class=''>" + construccion.material_predominante +"</span>";
-                                items += "<span class=''>" + construccion.estado_conservacion   +"</span>";
-                                items += "<span class=''>" + construccion.muros                 +"</span>";
-                                items += "<span class=''>" + construccion.techo                 +"</span>";
-                                items += "<span class=''>" + construccion.pisos                 +"</span>";
-                                items += "<span class=''>" + construccion.puertas               +"</span>";
-                                items += "<span class=''>" + construccion.revestimiento         +"</span>";
-                                items += "<span class=''>" + construccion.bannos                +"</span>";
-                                items += "<span class=''>" + construccion.electrico             +"</span>";
-                                items += "<span class=''>" + construccion.valor_unitario        +"</span>";
-                                items += "<span class=''>" + construccion.valor_incremento      +"</span>";
-                                items += "<span class=''>" + construccion.porc_depreciacion     +"</span>";
-                                items += "<span class=''>" + construccion.valor_unitario_depre  +"</span>";
-                                items += "<span class=''>" + construccion.valor_area_construida +"</span>";
-                                items += "<span class=''>" + construccion.valor_construccion    +"</span>";
-                                $("#contPU .items").append(items);
+                                items = "<tr>"
+                                            +"<td class='item'>"                    + construccion.item                  +"</td>"
+                                            +"<td class='tipo_nivel'>"              + construccion.tipo_nivel            +"</td>"
+                                            +"<td class='nro_nivel'>"               + construccion.nro_nivel             +"</td>"
+                                            +"<td class='seccion'>"                 + construccion.seccion               +"</td>"
+                                            +"<td class='anno_construccion'>"       + construccion.anno_construccion     +"</td>"
+                                            +"<td class='material_predominante'>"   + construccion.material_predominante +"</td>"
+                                            +"<td class='estado_conservacion'>"     + construccion.estado_conservacion   +"</td>"
+                                            +"<td class='muros'>"                   + construccion.muros                 +"</td>"
+                                            +"<td class='techo'>"                   + construccion.techo                 +"</td>"
+                                            +"<td class='pisos'>"                   + construccion.pisos                 +"</td>"
+                                            +"<td class='puertas'>"                 + construccion.puertas               +"</td>"
+                                            +"<td class='revestimiento'>"           + construccion.revestimiento         +"</td>"
+                                            +"<td class='bannos'>"                  + construccion.bannos                +"</td>"
+                                            +"<td class='electrico'>"               + construccion.electrico             +"</td>"
+                                            +"<td class='valor_unitario'>"          + construccion.valor_unitario        +"</td>"
+                                            +"<td class='valor_incremento'>"        + construccion.valor_incremento      +"</td>"
+                                            +"<td class='porc_depreciacion'>"       + construccion.porc_depreciacion     +"</td>"
+                                            +"<td class='valor_unitario_depre'>"    + construccion.valor_unitario_depre  +"</td>"
+                                            +"<td class='valor_area_construida'>"   + construccion.valor_area_construida +"</td>"
+                                            +"<td class='valor_construccion'>"      + construccion.valor_construccion    +"</td>"
+                                        +"</tr>";
+
+                                
+                                $("#contPU .construcciones tbody").append(items);
                             }
 
                         });
 
+                        var n_item_instalaciones;
+
                         $(data.instalaciones).each(function(index4, instalaciones){
                             if(PU.predio_id == instalaciones.predio_id){
-                                items =  "<span class=''>" + instalaciones.item                 +"</span>";
-                                items += "<span class=''>" + instalaciones.tipo_obra_id         +"</span>";
-                                items += "<span class=''>" + instalaciones.descripcion          +"</span>";
-                                items += "<span class=''>" + instalaciones.anno_instalacion     +"</span>";
-                                items += "<span class=''>" + instalaciones.medida               +"</span>";
-                                items += "<span class=''>" + instalaciones.inidad_medida        +"</span>";
-                                items += "<span class=''>" + instalaciones.valor_unitario       +"</span>";
-                                items += "<span class=''>" + instalaciones.valor_instalacion    +"</span>";
-                                items += "<span class=''>" + instalaciones.fact_oficializacion  +"</span>";
-                                items += "<span class=''>" + instalaciones.valor_total          +"</span>";
+
+                                if(n_item_instalaciones !== instalaciones.item){
+                                    n_item_instalaciones = instalaciones.item
+                                    items = "<tr>"
+                                            +"<td class='item'>"                + instalaciones.item                 +"</td>"
+                                            +"<td class='tipo_obra_id'>"        + instalaciones.tipo_obra_id         +"</td>"
+                                            +"<td class='descripcion'>"         + instalaciones.descripcion          +"</td>"
+                                            +"<td class='anno_instalacion'>"    + instalaciones.anno_instalacion     +"</td>"
+                                            +"<td class='medida'>"              + instalaciones.medida               +"</td>"
+                                            +"<td class='inidad_medida'>"       + instalaciones.inidad_medida        +"</td>"
+                                            +"<td class='valor_unitario'>"      + instalaciones.valor_unitario       +"</td>"
+                                            +"<td class='valor_instalacion'>"   + instalaciones.valor_instalacion    +"</td>"
+                                            +"<td class='fact_oficializacion'>" + instalaciones.fact_oficializacion  +"</td>"
+                                            +"<td class='valor_total'>"         + instalaciones.valor_total          +"</td>"
+                                        +"</tr>";
                                 
-                                $("#contPU .items").append(items);
+                                
+                                    $("#contPU .instalaciones tbody").append(items);
+                                }
+                                
                             }
                         })
                         
-                        $("#contPU .items").append(items);
                     });
                     
                 }
@@ -317,4 +332,17 @@ function obtener_personas(npagina){
             alert("Algo ha salido mal")
         }
     }); //FIN DE AJAX
+}
+
+function format(xNumero)
+{
+    var num = xNumero.replace(/\./g,'');
+    if(!isNaN(num)){
+        num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
+        num = num.split('').reverse().join('').replace(/^[\.]/,'');
+        xNumero = num;
+    }else{ 
+        alert('Solo se permiten numeros');
+        xNumero = xNumero;
+    }
 }
