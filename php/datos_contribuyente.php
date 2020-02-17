@@ -15,7 +15,7 @@ header('Content-Type: application/json');
 $data = array();
 
 //CONEXION BASE DE DATOS
-include "../db.php";
+include "db.php";
 
 //EXISTE UN ERROR DE CONEXION
 if ($mysqli->connect_errno) {
