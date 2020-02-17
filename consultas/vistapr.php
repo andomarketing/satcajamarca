@@ -37,7 +37,7 @@
                 <div id="contHR">
                     <img src="../img/pr.png" alt="PR" class="img img-fluid">
                     <div class="items"> <!-- DATOS DE DB --> </div>
-                    <table id="datosHR">
+                    <table id="datosPR">
                         <tbody>
                             <!-- DATOS DE DB -->
                         </tbody>
