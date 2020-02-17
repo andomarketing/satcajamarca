@@ -28,19 +28,19 @@ $("#buscarHR").submit(function(e){
                 }else{
 
                     if(index == 1){
-                        items = "<span class='ID_AUXILIAR'>"                + data.persona_id               +"</span>";
-                        items += "<span class='persona_id'>"                + data.persona_id                +"</span>";
-                        items += "<span class='fecha_de_emision_1'>"        + data.fechaEmision_completa     +"</span>";
-                        //items += "<span class='determinacion_id'>"          + data.determinacion_id          +"</span>";
-                        items += "<span class='emision'>"                   + data.emision                   +"</span>";
+                        //items = "<span class='ID_AUXILIAR'>"                + data.persona_id               +"</span>";
+                        items = "<span class='persona_id'>"                + data.persona_id               +"</span>";
+                        //items += "<span class='fecha_de_emision_1'>"        + data.fechaEmision_completa    +"</span>";
+                        items += "<span class='determinacion_id'>"          + data.NroDeclaracionJurada     +"</span>";
+                        items += "<span class='emision'>"                   + data.emision                  +"</span>";
                         items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
-                        items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad        +"</span>";
-                        items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres         +"</span>";
-                        items += "<span class='direccion_completa'>"        + data.domicilio_completo        +"</span>";
-                        //items += "<span class='base_imponible'>"            + data.base_imponible            +"</span>";
-                        //items += "<span class='base_afecta'>"               + data.base_afecta               +"</span>";
-                        //items += "<span class='impuesto'>"                  + data.impuesto                  +"</span>";
-                        //items += "<span class='monto_de_la_cuota'>"         + data.monto_de_la_cuota         +"</span>";
+                        items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad       +"</span>";
+                        items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
+                        items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";
+                        items += "<span class='base_imponible'>"            + data.pie_HR.cantidadPredios   +"</span>";
+                        items += "<span class='base_afecta'>"               + data.pie_HR.PrediosAfectos    +"</span>";
+                        items += "<span class='impuesto'>"                  + data.pie_HR.valor_TotalAfecto +"</span>";
+                        items += "<span class='monto_de_la_cuota'>"         + data.pie_HR.impuestoPredial   +"</span>";
                         $("#contHR .items").append(items);
                     }
                     
