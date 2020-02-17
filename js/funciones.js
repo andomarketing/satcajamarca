@@ -234,18 +234,7 @@ $("#consultarPR").submit(function(e){
 
                         items = "<span class=''>"  + PR.predio_id           +"</span>";
                         items += "<span class=''>" + PR.codigoCatastral     +"</span>";
-                        items += "<span class=''>" + PR.lugar               +"</span>";
-                        items += "<span class=''>" + PR.sector              +"</span>";
-                        items += "<span class=''>" + PR.direccion_completa  +"</span>";
-                        items += "<span class=''>" + PR.ubicacion_predio    +"</span>";
-                        items += "<span class=''>" + PR.area_terreno        +"</span>";
-                        items += "<span class=''>" + PR.condicion_propiedad +"</span>";
-                        items += "<span class=''>" + PR.arancel             +"</span>";
-                        items += "<span class=''>" + PR.porc_participacion  +"</span>";
-                        items += "<span class=''>" + PR.valor_terreno       +"</span>";
-
-                       
-                       
+                        
                         
                         $("#contPR .items").append(items);
                     });

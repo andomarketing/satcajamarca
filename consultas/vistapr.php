@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="col-12">
-                <div id="contHR">
+                <div id="contPR">
                     <img src="../img/pr.png" alt="PR" class="img img-fluid">
                     <div class="items"> <!-- DATOS DE DB --> </div>
                     <table id="datosPR">
