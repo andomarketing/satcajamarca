@@ -1,32 +1,60 @@
 #contHR{
-    table{
+    #datosRelacionados{
         tbody{
             position: absolute;
-            width: 100%;
-            top: 42%;
-            left: 13%;
+            width: 80%;
+            top: 28.5%;
+            left: 12%;
             font-weight: bold;
+            text-align: center;
+            font-size: 10pt;
             .item{
                 width: 6%;
             }
-            .direccion_predial{
+            .relacionado{
                 width: 34%;
+                text-align: left;
+            }
+            .Tporelacion{
+                width: 21%;
+            }
+            .NroDocumento{
+                width: 21%;
+            }
+        }    
+    }
+    #datosHR{
+        tbody{
+            position: absolute;
+            width: 82%;
+            top: 42%;
+            left: 11%;
+            font-weight: bold;
+            text-align: right;
+            font-size: 10pt;
+            .item{
+                width: 5%;
+                text-align: center;
+            }
+            .direccion_predial{
+                width: 40%;
+                text-align: left;
+                padding-left: 3%;
             }
             .fecha_adquisicion{
-                width: 10%;
+                width: 11%;
             }
             .valor_predio{
-                width: 10%;
+                width: 11%;
             }
             .porc_propiedad{
-                width: 10%;
+                width: 11%;
             }
             .monto_inafecto{
-                width: 4%;
+                width: 11%;
             }
             .base_imponible_variable{
-                width: 10%;
-                text-align: right;
+                width: 11%;
             }
         }
     }

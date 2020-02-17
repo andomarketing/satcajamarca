@@ -24,65 +24,67 @@ if ($mysqli->connect_errno) {
     exit;
 }
 
-//CONSULTA SQL
-$sql = "SELECT hr2_fija.*, datos_variables_hr1.*
-FROM hr2_fija  
-INNER JOIN datos_variables_hr1 ON hr2_fija.persona_id = '$codigo' && hr2_fija.persona_id = datos_variables_hr1.ID_AUXILIAR";
+//CONSULTAS SQL
+$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = '$codigo'";
+$hr_sql             = "SELECT * FROM tempo_hr_2020              WHERE persona_id = '$codigo'";
+$hr_pie_sql         = "SELECT * FROM tempo_hr_pie_2020          WHERE persona_id = '$codigo'";
+$relacionados_sql   = "SELECT * FROM tempo_relacionados_2020    WHERE persona_id = '$codigo'";
 
 //FALLO LA CONSULTA SQL
-if (!$resultado = $mysqli->query($sql)) {
-    $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
+if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
+    $data = array("error"=>true, "valor"=>"Error consultando el contributyente: " . $mysqli->error);
     echo json_encode($data);
     exit;
 }
 
 //NO SE ENCONTRARON REGISTROS
-if ($resultado->num_rows === 0) {
-    $data = array("error"=>true, "valor"=>"No se han encontrado registros.");
+if ($consulta_contribuyente->num_rows === 0) {
+    $data = array("error"=>true, "valor"=>"No se han encontrado registros de ese contribuyente.");
     echo json_encode($data);
     exit;
 }
 
-$item = "";
+//FALLO LA CONSULTA SQL
+if (!$consulta_hr = $mysqli->query($hr_sql)) {
+    $data = array("error"=>true, "valor"=>"Error consultando el HR contributyente: " . $mysqli->error);
+    echo json_encode($data);
+    exit;
+}
+
+//FALLO LA CONSULTA SQL
+if (!$consulta_relacionados = $mysqli->query($relacionados_sql)) {
+    $data = array("error"=>true, "valor"=>"Error consultando el Relacionados para el contributyente: " . $mysqli->error);
+    echo json_encode($data);
+    exit;
+}
+
 
 //GUARDAR CONSULTA EN ARRAY
-while ($x = $resultado->fetch_array()) {
+while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 
     $temp = array(  
-                    "error"                 => false,
-                    //FIJOS
-                    "ID_AUXILIAR"           => $x["ID_AUXILIAR"],
-                    "persona_id"            => $x["persona_id"],
-                    "fecha_de_emision_1"    => date_format(date_create($x["fecha_de_emision_1"]), 'd-m-Y'),
-                    "determinacion_id"      => $x["determinacion_id"],
-                    "emision"               => $x["emision"],
-                    "tipo_contribuyente"    => $x["tipo_contribuyente"],
-                    "nro_docu_identidad"    => $x["nro_docu_identidad"],
-                    "apellidos_nombres"     => $x["apellidos_nombres"],
-                    "direccion_completa"    => $x["direccion_completa"],
-                    "base_imponible"        => $x["base_imponible"],
-                    "base_afecta"           => $x["base_afecta"],
-                    "impuesto"              => $x["impuesto"],
-                    "monto_de_la_cuota"     => $x["monto_de_la_cuota"],
-                    "fecha_de_emision"      => date_format(date_create($x["fecha_de_emision"]), 'd-m-Y'),
-                    //VARIABLES
-                    "item"                  => $x["item"],
-                    "predio_id"             => $x["predio_id"],
-                    "cod_manzana"           => $x["cod_manzana"],
-                    "direccion_predial"     => $x["direccion_predial"],
-                    "referencia"            => $x["referencia"],
-                    "porc_propiedad"        => $x["porc_propiedad"],
-                    "valor_predio"          => $x["valor_predio"],
-                    "base_imponible_variable" => $x["base_imponible"],
-                    "monto_inafecto"        => $x["monto_inafecto"],
-                    "fecha_adquisicion"     => date_format(date_create($x["fecha_adquisicion"]), 'd-m-Y'),
+                    "error"                     => false,
+                    "fechaEmision_completa"     => date_format(date_create($contribuyente["fechaEmision_completa"]), 'd-m-Y'),
+                    "emision"                   => $contribuyente["emision"],
+                    "NroDeclaracionJurada"      => $contribuyente["NroDeclaracionJurada"],
+                    "persona_id"                => $contribuyente["persona_id"],
+                    "apellidos_nombres"         => $contribuyente["apellidos_nombres"],
+                    "tipo_Contribuyente"        => $contribuyente["tipo_Contribuyente"],
+                    "tipo_documento_identidad"  => $contribuyente["tipo_documento_identidad"],
+                    "nro_docu_identidad"        => $contribuyente["nro_docu_identidad"],
+                    "domicilio_completo"        => $contribuyente["domicilio_completo"],
+                    "referencia"                => $contribuyente["referencia"],
+                    "ManCatastral"              => $contribuyente["ManCatastral"],
+                    "HR"                        => $consulta_hr->fetch_array(),
+                    "relacionados"              => $consulta_relacionados->fetch_array()
                 );
+
     array_push($data, $temp);
 }
-echo json_encode($data);
 
+echo json_encode($data);
 
 // El script automáticamente liberará el resultado y cerrará la conexión
 // a MySQL cuando finalice, aunque aquí lo vamos a hacer nostros mismos
-$resultado->free();
+//$resultado->free();
 $mysqli->close();

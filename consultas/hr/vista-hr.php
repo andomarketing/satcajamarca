@@ -37,7 +37,13 @@
                 <div id="contHR">
                     <img src="../../img/hr.png" alt="HR" class="img img-fluid">
                     <div class="items"> <!-- DATOS DE DB --> </div>
-                    <table>
+                    <table id="datosHR">
+                        <tbody>
+                            <!-- DATOS DE DB -->
+                        </tbody>
+                    </table>
+
+                    <table id="datosRelacionados">
                         <tbody>
                             <!-- DATOS DE DB -->
                         </tbody>

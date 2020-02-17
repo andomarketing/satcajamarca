@@ -1,24 +1,45 @@
-#contHR table tbody {
+#contHR #datosRelacionados tbody {
   position: absolute;
-  width: 100%;
-  top: 42%;
-  left: 13%;
-  font-weight: bold; }
-  #contHR table tbody .item {
+  width: 80%;
+  top: 28.5%;
+  left: 12%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 10pt; }
+  #contHR #datosRelacionados tbody .item {
     width: 6%; }
-  #contHR table tbody .direccion_predial {
-    width: 34%; }
-  #contHR table tbody .fecha_adquisicion {
-    width: 10%; }
-  #contHR table tbody .valor_predio {
-    width: 10%; }
-  #contHR table tbody .porc_propiedad {
-    width: 10%; }
-  #contHR table tbody .monto_inafecto {
-    width: 4%; }
-  #contHR table tbody .base_imponible_variable {
-    width: 10%;
-    text-align: right; }
+  #contHR #datosRelacionados tbody .relacionado {
+    width: 34%;
+    text-align: left; }
+  #contHR #datosRelacionados tbody .Tporelacion {
+    width: 21%; }
+  #contHR #datosRelacionados tbody .NroDocumento {
+    width: 21%; }
+#contHR #datosHR tbody {
+  position: absolute;
+  width: 82%;
+  top: 42%;
+  left: 11%;
+  font-weight: bold;
+  text-align: right;
+  font-size: 10pt; }
+  #contHR #datosHR tbody .item {
+    width: 5%;
+    text-align: center; }
+  #contHR #datosHR tbody .direccion_predial {
+    width: 40%;
+    text-align: left;
+    padding-left: 3%; }
+  #contHR #datosHR tbody .fecha_adquisicion {
+    width: 11%; }
+  #contHR #datosHR tbody .valor_predio {
+    width: 11%; }
+  #contHR #datosHR tbody .porc_propiedad {
+    width: 11%; }
+  #contHR #datosHR tbody .monto_inafecto {
+    width: 11%; }
+  #contHR #datosHR tbody .base_imponible_variable {
+    width: 11%; }
 #contHR .items {
   font-size: 14pt;
   font-family: Arial;
@@ -77,336 +98,5 @@
     top: 71.6%;
     right: 10%;
     font-size: 12pt; }
-
-
-  
-/* CSS ESTILOS PU */
-
-#contHR .items .determinacion_id_pu {
-  position: absolute;
-  top: 13%;
-  line-height: 41px;
-  left: 58%;
-  font-size: 14pt;
-  font-family: Arial; }
-#contHR .items .fecha_emision_pu {
-  position: absolute;
-  top: 16%;
-  right: 1%;
-  line-height: 39px;
-  font-size: 12pt;
-  font-family: Arial;
-  font-weight: bold; }
-#contHR .items .emision_id_pu {
-  position: absolute;
-  top: 17.95%;
-  right: 9%;
-  font-size: 12pt;
-  font-family: Arial;
-  font-weight: bold; }
-#contHR .items .presona_id_pu {
-  position: absolute;
-  top: 18%;
-  line-height: 62px;
-  left: 22%;
-  font-size: 14pt;
-  font-family: Arial;
-  font-weight: bold; }
-#contHR .items .apellidos_nombres_pu {
-  position: absolute;
-  top: 23%;
-  left: 17%;
-  line-height: 53px;
-  font-size: 14pt;
-  font-family: Arial;
-  font-weight: bold; }
-
-  #contHR .items .estado_construccion_pu {
-    position: absolute;
-    top: 27%;
-    left: 22%;
-    line-height: 64px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .descripcion_pu {
-    position: absolute;
-    top: 27%;
-    left: 52%;
-    line-height: 64px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .porc_propiedad_pu {
-    position: absolute;
-    top: 27%;
-    left: 79%;
-    line-height: 64px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .area_terreno_pu {
-    position: absolute;
-    top: 32%;
-    left: 21%;
-    line-height: 64px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .valor_arancel_pu {
-    position: absolute;
-    top: 31%;
-    left: 50%;
-    line-height: 85px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .valor_terreno_pu {
-    position: absolute;
-    top: 31%;
-    left: 79%;
-    line-height: 85px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .direccion_pu {
-    position: absolute;
-    top: 19%;
-    left: 28%;
-    line-height: 85px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .item_pu {
-    position: absolute;
-    top: 63%;
-    left: 11%;
-    line-height: 60px;
-    font-size: 14pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .dentiponnivel_pu {
-    position: absolute;
-    top: 49%;
-    left: 10%;
-    font-size: 8pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .antiguedad_pu {
-    position: absolute;
-    top: 48%;
-    left: 18%;
-    line-height: 55px;
-    font-size: 12pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .mat_predominante_pu {
-    position: absolute;
-    top: 48%;
-    left: 21%;
-    line-height: 55px;
-    font-size: 12pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .conservacion_pu {
-    position: absolute;
-    top: 48%;
-    left: 23%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .nivel_pu {
-    position: absolute;
-    top: 48%;
-    left: 13%;
-    line-height: 55px;
-    font-size: 10pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .clasi_depreciacion_pu {
-    position: absolute;
-    top: 48%;
-    left: 66%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .denmuros_pu {
-    position: absolute;
-    top: 48%;
-    left: 26%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .dentecho_pu {
-    position: absolute;
-    top: 48%;
-    left: 29%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .denpisos_pu {
-    position: absolute;
-    top: 48%;
-    left: 31%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .denpuertas_pu {
-    position: absolute;
-    top: 48%;
-    left: 34%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .denrevestimiento_pu {
-    position: absolute;
-    top: 48%;
-    left: 37%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .denbannos_pu {
-    position: absolute;
-    top: 48%;
-    left: 39%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .denelectrico_pu {
-    position: absolute;
-    top: 48%;
-    left: 42%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .valor_unitario_pu {
-    position: absolute;
-    top: 49%;
-    left: 44%;
-    line-height: 15px;
-    font-size: 10pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .valor_incremento_pu {
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .porc_depreciacion_pu {
-    position: absolute;
-    top: 48%;
-    left: 54%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .valor_depreciacion_pu {
-    position: absolute;
-    top: 48%;
-    left: 59%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .area_construida_pu {
-    position: absolute;
-    top: 48%;
-    left: 70%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  #contHR .items .a_const_m2_pu {
-    position: absolute;
-    top: 48%;
-    left: 78%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .a_const_pu {
-    position: absolute;
-    top: 48%;
-    left: 87%;
-    line-height: 55px;
-    font-size: 11pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .valor_area_construida_pu {
-    position: absolute;
-    top: 56%;
-    left: 66%;
-    line-height: 66px;
-    font-size: 13pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-
-  #contHR .items .valor_de_construccion_pu {
-    position: absolute;
-    top: 56%;
-    left: 87%;
-    line-height: 66px;
-    font-size: 13pt;
-    font-family: Arial;
-    font-weight: bold;
-  }
-  
-
-/*FIN CSS ESTILOS PU */
 
 /*# sourceMappingURL=estilos.css.map */

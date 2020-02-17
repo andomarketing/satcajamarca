@@ -16,6 +16,8 @@ $("#buscarHR").submit(function(e){
         success: function(data){
             //SE LIMPIA LA TABLA
             $("#contHR .items").empty();
+            $("#datosHR tbody").empty();
+            $("#datosRelacionados tbody").empty();
 
             $(data).each(function(index, data) {
 
@@ -26,35 +28,48 @@ $("#buscarHR").submit(function(e){
                 }else{
 
                     if(index == 1){
-                        items = "<span class='ID_AUXILIAR'>"                + data.ID_AUXILIAR               +"</span>";
+                        items = "<span class='ID_AUXILIAR'>"                + data.persona_id               +"</span>";
                         items += "<span class='persona_id'>"                + data.persona_id                +"</span>";
-                        items += "<span class='fecha_de_emision_1'>"        + data.fecha_de_emision_1        +"</span>";
-                        items += "<span class='determinacion_id'>"          + data.determinacion_id          +"</span>";
+                        items += "<span class='fecha_de_emision_1'>"        + data.fechaEmision_completa     +"</span>";
+                        //items += "<span class='determinacion_id'>"          + data.determinacion_id          +"</span>";
                         items += "<span class='emision'>"                   + data.emision                   +"</span>";
-                        items += "<span class='tipo_contribuyente'>"        + data.tipo_contribuyente        +"</span>";
+                        items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
                         items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad        +"</span>";
                         items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres         +"</span>";
-                        items += "<span class='direccion_completa'>"        + data.direccion_completa        +"</span>";
-                        items += "<span class='base_imponible'>"            + data.base_imponible            +"</span>";
-                        items += "<span class='base_afecta'>"               + data.base_afecta               +"</span>";
-                        items += "<span class='impuesto'>"                  + data.impuesto                  +"</span>";
-                        items += "<span class='monto_de_la_cuota'>"         + data.monto_de_la_cuota         +"</span>";
+                        items += "<span class='direccion_completa'>"        + data.domicilio_completo        +"</span>";
+                        //items += "<span class='base_imponible'>"            + data.base_imponible            +"</span>";
+                        //items += "<span class='base_afecta'>"               + data.base_afecta               +"</span>";
+                        //items += "<span class='impuesto'>"                  + data.impuesto                  +"</span>";
+                        //items += "<span class='monto_de_la_cuota'>"         + data.monto_de_la_cuota         +"</span>";
                         $("#contHR .items").append(items);
                     }
                     
-
-                    fila_tabla = "<tr>"
-                                    + "<td class='item'>"               + data.item                      +"</td>"
-                                    + "<td class='direccion_predial'>"  + data.direccion_predial         +"</td>"
-                                    + "<td class='fecha_adquisicion'>"  + data.fecha_adquisicion         +"</td>"
-                                    + "<td class='valor_predio'>"       + data.valor_predio              +"</td>"
-                                    + "<td class='porc_propiedad'>"     + data.porc_propiedad            +"</td>"
-                                    + "<td class='monto_inafecto'>"     + data.monto_inafecto            +"</td>"
-                                    + "<td class='base_imponible_variable'>"    + data.base_imponible_variable   +"</td>"
+                    $(data.HR).each(function(index, HR) {
+                        fila_tabla = "<tr>"
+                                    + "<td class='item'>"               + HR.item                      +"</td>"
+                                    + "<td class='direccion_predial'>"  + HR.UbicacionPredio           +"</td>"
+                                    + "<td class='fecha_adquisicion'>"  + HR.fecha_adquisicion         +"</td>"
+                                    + "<td class='valor_predio'>"       + HR.valor_Predio              +"</td>"
+                                    + "<td class='porc_propiedad'>"     + HR.porc_participacion        +"%</td>"
+                                    + "<td class='monto_inafecto'>"     + HR.monto_inafecto            +"</td>"
+                                    + "<td class='base_imponible_variable'>"    + HR.valor_afecto   +"</td>"
                                 +"<tr>";
 
                     
-                    $("#contHR table tbody").append(fila_tabla);
+                        $("#datosHR tbody").append(fila_tabla);
+                    });
+
+                    $(data.relacionados).each(function(index, relacionados) {
+                        fila_tabla = "<tr>"
+                                    + "<td class='item'>"               + relacionados.item         +"</td>"
+                                    + "<td class='relacionado'>"  + relacionados.relacionado  +"</td>"
+                                    + "<td class='Tporelacion'>"  + relacionados.Tporelacion  +"</td>"
+                                    + "<td class='NroDocumento'>"       + relacionados.NroDocumento +"</td>"
+                                +"<tr>";
+                    
+                        $("#datosRelacionados tbody").append(fila_tabla);
+                    });
+                    
                 }
             });
                 
