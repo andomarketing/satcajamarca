@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 
 if (isset($_POST["codigo"])) {
     if ($_POST["codigo"] != "" || $_POST["codigo"] != null) {
