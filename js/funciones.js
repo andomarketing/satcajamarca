@@ -81,6 +81,91 @@ $("#buscarHR").submit(function(e){
 
 });
 
+$("#consultarPU").submit(function(e){
+
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        data: $(this).serialize(),
+        url: '/php/datos_contribuyente.php', 
+        dataType: "json",
+        success: function(data){
+            //SE LIMPIA LA TABLA
+            $("#contPU .items").empty();
+            $("#datosHR tbody").empty();
+            $("#datosRelacionados tbody").empty();
+
+            $(data).each(function(index, data) {
+
+                index +=1;
+
+                if(data.error == true){
+                    alert(data.valor);
+                }else{
+
+                    if(index == 1){
+                        items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
+                        items += "<span class='determinacion_id'>"          + data.NroDeclaracionJurada     +"</span>";
+                        items += "<span class='emision'>"                   + data.emision                  +"</span>";
+                        items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
+                        items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad       +"</span>";
+                        items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
+                        items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";
+                        $("#contPU .items").append(items);
+                    }
+                    
+                    $(data.PU).each(function(index, PU) {
+
+                        items = "<span class=''>"  + PU.predio_id           +"</span>";
+                        items += "<span class=''>" + PU.codigoCatastral     +"</span>";
+                        items += "<span class=''>" + PU.lugar               +"</span>";
+                        items += "<span class=''>" + PU.sector              +"</span>";
+                        items += "<span class=''>" + PU.direccion_completa  +"</span>";
+                        items += "<span class=''>" + PU.ubicacion_predio    +"</span>";
+                        items += "<span class=''>" + PU.area_terreno        +"</span>";
+                        items += "<span class=''>" + PU.condicion_propiedad +"</span>";
+                        items += "<span class=''>" + PU.arancel             +"</span>";
+                        items += "<span class=''>" + PU.porc_participacion  +"</span>";
+                        items += "<span class=''>" + PU.valor_terreno       +"</span>";
+
+                        $(data.construcciones).each(function(index3, contruccion){
+
+                            if(PU.predio_id == contruccion.predio_id){
+                                items += "<span class=''>" + construccion.item                  +"</span>";
+                                items += "<span class=''>" + construccion.tipo_nivel            +"</span>";
+                                items += "<span class=''>" + construccion.nro_nivel             +"</span>";
+                                items += "<span class=''>" + construccion.seccion               +"</span>";
+                                items += "<span class=''>" + construccion.anno_contruccion      +"</span>";
+                                items += "<span class=''>" + construccion.material_predominante +"</span>";
+                                items += "<span class=''>" + construccion.estado_conservacion   +"</span>";
+                                items += "<span class=''>" + construccion.muros                 +"</span>";
+                                items += "<span class=''>" + construccion.techo                 +"</span>";
+                                items += "<span class=''>" + construccion.pisos                 +"</span>";
+                                items += "<span class=''>" + construccion.puertas               +"</span>";
+                            }
+
+                        });
+
+                        $(data.instalaciones).each(function(index4, instalaciones){
+                            if(PU.predio_id == instalaciones.predio_id){
+                                
+                            }
+                        })
+                        
+                        $("#contPU .items").append(items);
+                    });
+                    
+                }
+            });
+                
+        },
+        error: function(data) {
+            alert("Algo ha salido mal")
+        }
+    }); //FIN DE AJAX
+});
+
 function obtener_personas(npagina){
 
     $.ajax({
