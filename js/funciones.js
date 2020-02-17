@@ -166,6 +166,72 @@ $("#consultarPU").submit(function(e){
     }); //FIN DE AJAX
 });
 
+
+//CONSULTA PR
+$("#consultarPR").submit(function(e){
+
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        data: $(this).serialize(),
+        url: '../php/datos_contribuyente.php', 
+        dataType: "json",
+        success: function(data){
+            //SE LIMPIA LA TABLA
+            $("#contPR .items").empty();
+            $("#datosPR tbody").empty();
+            $("#datosRelacionados tbody").empty();
+
+            $(data).each(function(index, data) {
+
+                index +=1;
+
+                if(data.error == true){
+                    alert(data.valor);
+                }else{
+
+                    if(index == 1){
+                        items = "<span class='persona_id_pr estilos'>"                 + data.persona_id               +"</span>";
+                        items += "<span class='nro_declaracion_id_pr estilos'>"          + data.NroDeclaracionJurada     +"</span>";
+                        items += "<span class='emision_pr estilos'>"                   + data.emision                  +"</span>";
+                        //items += "<span class='tipo_contribuyente_hr estilos'>"        + data.tipo_Contibuyente        +"</span>";
+                      //  items += "<span class='nro_docu_identidad_hr estilos'>"        + data.nro_docu_identidad       +"</span>";
+                        items += "<span class='apellidos_nombres_pr estilos'>"         + data.apellidos_nombres        +"</span>";
+                        items += "<span class='direccion_completa_pr estilos'>"        + data.domicilio_completo       +"</span>";
+                        $("#contPR .items").append(items);
+                    }
+                    
+                    $(data.PR).each(function(index, PR) {
+
+                        items = "<span class=''>"  + PR.predio_id           +"</span>";
+                        items += "<span class=''>" + PR.codigoCatastral     +"</span>";
+                        items += "<span class=''>" + PR.lugar               +"</span>";
+                        items += "<span class=''>" + PR.sector              +"</span>";
+                        items += "<span class=''>" + PR.direccion_completa  +"</span>";
+                        items += "<span class=''>" + PR.ubicacion_predio    +"</span>";
+                        items += "<span class=''>" + PR.area_terreno        +"</span>";
+                        items += "<span class=''>" + PR.condicion_propiedad +"</span>";
+                        items += "<span class=''>" + PR.arancel             +"</span>";
+                        items += "<span class=''>" + PR.porc_participacion  +"</span>";
+                        items += "<span class=''>" + PR.valor_terreno       +"</span>";
+
+                       
+                       
+                        
+                        $("#contPR .items").append(items);
+                    });
+                    
+                }
+            });
+                
+        },
+        error: function(data) {
+            alert("Algo ha salido mal")
+        }
+    }); //FIN DE AJAX
+});
+
 function obtener_personas(npagina){
 
     $.ajax({
