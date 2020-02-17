@@ -232,8 +232,18 @@ $("#consultarPR").submit(function(e){
                     
                     $(data.PR).each(function(index, PR) {
 
-                        items = "<span class=''>"  + PR.predio_id           +"</span>";
-                        items += "<span class=''>" + PR.codigoCatastral     +"</span>";
+                        items = "<span class='codigo_predio_pr estilos'>"  + PR.predio_id           +"</span>";
+                        items += "<span class='codigo_catastral_pr estilos'>" + PR.codigoCatastral     +"</span>";
+                        items += "<span class='condicion_propiedad_pr estilos'>" + PR.condicion_propiedad     +"</span>";
+                        items += "<span class='condicion_propiedad2_pr estilos'>" + PR.condicion_propiedad     +"</span>";
+                        items += "<span class='altitud_pr estilos'>" + PR.altitud     +"</span>";
+                        items += "<span class='porc_propiedad_pr estilos'>" + PR.porc_propiedad     +"</span>";
+                        items += "<span class='categoria_rustico_pr estilos'>" + PR.categoria_rustico     +"</span>";
+                        items += "<span class='tipo_tierra_pr '>" + PR.tipo_tierra     +"</span>";
+                        items += "<span class='uso_pr estilos'>" + PR.uso     +"</span>";
+                        items += "<span class='area_pr estilos'>" + PR.area     +"</span>";
+                        items += "<span class='arancel_pr estilos'>" + PR.arancel     +"</span>";
+                        items += "<span class='valor_terreno_pr estilos'>" + PR.valor_terreno     +"</span>";
                         
                         
                         $("#contPR .items").append(items);
