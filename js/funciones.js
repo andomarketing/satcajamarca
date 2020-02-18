@@ -92,10 +92,9 @@ $("#consultarPU").submit(function(e){
         dataType: "json",
         success: function(data){
             //SE LIMPIA LA TABLA
-            $("#contPU .items").empty();
-            $("#datosHR tbody").empty();
-            $("#datosRelacionados tbody").empty();
+            $("#dtsPU .items").empty();
 
+            var contenedor;
             $(data).each(function(index, data) {
 
                 index +=1;
@@ -104,17 +103,36 @@ $("#consultarPU").submit(function(e){
                     alert(data.valor);
                 }else{
 
-                    if(index == 1){
+                    
+                    
+                    $(data.PU).each(function(npu, PU) {
+
+                        npu += 1;
+
+                        contenedor = ''
+                        +'<div class="contPU PU_'+npu+'">'
+                            +'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
+                            +'<div class="items"><!-- DATOS DE DB --></div>'
+                            +'<table class="construcciones">'
+                              + ' <tbody>'
+                              +  '</tbody>'
+                            +'</table>'
+
+                            +'<table class="instalaciones">'
+                              +  '<tbody>'
+                               + '</tbody>'
+                            +'</table>'
+                        +'</div>';
+
+                        $("#dtsPU").append(contenedor);
+
                         items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
                         items +=  "<span class='determinacion_id'>"         + data.NroDeclaracionJurada     +"</span>";
                         items += "<span class='emision'>"                   + data.emision                  +"</span>";
                         items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
                         items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
-                        items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";                        
-                        $("#contPU .items").append(items);
-                    }
-                    
-                    $(data.PU).each(function(index, PU) {
+                        items += "<span class='direccion_completa'>"        + PU.direccion_completa       +"</span>";                        
+                        $(".PU_"+npu+" .items").append(items);
 
                         items = "<span class='predio_id'>"              + PU.predio_id           +"</span>";
                         items += "<span class='codigoCatastral'>"       + PU.codigoCatastral     +"</span>";
@@ -135,7 +153,7 @@ $("#consultarPU").submit(function(e){
                         items += "<span class='PU_valor_instalacion'>"     + PU.valor_instalacion   +"</span>";
                         items += "<span class='PU_base_imponible'>"        + PU.base_imponible      +"</span>";
 
-                        $("#contPU .items").append(items);
+                        $(".PU_"+npu+" .items").append(items);
 
                         $(data.construcciones).each(function(index3, construccion){
 
@@ -167,7 +185,7 @@ $("#consultarPU").submit(function(e){
                                         +"</tr>";
 
                                 
-                                $("#contPU .construcciones tbody").append(items);
+                                $(".PU_"+npu+" .construcciones tbody").append(items);
                             }
 
                         });
@@ -193,7 +211,7 @@ $("#consultarPU").submit(function(e){
                                         +"</tr>";
                                 
                                 
-                                    $("#contPU .instalaciones tbody").append(items);
+                                    $(".PU_"+npu+" .instalaciones tbody").append(items);
                                 }
                                 
                             }
