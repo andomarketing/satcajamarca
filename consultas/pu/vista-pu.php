@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
-    <div class="container" class="no_imprimir">
+    <div class="container no_imprimir" style="max-width: 665px;
+    overflow: hidden;     padding: 35px;">
         <div class="row">
             <div class="col-12">
                 <h1 class="no_imprimir">Declaración Tributaria  </h1>

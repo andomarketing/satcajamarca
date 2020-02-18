@@ -106,10 +106,7 @@
       left: 84%;
       font-size: 8pt; }
 
-.contPU {
-  width: 1110px;
-  height: 1923.7px;
-  position: relative; }
+
   .contPU .items {
     font-size: 11pt;
     font-family: Arial;
@@ -328,6 +325,12 @@
       width: 5%; }
     .contPU .instalaciones .valor_total {
       width: 5%; }
+
+
+.estilos{
+  font-weight: bold;
+  font-size: 10px;
+}
 
 @media print {
   .no_imprimir {
