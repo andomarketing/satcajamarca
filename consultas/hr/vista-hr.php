@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-12">
                 <div id="contHR">
-                    
+                    <img class="img img-fluid" src="/img/CuponeraFINAL5 CONTORNOS-04.png"/>
                     <div class="items"> <!-- DATOS DE DB --> </div>
                     <table id="datosHR">
                         <tbody>

@@ -11,7 +11,7 @@ $("#buscarHR").submit(function(e){
     $.ajax({
         type: "POST",
         data: $(this).serialize(),
-        url: 'consuta_hr.php', 
+        url: '/php/datos_contribuyente.php', 
         dataType: "json",
         success: function(data){
             //SE LIMPIA LA TABLA
@@ -37,10 +37,10 @@ $("#buscarHR").submit(function(e){
                         items += "<span class='nro_docu_identidad'>"        + data.nro_docu_identidad       +"</span>";
                         items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
                         items += "<span class='direccion_completa'>"        + data.domicilio_completo       +"</span>";
-                        items += "<span class='base_imponible'>"            + data.pie_HR.cantidadPredios   +"</span>";
-                        items += "<span class='base_afecta'>"               + data.pie_HR.PrediosAfectos    +"</span>";
-                        items += "<span class='impuesto'>"                  + data.pie_HR.valor_TotalAfecto +"</span>";
-                        items += "<span class='monto_de_la_cuota'>"         + data.pie_HR.impuestoPredial   +"</span>";
+                        items += "<span class='base_imponible'>"            + data.pie_HR["0"].cantidadPredios   +"</span>";
+                        items += "<span class='base_afecta'>"               + data.pie_HR["0"].PrediosAfectos    +"</span>";
+                        items += "<span class='impuesto'>"                  + data.pie_HR["0"].valor_TotalAfecto +"</span>";
+                        items += "<span class='monto_de_la_cuota'>"         + data.pie_HR["0"].impuestoPredial   +"</span>";
                         $("#contHR .items").append(items);
                     }
                     
@@ -111,7 +111,7 @@ $("#consultarPU").submit(function(e){
 
                         contenedor = ''
                         +'<div class="contPU PU_'+npu+'">'
-                            //+'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
+                            +'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
                             +'<div class="items"><!-- DATOS DE DB --></div>'
                             +'<table class="construcciones">'
                               + ' <tbody>'
