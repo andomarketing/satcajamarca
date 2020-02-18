@@ -1,114 +1,105 @@
-#contHR {
-  width: 185mm;
-  height: 262.77mm;
-  margin: auto;
-  position: relative; }
-  #contHR #datosRelacionados tbody {
+#contHR #datosRelacionados tbody {
+  position: absolute;
+  width: 80%;
+  top: 28.5%;
+  left: 12%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 10pt; }
+  #contHR #datosRelacionados tbody .item {
+    width: 6%; }
+  #contHR #datosRelacionados tbody .relacionado {
+    width: 34%;
+    text-align: left; }
+  #contHR #datosRelacionados tbody .Tporelacion {
+    width: 21%; }
+  #contHR #datosRelacionados tbody .NroDocumento {
+    width: 21%; }
+#contHR #datosHR tbody {
+  position: absolute;
+  width: 82%;
+  top: 42%;
+  left: 11%;
+  font-weight: bold;
+  text-align: right;
+  font-size: 10pt; }
+  #contHR #datosHR tbody .item {
+    width: 5%;
+    text-align: center; }
+  #contHR #datosHR tbody .direccion_predial {
+    width: 40%;
+    text-align: left;
+    padding-left: 3%; }
+  #contHR #datosHR tbody .fecha_adquisicion {
+    width: 11%; }
+  #contHR #datosHR tbody .valor_predio {
+    width: 11%; }
+  #contHR #datosHR tbody .porc_propiedad {
+    width: 11%; }
+  #contHR #datosHR tbody .monto_inafecto {
+    width: 11%; }
+  #contHR #datosHR tbody .base_imponible_variable {
+    width: 11%; }
+#contHR .items {
+  font-size: 14pt;
+  font-family: Arial;
+  font-weight: bold; }
+  #contHR .items .determinacion_id {
     position: absolute;
-    width: 86%;
-    top: 37%;
-    left: 9%;
-    font-weight: bold;
-    text-align: center;
-    font-size: 7pt; }
-    #contHR #datosRelacionados tbody tr {
-      display: flex; }
-    #contHR #datosRelacionados tbody .item {
-      width: 6%; }
-    #contHR #datosRelacionados tbody .relacionado {
-      width: 43%;
-      padding: 0 1%;
-      text-align: left; }
-    #contHR #datosRelacionados tbody .Tporelacion {
-      width: 29.5%; }
-    #contHR #datosRelacionados tbody .NroDocumento {
-      width: 21%; }
-  #contHR #datosHR tbody {
+    top: 13%;
+    left: 59.1%; }
+  #contHR .items .fecha_de_emision_1 {
     position: absolute;
-    width: 86%;
-    top: 52%;
-    left: 8%;
-    font-weight: bold;
-    text-align: right;
-    font-size: 7pt; }
-    #contHR #datosHR tbody .item {
-      width: 5%;
-      text-align: center; }
-    #contHR #datosHR tbody .direccion_predial {
-      width: 40%;
-      text-align: left;
-      padding-left: 3%; }
-    #contHR #datosHR tbody .fecha_adquisicion {
-      width: 11%; }
-    #contHR #datosHR tbody .valor_predio {
-      width: 11%; }
-    #contHR #datosHR tbody .porc_propiedad {
-      width: 11%; }
-    #contHR #datosHR tbody .monto_inafecto {
-      width: 11%; }
-    #contHR #datosHR tbody .base_imponible_variable {
-      width: 11%; }
-  #contHR .items {
-    font-size: 10pt;
-    font-family: Arial;
-    font-weight: bold; }
-    #contHR .items .determinacion_id {
-      position: absolute;
-      top: 15.7%;
-      left: 58.5%; }
-    #contHR .items .emision {
-      position: absolute;
-      top: 21%;
-      right: 14%;
-      font-size: 9pt; }
-    #contHR .items .persona_id {
-      position: absolute;
-      top: 25.5%;
-      left: 30%;
-      font-size: 7pt; }
-    #contHR .items .apellidos_nombres {
-      position: absolute;
-      top: 27.8%;
-      left: 18%;
-      font-size: 7pt; }
-    #contHR .items .nro_docu_identidad {
-      position: absolute;
-      right: 23%;
-      top: 25.5%;
-      font-size: 7pt; }
-    #contHR .items .tipo_contribuyente {
-      display: none; }
-    #contHR .items .direccion_completa {
-      position: absolute;
-      top: 30.2%;
-      left: 24%;
-      width: 67%;
-      font-size: 7pt;
-      line-height: 7pt; }
-    #contHR .items .base_imponible {
-      position: absolute;
-      top: 89.5%;
-      left: 24%;
-      font-size: 8pt; }
-    #contHR .items .base_afecta {
-      position: absolute;
-      left: 42%;
-      top: 89.5%;
-      font-size: 8pt; }
-    #contHR .items .impuesto {
-      position: absolute;
-      left: 62%;
-      top: 89.5%;
-      font-size: 8pt; }
-    #contHR .items .monto_de_la_cuota {
-      position: absolute;
-      top: 89.5%;
-      left: 84%;
-      font-size: 8pt; }
+    top: 19.75%;
+    right: 9%;
+    font-size: 12pt; }
+  #contHR .items .emision {
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    font-size: 12pt; }
+  #contHR .items .persona_id {
+    position: absolute;
+    top: 20.5%;
+    left: 18%; }
+  #contHR .items .apellidos_nombres {
+    position: absolute;
+    top: 22.5%;
+    left: 18%; }
+  #contHR .items .nro_docu_identidad {
+    position: absolute;
+    right: 23%;
+    top: 20.5%; }
+  #contHR .items .tipo_contribuyente {
+    display: none; }
+  #contHR .items .direccion_completa {
+    position: absolute;
+    top: 24.2%;
+    left: 25%;
+    width: 66%;
+    font-size: 12pt; }
+  #contHR .items .base_imponible {
+    position: absolute;
+    top: 71.6%;
+    left: 22%;
+    font-size: 12pt; }
+  #contHR .items .base_afecta {
+    position: absolute;
+    left: 40%;
+    top: 71.6%;
+    font-size: 12pt; }
+  #contHR .items .impuesto {
+    position: absolute;
+    left: 63%;
+    top: 71.6%;
+    font-size: 12pt; }
+  #contHR .items .monto_de_la_cuota {
+    position: absolute;
+    top: 71.6%;
+    right: 10%;
+    font-size: 12pt; }
 
 .contPU {
-  width: 1110px;
-  height: 1923.7px;
   position: relative; }
   .contPU .items {
     font-size: 11pt;
@@ -349,7 +340,7 @@
   position: absolute;
   top: 14%;
   left: 59%;
-  line-height: 30px;
+  line-height: 20px;
 }
 .nro_docu_identidad_pr{
   position: absolute;
@@ -413,11 +404,11 @@
 
 .tipo_tierra_pr{
   position: absolute;
-  top: 26%;
+  top: 25%;
   left: 77%;
-  line-height: 13px;
-  width: 16%;
-  font-size: 12px;
+  line-height: 9px;
+  width: 15%;
+  font-size: 8px;
   padding-top: 4px;
   font-weight: bold;
 }
@@ -626,28 +617,30 @@
 }
 
 .valor_constru_fin_pr{
-  left: 83%;
-  top: 71%;
-  line-height: 15px;
+  left: 81%;
+    position: absolute;
+    top: 72%;
+    line-height: 26px;
 }
 
 .valor_terreno_fin_pr{
   position: absolute;
-  left: 82%;
-    top: 72%;
+  left: 80%;
+    top: 73%;
+    line-height: 33px;
 }
 
 .valor_instalacion_fin_pr{
   position: absolute;
-  left: 82%;
-    top: 73%;
-    line-height: 30px;
+  left: 81%;
+    top: 75%;
+    line-height: 21px;
 }
 
 .valor_inponible_pr{
   position: absolute;
-  left: 82%;
-    top: 75%;
+  left: 80%;
+    top: 77%;
     line-height: 13px;
 }
 
@@ -660,6 +653,7 @@
 
 .estilos{
   font-weight: bold;
+  font-size: 10px;
 }
 
 
