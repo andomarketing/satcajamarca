@@ -379,6 +379,52 @@ $("#consultarPR").submit(function(e){
     }); //FIN DE AJAX
 });
 
+
+// CONSULTA HLP
+
+$("#consultarHLP").submit(function(e){
+
+    e.preventDefault();
+
+    $.ajax({
+        type: "POST",
+        data: $(this).serialize(),
+        url: '../php/datos_contribuyente.php', 
+        dataType: "json",
+        success: function(data){
+            //SE LIMPIA LA TABLA
+            $("#contHLP .items").empty();
+            $("#datosHLP tbody").empty();
+            $("#datosRelacionados tbody").empty();
+
+            $(data).each(function(index, data) {
+                console.log(data);
+                index +=1;
+
+                if(data.error == true){
+                    alert(data.valor);
+                }else{
+
+                    if(index == 1){
+                        items = "<span class='persona_id_hlp estilos'>"                 + data.persona_id               +"</span>";
+                        items += "<span class='emision_pr estilos'>"                   + data.emision                  +"</span>";
+                        items += "<span class='apellidos_nombres_hlp estilos'>"         + data.apellidos_nombres        +"</span>";
+                       
+                        $("#contHLP .items").append(items);
+                    }
+                    
+                   
+                }
+            });
+                
+        },
+        error: function(data) {
+            alert("Algo ha salido mal")
+        }
+    }); //FIN DE AJAX
+});
+
+
 function obtener_personas(npagina){
 
     $.ajax({

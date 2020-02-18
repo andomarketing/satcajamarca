@@ -642,13 +642,33 @@
     line-height: 13px;
 }
 
+.persona_id_pr{
+  position: absolute;
+  top: 18%;
+  left: 28%;
+  line-height: 47px;
+}
+
 .estilos{
   font-weight: bold;
 }
 
 
-
-
-
 /* FIN ESTILOS HR */
+
+/*  ESTILOS HLP */
+.persona_id_hlp{
+  position: absolute;
+  top: 18%;
+  left: 28%;
+  line-height: 47px;
+}
+.apellidos_nombres_hlp{
+  top: 23%;
+    left: 17%;
+    line-height: 47px;
+}
+
+
+/* FIN ESTILOS HLP */
 /*# sourceMappingURL=estilos.css.map */
