@@ -135,7 +135,7 @@
     
 }
 
-#contPU{
+.contPU{
     position: relative;
     .items{ 
         font-size: 11pt;
@@ -291,6 +291,7 @@
         text-align: center;
         tr{
             display: flex;
+            padding: 0.5% 0;
         }
         .item{
             width:4%;
@@ -393,7 +394,8 @@
             width: 5%;
         }
         .descripcion{
-            width: 16%;
+            width: 15.5%;
+            font-size: 7pt;
         }
         .anno_instalacion{
             width: 9%;

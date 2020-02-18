@@ -99,222 +99,224 @@
     right: 10%;
     font-size: 12pt; }
 
-#contPU {
+.contPU {
   position: relative; }
-  #contPU .items {
+  .contPU .items {
     font-size: 11pt;
     font-family: Arial;
     font-weight: bold; }
-    #contPU .items .determinacion_id {
+    .contPU .items .determinacion_id {
       position: absolute;
       top: 13.6%;
       left: 59.1%; }
-    #contPU .items .emision {
+    .contPU .items .emision {
       position: absolute;
       top: 15.4%;
       right: 16%;
       font-size: 12pt; }
-    #contPU .items .persona_id {
+    .contPU .items .persona_id {
       position: absolute;
       top: 19%;
       left: 28%; }
-    #contPU .items .codigoCatastral {
+    .contPU .items .codigoCatastral {
       position: absolute;
       top: 22.1%;
       left: 62%; }
-    #contPU .items .apellidos_nombres {
+    .contPU .items .apellidos_nombres {
       position: absolute;
       top: 20.5%;
       left: 17%; }
-    #contPU .items .nro_docu_identidad {
+    .contPU .items .nro_docu_identidad {
       position: absolute;
       right: 23%;
       top: 20.5%; }
-    #contPU .items .tipo_contribuyente {
+    .contPU .items .tipo_contribuyente {
       display: none; }
-    #contPU .items .direccion_completa {
+    .contPU .items .direccion_completa {
       position: absolute;
       top: 23.3%;
       left: 27%;
       width: 66%; }
-    #contPU .items .base_imponible {
+    .contPU .items .base_imponible {
       position: absolute;
       top: 71.6%;
       left: 22%;
       font-size: 12pt; }
-    #contPU .items .base_afecta {
+    .contPU .items .base_afecta {
       position: absolute;
       left: 40%;
       top: 71.6%;
       font-size: 12pt; }
-    #contPU .items .impuesto {
+    .contPU .items .impuesto {
       position: absolute;
       left: 63%;
       top: 71.6%;
       font-size: 12pt; }
-    #contPU .items .monto_de_la_cuota {
+    .contPU .items .monto_de_la_cuota {
       position: absolute;
       top: 71.6%;
       right: 10%;
       font-size: 12pt; }
-    #contPU .items .predio_id {
+    .contPU .items .predio_id {
       position: absolute;
       top: 22.1%;
       left: 22%; }
-    #contPU .items .lugar {
+    .contPU .items .lugar {
       position: absolute;
       top: 25.2%;
       left: 16%; }
-    #contPU .items .sector {
+    .contPU .items .sector {
       position: absolute;
       top: 26.7%;
       left: 17%; }
-    #contPU .items .ubicacion_predio {
+    .contPU .items .ubicacion_predio {
       position: absolute;
       top: 29%;
       left: 20%; }
-    #contPU .items .area_terreno {
+    .contPU .items .area_terreno {
       position: absolute;
       top: 33%;
       left: 22%; }
-    #contPU .items .condicion_propiedad {
+    .contPU .items .condicion_propiedad {
       position: absolute;
       top: 29%;
       left: 53%; }
-    #contPU .items .arancel {
+    .contPU .items .arancel {
       position: absolute;
       top: 33%;
       left: 50%; }
-    #contPU .items .porc_participacion {
+    .contPU .items .porc_participacion {
       position: absolute;
       top: 29%;
       left: 80%; }
-    #contPU .items .valor_terreno {
+    .contPU .items .valor_terreno {
       position: absolute;
       top: 33%;
       left: 81%; }
-    #contPU .items .valor_construccion {
+    .contPU .items .valor_construccion {
       position: absolute;
       left: 84%;
       top: 58%; }
-    #contPU .items .area_construida {
+    .contPU .items .area_construida {
       position: absolute;
       top: 58%;
       left: 66%; }
-    #contPU .items .PU_valor_terreno {
+    .contPU .items .PU_valor_terreno {
       position: absolute;
       top: 74%;
       left: 84%; }
-    #contPU .items .PU_valor_construccion {
+    .contPU .items .PU_valor_construccion {
       position: absolute;
       top: 72.5%;
       left: 84%; }
-    #contPU .items .PU_valor_instalacion {
+    .contPU .items .PU_valor_instalacion {
       position: absolute;
       top: 75.5%;
       left: 84%; }
-    #contPU .items .PU_base_imponible {
+    .contPU .items .PU_base_imponible {
       position: absolute;
       top: 76.8%;
       left: 84%; }
-  #contPU .construcciones {
+  .contPU .construcciones {
     position: absolute;
     width: 90%;
     top: 47%;
     left: 4.3%;
     text-align: center; }
-    #contPU .construcciones tr {
-      display: flex; }
-    #contPU .construcciones .item {
+    .contPU .construcciones tr {
+      display: flex;
+      padding: 0.5% 0; }
+    .contPU .construcciones .item {
       width: 4%; }
-    #contPU .construcciones .tipo_nivel {
+    .contPU .construcciones .tipo_nivel {
       width: 3.5%;
       writing-mode: vertical-lr;
       transform: rotate(180deg); }
-    #contPU .construcciones .nro_nivel {
+    .contPU .construcciones .nro_nivel {
       width: 3%; }
-    #contPU .construcciones .seccion {
+    .contPU .construcciones .seccion {
       width: 3%; }
-    #contPU .construcciones .anno_construccion {
+    .contPU .construcciones .anno_construccion {
       width: 3%;
       writing-mode: vertical-lr;
       transform: rotate(180deg); }
-    #contPU .construcciones .material_predominante {
+    .contPU .construcciones .material_predominante {
       width: 3%;
       writing-mode: vertical-lr;
       transform: rotate(180deg); }
-    #contPU .construcciones .estado_conservacion {
+    .contPU .construcciones .estado_conservacion {
       width: 3%;
       writing-mode: vertical-lr;
       transform: rotate(180deg); }
-    #contPU .construcciones .muros {
+    .contPU .construcciones .muros {
       width: 3%; }
-    #contPU .construcciones .techo {
+    .contPU .construcciones .techo {
       width: 3%; }
-    #contPU .construcciones .pisos {
+    .contPU .construcciones .pisos {
       width: 3%; }
-    #contPU .construcciones .puertas {
+    .contPU .construcciones .puertas {
       width: 3%; }
-    #contPU .construcciones .revestimiento {
+    .contPU .construcciones .revestimiento {
       width: 3%; }
-    #contPU .construcciones .bannos {
+    .contPU .construcciones .bannos {
       width: 3%; }
-    #contPU .construcciones .electrico {
+    .contPU .construcciones .electrico {
       width: 3%; }
-    #contPU .construcciones .valor_unitario {
+    .contPU .construcciones .valor_unitario {
       width: 5%;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
       padding-left: 2%; }
-    #contPU .construcciones .valor_incremento {
+    .contPU .construcciones .valor_incremento {
       width: 4%;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
       padding-left: 1%; }
-    #contPU .construcciones .porc_depreciacion {
+    .contPU .construcciones .porc_depreciacion {
       width: 7%; }
-    #contPU .construcciones .valor_depreciacion {
+    .contPU .construcciones .valor_depreciacion {
       width: 7%; }
-    #contPU .construcciones .valor_unitario_depre {
+    .contPU .construcciones .valor_unitario_depre {
       width: 6%;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
       padding-left: 2%; }
-    #contPU .construcciones .valor_area_construida {
+    .contPU .construcciones .valor_area_construida {
       width: 9%;
       writing-mode: vertical-lr;
       transform: rotate(180deg);
       padding-left: 3%; }
-    #contPU .construcciones .valor_construccion {
+    .contPU .construcciones .valor_construccion {
       width: 12%; }
-  #contPU .instalaciones {
+  .contPU .instalaciones {
     position: absolute;
     width: 85%;
     top: 65%;
     left: 8.5%;
     font-size: 10pt;
     text-align: center; }
-    #contPU .instalaciones td {
+    .contPU .instalaciones td {
       padding: 0 1%; }
-    #contPU .instalaciones .item {
+    .contPU .instalaciones .item {
       width: 3%; }
-    #contPU .instalaciones .tipo_obra_id {
+    .contPU .instalaciones .tipo_obra_id {
       width: 5%; }
-    #contPU .instalaciones .descripcion {
-      width: 16%; }
-    #contPU .instalaciones .anno_instalacion {
+    .contPU .instalaciones .descripcion {
+      width: 15.5%;
+      font-size: 7pt; }
+    .contPU .instalaciones .anno_instalacion {
       width: 9%; }
-    #contPU .instalaciones .medida {
+    .contPU .instalaciones .medida {
       width: 5%; }
-    #contPU .instalaciones .inidad_medida {
+    .contPU .instalaciones .inidad_medida {
       width: 5%; }
-    #contPU .instalaciones .valor_unitario {
+    .contPU .instalaciones .valor_unitario {
       width: 5%; }
-    #contPU .instalaciones .valor_instalacion {
+    .contPU .instalaciones .valor_instalacion {
       width: 7%; }
-    #contPU .instalaciones .fact_oficializacion {
+    .contPU .instalaciones .fact_oficializacion {
       width: 5%; }
-    #contPU .instalaciones .valor_total {
+    .contPU .instalaciones .valor_total {
       width: 5%; }
 
 @media print {

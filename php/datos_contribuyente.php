@@ -157,10 +157,66 @@
 
 
 
-
-
-
-
+    $data_HR = array();
+    while ($HR = $consulta_hr->fetch_array()) {
+        array_push($data_HR, $HR);
+    }
+    $pie_HR = array();
+    while ($HR = $consulta_pie_hr->fetch_array()) {
+        array_push($pie_HR, $HR);
+    }
+    $data_relacionados = array();
+    while ($relacionados = $consulta_relacionados->fetch_array()) {
+        array_push($data_relacionados, $relacionados);
+    }
+    
+    $data_construcciones = array();
+    while ($construcciones = $consulta_construcciones->fetch_array()) {
+        array_push($data_construcciones, $construcciones);
+    }
+    $data_instalaciones = array();
+    while ($instalaciones = $consulta_instalaciones->fetch_array()) {
+        array_push($data_instalaciones, $instalaciones);
+    }
+    
+    $data_PR = array();
+    while ($PR = $consulta_PR->fetch_array()) {
+        array_push($data_PR, $PR);
+    }
+    $data_HLP = array();
+    while ($HLP = $consulta_HLP->fetch_array()) {
+        array_push($data_HLP, $HLP);
+    }
+    $data_tramos = array();
+    while ($tramos = $consulta_tramos->fetch_array()) {
+        array_push($data_tramos, $tramos);
+    }
+    $data_cronograma = array();
+    while ($cronograma = $consulta_cronograma->fetch_array()) {
+        array_push($data_cronograma, $cronograma);
+    }
+    $data_arbitrios = array();
+    while ($arbitrios = $consulta_arbitrios->fetch_array()) {
+        array_push($data_arbitrios, $arbitrios);
+    }
+    $data_EC = array();
+    while ($EC = $consulta_EC->fetch_array()) {
+        array_push($data_EC, $EC);
+    }
+    
+    $data_TEC = array();
+    while ($TEC = $consulta_totales_EC->fetch_array()) {
+        array_push($data_TEC, $TEC);
+    }
+    $data_deudas = array();
+    while ($deudas = $consulta_deudas_anteriores->fetch_array()) {
+        array_push($data_deudas, $deudas);
+    }
+    $data_PU = array();
+    while ($PU = $consulta_PU->fetch_array()) {
+        array_push($data_PU, $PU);
+    }
+    
     //GUARDAR CONSULTA EN ARRAY
     while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 
@@ -177,20 +233,20 @@
             "domicilio_completo"        => $contribuyente["domicilio_completo"],
             "referencia"                => $contribuyente["referencia"],
             "ManCatastral"              => $contribuyente["ManCatastral"],
-            "HR"                        => $consulta_hr->fetch_array(),
-            "pie_HR"                    => $consulta_pie_hr->fetch_array(),
-            "relacionados"              => $consulta_relacionados->fetch_array(),
-            "PU"                        => $consulta_PU->fetch_array(),
-            "construcciones"            => $consulta_construcciones->fetch_array(),
-            "instalaciones"             => $consulta_instalaciones->fetch_array(),
-            "PR"                        => $consulta_PR->fetch_array(),
-            "HLP"                       => $consulta_HLP->fetch_array(),
-            "HLP_tramos"                => $consulta_tramos->fetch_array(),
-            "HLP_cronograma"            => $consulta_cronograma->fetch_array(),
-            "arbitrios"                 => $consulta_arbitrios->fetch_array(),
-            "EC"                        => $consulta_EC->fetch_array(),
-            "EC_totales"                => $consulta_totales_EC->fetch_array(),
-            "deudas_anteriores"         => $consulta_deudas_anteriores->fetch_array(),
+            "HR"                        => $data_HR,
+            "pie_HR"                    => $pie_HR,
+            "relacionados"              => $data_relacionados,
+            "PU"                        => $data_PU,
+            "construcciones"            => $data_construcciones,
+            "instalaciones"             => $data_instalaciones,
+            "PR"                        => $data_PR,
+            "HLP"                       => $data_HLP,
+            "HLP_tramos"                => $data_tramos,
+            "HLP_cronograma"            => $data_cronograma,
+            "arbitrios"                 => $data_arbitrios,
+            "EC"                        => $data_EC,
+            "EC_totales"                => $data_TEC,
+            "deudas_anteriores"         => $data_deudas,
         );
 
         array_push($data, $temp);
