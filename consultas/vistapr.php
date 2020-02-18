@@ -11,14 +11,15 @@
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="max-width: 665px;
+    overflow: hidden;     padding: 35px;">
         <div class="row">
             <div class="col-12">
-                <h1>Declaración Tributaria</h1>
+                <h1 class="no_imprimir">Declaración Tributaria</h1>
             </div>
         </div>
 
-        <form action="#" id="consultarPR">
+        <form action="#" id="consultarPR" class="no_imprimir">
             <div class="row align-items-center">
                 <div class="col-12 col-md-4">
                     <div class="form-group">
@@ -34,8 +35,9 @@
 
         <div class="row">
             <div class="col-12">
-                <div id="contPR">
-                    <img src="../img/pr.png" alt="PR" class="img img-fluid">
+                <div id="contPR" style="max-width: 665px;
+    overflow: hidden;     padding: 35px;">
+                    
                     <div class="items"> <!-- DATOS DE DB --> </div>
                     <table class="construcciones_pr ">
                         <tbody>
