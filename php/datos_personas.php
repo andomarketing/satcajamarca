@@ -1,19 +1,18 @@
-<?php 
+<?php
 
 //SE RECIBE EL NUMERO DE PÁGINA
 if (isset($_POST['pageno'])) {
     if ($_POST["pageno"] != "" || $_POST["pageno"] != null) {
         $pageno = $_POST['pageno'];
-    }else{
+    } else {
         $pageno = 1;
     }
-    
 } else {
     $pageno = 1;
 }
 
 $no_de_registros = 15;
-$offset = ($pageno-1) * $no_de_registros;
+$offset = ($pageno - 1) * $no_de_registros;
 
 //SE ESTABLECE COMO JSON EL HEADER
 header('Content-Type: application/json');
@@ -24,7 +23,7 @@ include "db.php";
 
 //EXISTE UN ERROR DE CONEXION
 if ($mysqli->connect_errno) {
-    $data = array("error"=>true, "valor"=>"Error: " . $mysqli->connect_error);
+    $data = array("error" => true, "valor" => "Error: " . $mysqli->connect_error);
     echo json_encode($data);
     exit;
 }
@@ -40,28 +39,28 @@ $sql = "SELECT codigo_persona, nro_docu_identidad, apellidos_nombres FROM hr1_fi
 
 //FALLO LA CONSULTA SQL
 if (!$resultado = $mysqli->query($sql)) {
-    $data = array("error"=>true, "valor"=>"Error: " . $mysqli->error);
+    $data = array("error" => true, "valor" => "Error: " . $mysqli->error);
     echo json_encode($data);
     exit;
 }
 
 //NO SE ENCONTRARON REGISTROS
 if ($resultado->num_rows === 0) {
-    $data = array("error"=>true, "valor"=>"No se han encontrado registros.");
+    $data = array("error" => true, "valor" => "No se han encontrado registros.");
     echo json_encode($data);
     exit;
 }
 
 //GUARDAR CONSULTA EN ARRAY
 while ($x = $resultado->fetch_array()) {
-    $temp = array(  
-                    "error"                 => false,
-                    "codigo_persona"        => $x["codigo_persona"],
-                    "nro_docu_identidad"    => $x["nro_docu_identidad"],
-                    "apellidos_nombres"     => $x["apellidos_nombres"],
-                    "n_paginas"             => $paginas_totales,
-                    "pagina_actual"         => $pageno
-                );
+    $temp = array(
+        "error"                 => false,
+        "codigo_persona"        => $x["codigo_persona"],
+        "nro_docu_identidad"    => $x["nro_docu_identidad"],
+        "apellidos_nombres"     => $x["apellidos_nombres"],
+        "n_paginas"             => $paginas_totales,
+        "pagina_actual"         => $pageno
+    );
     array_push($data, $temp);
 }
 echo json_encode($data);

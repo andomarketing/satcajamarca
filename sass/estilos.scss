@@ -138,7 +138,7 @@
 #contPU{
     position: relative;
     .items{ 
-        font-size: 12pt;
+        font-size: 11pt;
         font-family: Arial;
         font-weight: bold;
 
@@ -181,7 +181,6 @@
             top: 23.3%;
             left: 27%;
             width: 66%;
-            font-size: 12pt;
         }
         .base_imponible{
             position: absolute;
@@ -417,5 +416,11 @@
         .valor_total{
             width: 5%;
         }
+    }
+}
+
+@media print{
+    .no_imprimir{
+        display:none !important;
     }
 }
