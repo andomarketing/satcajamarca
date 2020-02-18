@@ -266,7 +266,6 @@ $("#consultarPR").submit(function(e){
                     }
                     
                     $(data.PR).each(function(index, PR) {
-
                         items = "<span class='codigo_predio_pr estilos'>"  + PR.predio_id           +"</span>";
                         items += "<span class='codigo_catastral_pr estilos'>" + PR.codigoCatastral     +"</span>";
                         items += "<span class='condicion_propiedad_pr estilos'>" + PR.condicion_propiedad     +"</span>";
@@ -279,8 +278,14 @@ $("#consultarPR").submit(function(e){
                         items += "<span class='area_pr estilos'>" + PR.area     +"</span>";
                         items += "<span class='arancel_pr estilos'>" + PR.arancel     +"</span>";
                         items += "<span class='valor_terreno_pr estilos'>" + PR.valor_terreno     +"</span>";
+
+                        items += "<span class='valor_constru_fin_pr estilos'>" + PR.valor_construccion     +"</span>";
+
+                        items += "<span class='valor_terreno_fin_pr estilos'>" + PR.valor_terreno     +"</span>";
+                        items += "<span class='valor_instalacion_fin_pr estilos'>" + PR.valor_instalacion     +"</span>";
+
+                        items += "<span class='valor_inponible_pr estilos'>" + PR.base_imponible     +"</span>";
                         
-<<<<<<< HEAD
                         $("#contPR .items").append(items);
                        
                         var n_item_instalaciones2;
@@ -336,7 +341,7 @@ $("#consultarPR").submit(function(e){
                                 if(n_item_instalaciones3 !== instalaciones.item){
                                     n_item_instalaciones3 = instalaciones.item
 
-                              console.log(instalaciones);
+                              
 
                               items = "<tr>"
                               +"<td class='item_insta_pr'>"                + instalaciones.item                 +"</td>"
@@ -349,7 +354,7 @@ $("#consultarPR").submit(function(e){
                               +"<td class='valor_instalacion_pr'>"   + instalaciones.valor_instalacion    +"</td>"
                               +"<td class='fact_oficializacion_pr'>" + instalaciones.factor_oficializacion  +"</td>"
                               +"<td class='valor_total_pr'>"         + instalaciones.valor_total          +"</td>"
-                          +"</tr>";
+                            +"</tr>";
                   
                               
                                
@@ -360,10 +365,8 @@ $("#consultarPR").submit(function(e){
                         });
 
 
-=======
->>>>>>> 3c8033b2e6ea1b7d39e2afd3d902fe8ca115ba0d
                         
-                        $("#contPR .items").append(items);
+                      
                     });
                     
                 }

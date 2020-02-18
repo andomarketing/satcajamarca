@@ -323,7 +323,6 @@
   .no_imprimir {
     display: none !important; } }
 
-<<<<<<< HEAD
 .apellidos_nombres_pr{
   position: absolute;
   top: 20%;
@@ -569,7 +568,7 @@
 
 .instalaciones_pr{
   position: absolute;
-    top: 65%;
+    top: 64%;
     left: 10%;
     font-weight: bold;
 }
@@ -617,11 +616,39 @@
   left: 9%;
 }
 
+.valor_constru_fin_pr{
+  left: 83%;
+  top: 71%;
+  line-height: 15px;
+}
+
+.valor_terreno_fin_pr{
+  position: absolute;
+  left: 82%;
+    top: 72%;
+}
+
+.valor_instalacion_fin_pr{
+  position: absolute;
+  left: 82%;
+    top: 73%;
+    line-height: 30px;
+}
+
+.valor_inponible_pr{
+  position: absolute;
+  left: 82%;
+    top: 75%;
+    line-height: 13px;
+}
+
+.estilos{
+  font-weight: bold;
+}
+
 
 
 
 
 /* FIN ESTILOS HR */
-=======
 /*# sourceMappingURL=estilos.css.map */
->>>>>>> 3c8033b2e6ea1b7d39e2afd3d902fe8ca115ba0d
