@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 185mm">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h1>Declaración Tributaria</h1>
+                <h1 class="no_imprimir">Declaración Tributaria</h1>
             </div>
         </div>
 
-        <form action="#" id="buscarHR">
+        <form action="#" id="buscarHR" class="no_imprimir">
             <div class="row align-items-center">
                 <div class="col-12 col-md-4">
                     <div class="form-group">
@@ -29,13 +29,16 @@
                 <div class="col-12 col-md-4">
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </div>
+                <div class="col-12 col-md-4">
+                    <button class="btn btn-success" onclick="javascript:window.print()">Imprimir</button>
+                </div>
             </div>
         </form>
 
         <div class="row">
             <div class="col-12">
                 <div id="contHR">
-                    <img src="../../img/CuponeraFINAL5 CONTORNOS-04.png" alt="HR" class="img img-fluid">
+                    
                     <div class="items"> <!-- DATOS DE DB --> </div>
                     <table id="datosHR">
                         <tbody>

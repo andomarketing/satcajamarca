@@ -111,7 +111,7 @@ $("#consultarPU").submit(function(e){
 
                         contenedor = ''
                         +'<div class="contPU PU_'+npu+'">'
-                            +'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
+                            //+'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
                             +'<div class="items"><!-- DATOS DE DB --></div>'
                             +'<table class="construcciones">'
                               + ' <tbody>'

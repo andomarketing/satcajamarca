@@ -1,22 +1,30 @@
 #contHR{
+    width: 185mm;
+    height: 262.77mm;
+    margin: auto;
+    position: relative;
     #datosRelacionados{
         tbody{
             position: absolute;
-            width: 80%;
-            top: 28.5%;
-            left: 12%;
+            width: 86%;
+            top: 37%;
+            left: 9%;
             font-weight: bold;
             text-align: center;
-            font-size: 10pt;
+            font-size: 7pt;
+            tr{
+                display: flex; 
+            }
             .item{
                 width: 6%;
             }
             .relacionado{
-                width: 34%;
+                width: 43%;
+                padding: 0 1%;
                 text-align: left;
             }
             .Tporelacion{
-                width: 21%;
+                width: 29.5%;
             }
             .NroDocumento{
                 width: 21%;
@@ -26,12 +34,12 @@
     #datosHR{
         tbody{
             position: absolute;
-            width: 82%;
-            top: 42%;
-            left: 11%;
+            width: 86%;
+            top: 52%;
+            left: 8%;
             font-weight: bold;
             text-align: right;
-            font-size: 10pt;
+            font-size: 7pt;
             .item{
                 width: 5%;
                 text-align: center;
@@ -59,75 +67,73 @@
         }
     }
     .items{
-        font-size: 14pt;
+        font-size: 10pt;
         font-family: Arial;
         font-weight: bold;
 
         .determinacion_id{
             position: absolute;
-            top: 13%;
-            left: 59.1%; 
-        }
-        .fecha_de_emision_1{
-            position: absolute;
-            top: 19.75%;
-            right: 9%;
-            font-size: 12pt;
+            top: 15.7%;
+            left: 58.5%;
         }
         .emision{
             position: absolute;
-            top: 15%;
-            right: 7%;
-            font-size: 12pt;
+            top: 21%;
+            right: 14%;
+            font-size: 9pt;
         }
         .persona_id{
             position: absolute;
-            top: 20.5%;
-            left: 18%;
+            top: 25.5%;
+            left: 30%;
+            font-size: 7pt;
         }
         .apellidos_nombres{
             position: absolute;
-            top: 22.5%;
+            top: 27.8%;
             left: 18%;
+            font-size: 7pt;
         }
         .nro_docu_identidad{
             position: absolute;
             right: 23%;
-            top: 20.5%;
+            top: 25.5%;
+            font-size: 7pt;
         }
         .tipo_contribuyente{
             display: none;
         }
         .direccion_completa{
             position: absolute;
-            top: 24.2%;
-            left: 25%;
-            width: 66%;
-            font-size: 12pt;
+            top: 30.2%;
+            left: 24%;
+            width: 67%;
+            font-size: 7pt;
+            line-height: 7pt;
         }
         .base_imponible{
             position: absolute;
-            top: 71.6%;
-            left: 22%;
-            font-size: 12pt;
+            top: 89.5%;
+            left: 24%;
+            font-size: 8pt;
         }
         .base_afecta{
             position: absolute;
-            left: 40%;
-            top: 71.6%;
-            font-size: 12pt;
+            left: 42%;
+            top: 89.5%;
+            font-size: 8pt;
         }
         .impuesto{ 
             position: absolute;
-            left: 63%;
-            top: 71.6%;
-            font-size: 12pt;
+            left: 62%;
+            top: 89.5%;
+            font-size: 8pt;
         }
         .monto_de_la_cuota{
             position: absolute;
-            top: 71.6%;
-            right: 10%;
-            font-size: 12pt;
+            top: 89.5%;
+            left: 84%;
+            font-size: 8pt;
         }
     }
     
@@ -136,6 +142,8 @@
 }
 
 .contPU{
+    width: 1110px;
+    height: 1923.7px;
     position: relative;
     .items{ 
         font-size: 11pt;
