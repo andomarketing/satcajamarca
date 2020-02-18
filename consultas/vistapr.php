@@ -37,7 +37,7 @@
                 <div id="contPR">
                     <img src="../img/pr.png" alt="PR" class="img img-fluid">
                     <div class="items"> <!-- DATOS DE DB --> </div>
-                    <table class="construcciones_pr">
+                    <table class="construcciones_pr ">
                         <tbody>
                             <!-- DATOS DE DB -->
                         </tbody>

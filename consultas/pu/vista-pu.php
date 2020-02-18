@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="../../css/estilos.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" class="no_imprimir">
         <div class="row">
             <div class="col-12">
-                <h1>Declaración Tributaria  </h1>
+                <h1 class="no_imprimir">Declaración Tributaria  </h1>
             </div>
         </div>
 
-        <form action="#" id="consultarPU">
+        <form action="#" id="consultarPU" class="no_imprimir">
             <div class="row align-items-center">
                 <div class="col-12 col-md-4">
                     <div class="form-group">
@@ -35,6 +35,7 @@
         <div class="row">
             <div class="col-12">
                 <div id="contPU">
+                    <link rel="stylesheet" href="../../css/estilos.css">
                     <img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">
                     <div class="items"><!-- DATOS DE DB --></div>
                     <table class="construcciones">
@@ -49,6 +50,12 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+
+        <div class="row" class="no_imprimir">
+            <div class="col-12 col-sm-12">
+                <button onclick="javascript:window.print()" class="btn btn-success no_imprimir">Imprimir</button>
             </div>
         </div>
     </div>

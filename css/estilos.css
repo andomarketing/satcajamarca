@@ -102,7 +102,7 @@
 #contPU {
   position: relative; }
   #contPU .items {
-    font-size: 12pt;
+    font-size: 11pt;
     font-family: Arial;
     font-weight: bold; }
     #contPU .items .determinacion_id {
@@ -136,8 +136,7 @@
       position: absolute;
       top: 23.3%;
       left: 27%;
-      width: 66%;
-      font-size: 12pt; }
+      width: 66%; }
     #contPU .items .base_imponible {
       position: absolute;
       top: 71.6%;
@@ -220,55 +219,81 @@
       left: 84%; }
   #contPU .construcciones {
     position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0; }
+    width: 90%;
+    top: 47%;
+    left: 4.3%;
+    text-align: center; }
+    #contPU .construcciones tr {
+      display: flex; }
     #contPU .construcciones .item {
-      width: 5%; }
+      width: 4%; }
     #contPU .construcciones .tipo_nivel {
-      width: 5%; }
+      width: 3.5%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg); }
     #contPU .construcciones .nro_nivel {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .seccion {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .anno_construccion {
-      width: 5%; }
+      width: 3%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg); }
     #contPU .construcciones .material_predominante {
-      width: 5%; }
+      width: 3%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg); }
     #contPU .construcciones .estado_conservacion {
-      width: 5%; }
+      width: 3%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg); }
     #contPU .construcciones .muros {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .techo {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .pisos {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .puertas {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .revestimiento {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .bannos {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .electrico {
-      width: 5%; }
+      width: 3%; }
     #contPU .construcciones .valor_unitario {
-      width: 5%; }
+      width: 5%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      padding-left: 2%; }
     #contPU .construcciones .valor_incremento {
-      width: 5%; }
+      width: 4%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      padding-left: 1%; }
     #contPU .construcciones .porc_depreciacion {
-      width: 5%; }
+      width: 7%; }
+    #contPU .construcciones .valor_depreciacion {
+      width: 7%; }
     #contPU .construcciones .valor_unitario_depre {
-      width: 5%; }
+      width: 6%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      padding-left: 2%; }
     #contPU .construcciones .valor_area_construida {
-      width: 5%; }
+      width: 9%;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      padding-left: 3%; }
     #contPU .construcciones .valor_construccion {
-      width: 5%; }
+      width: 12%; }
   #contPU .instalaciones {
     position: absolute;
     width: 85%;
     top: 65%;
     left: 8.5%;
-    font-size: 10pt; }
+    font-size: 10pt;
+    text-align: center; }
     #contPU .instalaciones td {
       padding: 0 1%; }
     #contPU .instalaciones .item {
@@ -292,19 +317,11 @@
     #contPU .instalaciones .valor_total {
       width: 5%; }
 
-/*# sourceMappingURL=estilos.css.map */
+@media print {
+  .no_imprimir {
+    display: none !important; } }
 
-/* ESTILOS HR */
-.estilos{
-  font-weight: bold;
-}
-.persona_id_pr{
-  position: absolute;
-  top: 19%;
-  left: 28%;
-  line-height: 10px;
-}
-
+<<<<<<< HEAD
 .apellidos_nombres_pr{
   position: absolute;
   top: 20%;
@@ -603,3 +620,6 @@
 
 
 /* FIN ESTILOS HR */
+=======
+/*# sourceMappingURL=estilos.css.map */
+>>>>>>> 3c8033b2e6ea1b7d39e2afd3d902fe8ca115ba0d
