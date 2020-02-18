@@ -35,9 +35,8 @@
 
         <div class="row">
             <div class="col-12">
-                <div id="contPR" style="max-width: 665px;
-    overflow: hidden;     padding: 35px;">
-                    
+                <div id="contPR">
+                    <img src="/img/pr.png" class="img img-fluid" alt="">
                     <div class="items"> <!-- DATOS DE DB --> </div>
                     <table class="construcciones_pr ">
                         <tbody>

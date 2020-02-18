@@ -80,16 +80,14 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         array_push($data_relacionados, $relacionados);
     }
 
-    $pdf_hr .=  
-        '<div style="position:relative;font-size: 10pt; font-family: Arial; font-weight: bold;">
-            <span style="position: absolute; top: 9%; left: 58.5%;">'.$contribuyente["NroDeclaracionJurada"].'</span>
-            <span style="position: absolute; top: 13%; right: 14%; font-size: 9pt;">'.$contribuyente["emision"].'</span>
-            <span style="position: absolute; top: 17.5%; left: 30%; font-size: 7pt;" >'.$contribuyente["persona_id"].'</span>
-            <span style="position: absolute; top: 20%; left: 18%; font-size: 7pt;" >'.$contribuyente["apellidos_nombres"].'</span>
-            <span style="position: absolute; right: 25.5%; top: 17.5%; font-size: 7pt;" >'.$contribuyente["nro_docu_identidad"].'</span>
-            <span style="position: absolute; top: 22%; left: 24%; width: 67%; font-size: 7pt; line-height: 7pt;" >'.$contribuyente["domicilio_completo"].'</span>    
-        </div>
-        <div style="page-break-before: always;"></div>';
+    $pdf_hr .=  '<div style="position:relative;font-size: 10pt; font-family: Arial; font-weight: bold;">
+                    <span style="position: absolute; top: 9%; left: 58.5%;">'.$contribuyente["NroDeclaracionJurada"].'</span>
+                    <span style="position: absolute; top: 13%; right: 14%; font-size: 9pt;">'.$contribuyente["emision"].'</span>
+                    <span style="position: absolute; top: 17.5%; left: 30%; font-size: 7pt;" >'.$contribuyente["persona_id"].'</span>
+                    <span style="position: absolute; top: 20%; left: 18%; font-size: 7pt;" >'.$contribuyente["apellidos_nombres"].'</span>
+                    <span style="position: absolute; right: 25.5%; top: 17.5%; font-size: 7pt;" >'.$contribuyente["nro_docu_identidad"].'</span>
+                    <span style="position: absolute; top: 22%; left: 24%; width: 67%; font-size: 7pt; line-height: 7pt;" >'.$contribuyente["domicilio_completo"].'</span>    
+                </div> <div style="page-break-before: always;"> </div>';
 }
 
 $dompdf->loadHtml($pdf_hr);
