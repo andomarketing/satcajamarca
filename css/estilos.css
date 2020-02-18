@@ -440,6 +440,114 @@
   left: 76%;
   line-height: 31px;
 }
+.construcciones_pr{
+  position: absolute;
+    top: 49%;
+    left: 8%;
+    font-weight: bold;
+}
+
+.item_tabla_pr{
+  position: relative;
+  right: 1%;
+}
+.gira {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+ 
+}
+
+.tipo_tabla_nivel_pr{
+  padding: 3px;
+}
+
+.nro_nivel_tabla_pr{
+  padding: 0px 9px;
+}
+.seccion_pr{
+  padding: 4px 9px;
+}
+
+.anno_construccion_pr{
+  padding-bottom: 13px;
+}
+
+.material_predominante_pr{
+  padding-bottom: 13px;
+}
+
+.estado_conservacion_pr{
+  padding-bottom: 27px;
+}
+
+.muros_pr{
+  position: relative;
+  right: 20px;
+}
+
+
+.pisos_pr{
+  padding-left: 14px;
+}
+
+.revestimiento_pr{
+  padding-left: 22px;
+}
+
+.puertas_pr{
+  padding-left: 16px;
+}
+
+.bannos_pr{
+  padding-left: 14px;
+}
+
+.electrico_pr{
+  padding-left: 14px;
+}
+
+.valor_unitario_pr{
+  padding-left: 14px;
+}
+
+.valor_incremento_pr{
+  padding-left: 3px;
+}
+
+.porc_depreciacion_pr{
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.valor_unitario_depre_pr{
+  padding-left: 7px;
+    padding-right: 4px;
+}
+
+.valor_unitario_depre2_pr{
+  padding-left: 7px;
+  padding-right: 4px;
+}
+
+.valor_area_construida_pr{
+  padding-left: 11px;
+}
+
+.valovalor_construccionr_total_pr{
+  padding-left: 39px;
+}
+
+.valor_unitario_total2_pr{
+  position: absolute;
+    left: 68%;
+    top: 172px;
+}
+
+.valovalor_construccionr_total2_pr{
+  position: absolute;
+  left: 90%;
+  top: 172px;
+}
+
 
 
 

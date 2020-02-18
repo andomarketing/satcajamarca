@@ -263,33 +263,78 @@ $("#consultarPR").submit(function(e){
                         
                         $("#contPR .items").append(items);
                        
+                        var n_item_instalaciones2;
                         $(data.construcciones).each(function(index3, construccion){
                            
                             if(PR.predio_id == construccion.predio_id){
 
-                                items = "<span class='item_pr'>" + construccion.item        +"</span>";
-                                items += "<span class='tipo_nivel_pr'>" + construccion.tipo_nivel      +"</span>";
-                                items += "<span class='nronivel_pr'>" + construccion.nro_nivel        +"</span>";
-                                items += "<span class='seccion_pr'>" + construccion.seccion      +"</span>";
-                                items += "<span class='anno_construccion_pr'>" + construccion.anno_construccion    +"</span>";
-                                items += "<span class='material_predominante_pr'>" + construccion.material_predominante    +"</span>";
-                                items += "<span class='estado_conservacion_pr'>" + construccion.estado_conservacion    +"</span>";
-                                items += "<span class='muros_pr'>" + construccion.muros    +"</span>";
-                                items += "<span class='techo_pr'>" + construccion.techo    +"</span>";
-                                items += "<span class='pisos_pr'>" + construccion.pisos    +"</span>";
-                                items += "<span class='puertas_pr'>" + construccion.puertas    +"</span>";
-                                items += "<span class='revestimiento_pr'>" + construccion.revestimiento    +"</span>";
-                                items += "<span class='bannos_pr'>" + construccion.bannos    +"</span>";
-                                items += "<span class='electrico_pr'>" + construccion.electrico    +"</span>";
-                                items += "<span class='valor_unitario_pr'>" + construccion.valor_unitario    +"</span>";
-                                items += "<span class='valor_incremento_pr'>" + construccion.valor_incremento    +"</span>";
-                                items += "<span class='tipo_nivel_pr'>" + construccion.porc_depreciacion    +"</span>";
-                                items += "<span class='porc_depreciacion_pr'>" + construccion.valor_unitario_depre    +"</span>";
-                                items += "<span class='valor_area_construida_pr'>" + construccion.valor_area_construida    +"</span>";
-                                items += "<span class='valor_unitario_depre_pr'>" + construccion.valor_unitario_depre    +"</span>";
-                                items += "<span class='valor_construccion_pr'>" + construccion.valor_construccion    +"</span>";
+                                if(n_item_instalaciones2 !== construccion.item){
+                                    n_item_instalaciones2 = construccion.item
+
+
+                                items = "<tr>"
+                                            +"<td class='item_tabla_pr '>"                     + construccion.item                +"</td>"
+                                            +"<td class='tipo_tabla_nivel_pr gira'>"               + construccion.TipoNivel         +"</td>"
+                                            +"<td class='nro_nivel_tabla_pr gira'>"                + construccion.nro_nivel          +"</td>"
+                                            +"<td class='seccion_pr gira'>"                  + construccion.seccion     +"</td>"
+                                            +"<td class='anno_construccion_pr gira'>"        + construccion.anno_construccion               +"</td>"
+                                            +"<td class='material_predominante_pr gira'>"    + construccion.material_predominante        +"</td>"
+                                            +"<td class='estado_conservacion_pr gira'>"           + construccion.estado_concervacion     +"</td>"
+                                            +"<td class='muros_pr'>"                    + construccion.muros    +"</td>"
+                                            +"<td class='techo_pr'>"                    + construccion.techo   +"</td>"
+                                            +"<td class='pisos_pr'>"              + construccion.pisos           +"</td>"
+                                            +"<td class='puertas_pr'>"              + construccion.puertas           +"</td>"
+                                            +"<td class='revestimiento_pr'>"              + construccion.revestimientos           +"</td>"
+                                            +"<td class='bannos_pr'>"                   + construccion.bannos           +"</td>"
+                                            +"<td class='electrico_pr'>"                 + construccion.electricos           +"</td>"
+                                            +"<td class='valor_unitario_pr gira'>"              + construccion.valor_unitario           +"</td>"
+                                            +"<td class='valor_incremento_pr gira'>"             + construccion.valor_incremento           +"</td>"
+                                            +"<td class='porc_depreciacion_pr'>"              + construccion.porc_depreciacion           +"</td>"
+                                            +"<td class='valor_unitario_depre_pr'>"             + construccion.valor_unitario_depre           +"</td>"
+                                            +"<td class='valor_area_construida_pr gira'>"             + construccion.valor_area_construida           +"</td>"
+                                            +"<td class='valor_unitario_depre_pr gira'>"             + construccion.valor_unitario_depre           +"</td>"
+                                            +"<td class='valor_unitario_depre2_pr gira'>"             + construccion.valor_unitario_depre           +"</td>"
+                                            +"<td class='valovalor_construccionr_total_pr ' >"           + construccion.valor_construccion           +"</td>"
+
+                                            +"<td class='valor_unitario_total2_pr '>"             + construccion.valor_unitario_depre           +"</td>"
+                                            +"<td class='valovalor_construccionr_total2_pr ' >"           + construccion.valor_construccion           +"</td>"
+                                        +"</tr>";
+
+                              
                                
-                                $("#contPR .items").append(items);
+                                        $("#contPR .construcciones_pr tbody").append(items);
+                                }
+                            }
+
+                        });
+
+                        var n_item_instalaciones3;
+                        $(data.instalaciones).each(function(index3, instalaciones){
+                           
+                            if(PR.predio_id == instalaciones.predio_id){
+
+                                if(n_item_instalaciones3 !== instalaciones.item){
+                                    n_item_instalaciones3 = instalaciones.item
+
+                              console.log(instalaciones);
+
+                              items = "<tr>"
+                              +"<td class='item_insta_pr'>"                + instalaciones.item                 +"</td>"
+                              +"<td class='tipo_obra_id_pr'>"        + instalaciones.tipo_obra_id         +"</td>"
+                              +"<td class='descripcion_pr'>"         + instalaciones.descripcion          +"</td>"
+                              +"<td class='anno_instalacion'>"    + instalaciones.anno_instalacion     +"</td>"
+                              +"<td class='medida'>"              + instalaciones.medida               +"</td>"
+                              +"<td class='inidad_medida'>"       + instalaciones.inidad_medida        +"</td>"
+                              +"<td class='valor_unitario'>"      + instalaciones.valor_unitario       +"</td>"
+                              +"<td class='valor_instalacion'>"   + instalaciones.valor_instalacion    +"</td>"
+                              +"<td class='fact_oficializacion'>" + instalaciones.fact_oficializacion  +"</td>"
+                              +"<td class='valor_total'>"         + instalaciones.valor_total          +"</td>"
+                          +"</tr>";
+                  
+                              
+                               
+                                        $("#contPR .instalaciones_pr tbody").append(items);
+                                }
                             }
 
                         });
