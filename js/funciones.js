@@ -322,13 +322,13 @@ $("#consultarPR").submit(function(e){
                               +"<td class='item_insta_pr'>"                + instalaciones.item                 +"</td>"
                               +"<td class='tipo_obra_id_pr'>"        + instalaciones.tipo_obra_id         +"</td>"
                               +"<td class='descripcion_pr'>"         + instalaciones.descripcion          +"</td>"
-                              +"<td class='anno_instalacion'>"    + instalaciones.anno_instalacion     +"</td>"
-                              +"<td class='medida'>"              + instalaciones.medida               +"</td>"
-                              +"<td class='inidad_medida'>"       + instalaciones.inidad_medida        +"</td>"
-                              +"<td class='valor_unitario'>"      + instalaciones.valor_unitario       +"</td>"
-                              +"<td class='valor_instalacion'>"   + instalaciones.valor_instalacion    +"</td>"
-                              +"<td class='fact_oficializacion'>" + instalaciones.fact_oficializacion  +"</td>"
-                              +"<td class='valor_total'>"         + instalaciones.valor_total          +"</td>"
+                              +"<td class='anno_instalacion_pr'>"    + instalaciones.anno_instalacion     +"</td>"
+                              +"<td class='medida_pr'>"              + instalaciones.medida               +"</td>"
+                              +"<td class='unidad_medida_pr'>"       + instalaciones.unidad_medida        +"</td>"
+                              +"<td class='valor_unitario_pr'>"      + instalaciones.valor_unitario       +"</td>"
+                              +"<td class='valor_instalacion_pr'>"   + instalaciones.valor_instalacion    +"</td>"
+                              +"<td class='fact_oficializacion_pr'>" + instalaciones.factor_oficializacion  +"</td>"
+                              +"<td class='valor_total_pr'>"         + instalaciones.valor_total          +"</td>"
                           +"</tr>";
                   
                               

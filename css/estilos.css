@@ -548,6 +548,56 @@
   top: 172px;
 }
 
+.instalaciones_pr{
+  position: absolute;
+    top: 65%;
+    left: 10%;
+    font-weight: bold;
+}
+.tipo_obra_id_pr{
+  padding-left: 44px;
+}
+
+.descripcion_pr{
+  width: 23%;
+  font-size: 12px;
+  text-align: justify;
+  line-height: 13px;
+  position: relative;
+    right: 22px;
+    padding-left: 16px;
+}
+.anno_instalacion_pr{
+  position: relative;
+  left: 4%;
+}
+.medida_pr{
+  position: relative;
+  left: 8%;
+}
+.unidad_medida_pr{
+  position: relative;
+  left: 9%;
+}
+
+.valor_unitario_pr{
+  position: relative;
+  left: 10%;
+}
+.valor_instalacion_pr{
+  position: relative;
+  left: 8%;
+}
+.fact_oficializacion_pr{
+  position: relative;
+  left: 7%;
+}
+
+.valor_total_pr{
+  position: relative;
+  left: 9%;
+}
+
 
 
 
