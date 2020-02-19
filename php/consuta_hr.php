@@ -25,7 +25,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTAS SQL
-$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  LIMIT 5";
+$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id=103872";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
@@ -70,35 +70,25 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         echo json_encode($data);
         exit;
     }
+    $nro_registros_hr = 6;
+    $conta_hr = 1;
+    $offset_hr =  (1 - 1) * $nro_registros_hr;
 
-    $conta_hr = 0;
-    $conta_relacionados = 0;
+    $nro_registros_relacionados = 5;
+    $conta_relacionados = 1;
+    $offset_relacionados =  (1 - 1) * $nro_registros_relacionados;
 
     if($cant_hr > 6 || $cant_realacionados > 5){
 
-        $nro_registros_hr = 6;
+        
         $n_paginas_hr = ceil($cant_hr / 6);
 
-        $nro_registros_relacionados = 5;
+        
         $n_paginas_relacionados = ceil($cant_realacionados / 5);
 
         while ( $n_paginas_hr >= $conta_hr || $n_paginas_relacionados >= $conta_relacionados) {
 
-            if ($n_paginas_hr >= 1 && $conta_hr <= $n_paginas_hr) {
-                $conta_hr +=1;
-                $offset_hr =  ($conta_hr - 1) * $nro_registros_hr;
-            }else{
-                $conta_hr = 1;
-                $offset_hr =  ($conta_hr - 1) * $nro_registros_hr;
-            }
-
-            if ($n_paginas_relacionados >= 1 && $conta_relacionados <= $n_paginas_relacionados) {
-                $conta_relacionados +=1;
-                $offset_relacionados =  ($conta_relacionados - 1) * $nro_registros_relacionados;
-            }else{
-                $conta_relacionados = 1;
-                $offset_relacionados =  ($conta_relacionados - 1) * $nro_registros_relacionados;
-            }            
+            
 
             $relacionados_fraccionado = "SELECT * FROM tempo_relacionados_2020 WHERE persona_id = '".$contribuyente["persona_id"]."' LIMIT $offset_relacionados, $nro_registros_relacionados";
             //FALLO LA CONSULTA SQL
@@ -118,14 +108,14 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
             ?>
 
             <div style="width:221mm; height: 297mm; position:relative; font-size: 9pt; font-family: Arial; font-weight: bold; page-break-after: always; background: url('../img/CuponeraFINAL5 CONTORNOS-04.png'); background-size: cover;">
-                <span style="position: absolute; top: 54.5mm; left: 148mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
-                <span style="position: absolute; top: 69.8mm; left: 196mm;"><?php echo $contribuyente["emision"]; ?> </span>
-                <span style="position: absolute; top: 82.8mm; left: 84mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-                <span style="position: absolute; top: 90.6mm; left: 60mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-                <span style="position: absolute; top: 82.8mm; left: 170mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
+                <span style="position: absolute; top: 53.5mm; left: 148mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
+                <span style="position: absolute; top: 68.8mm; left: 196mm;"><?php echo $contribuyente["emision"]; ?> </span>
+                <span style="position: absolute; top: 81.8mm; left: 84mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+                <span style="position: absolute; top: 88.6mm; left: 60mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+                <span style="position: absolute; top: 81.8mm; left: 170mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
                 <span style="position: absolute; top: 99mm; left: 71mm; width: 67%; font-size: 8pt; line-height: 8pt;" ><?php echo $contribuyente["domicilio_completo"]; ?> </span>
     
-                <table style="position: absolute; top: 117mm; width: 86%; font-size: 8pt; font-weight: bold;left: 36mm; text-align: center;">
+                <table style="position: absolute; top: 116mm; width: 86%; font-size: 7pt; font-weight: bold;left: 36mm; text-align: center;">
                     <tbody>
     <?php
                 while ($xrelacionado = $rela_paginas->fetch_array()) {
@@ -178,6 +168,16 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
            
     <?php
 
+            if ($n_paginas_hr >= 1 && $conta_hr <= $n_paginas_hr) {
+                $conta_hr +=1;
+                $offset_hr =  ($conta_hr - 1) * $nro_registros_hr;
+            }
+
+            if ($n_paginas_relacionados >= 1 && $conta_relacionados <= $n_paginas_relacionados) {
+                $conta_relacionados +=1;
+                $offset_relacionados =  ($conta_relacionados - 1) * $nro_registros_relacionados;
+            }
+
         }
 
     }else{
@@ -187,12 +187,12 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
             <div style="width:221mm; height: 297mm; position:relative; font-size: 9pt; font-family: Arial; font-weight: bold; page-break-after: always; background: url('../img/CuponeraFINAL5 CONTORNOS-04.png'); background-size: cover;">
             <span style="position: absolute; top: 54.5mm; left: 148mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
             <span style="position: absolute; top: 69.8mm; left: 196mm;"><?php echo $contribuyente["emision"]; ?> </span>
-            <span style="position: absolute; top: 82.8mm; left: 84mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-            <span style="position: absolute; top: 90.6mm; left: 60mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-            <span style="position: absolute; top: 82.8mm; left: 170mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
+            <span style="position: absolute; top: 81.8mm; left: 84mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+            <span style="position: absolute; top: 88.6mm; left: 60mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+            <span style="position: absolute; top: 81.8mm; left: 170mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
             <span style="position: absolute; top: 99mm; left: 71mm; width: 67%; font-size: 8pt; line-height: 8pt;" ><?php echo $contribuyente["domicilio_completo"]; ?> </span>
 
-            <table style="position: absolute; top: 117mm; width: 86%; font-size: 8pt; font-weight: bold;left: 36mm; text-align: center;">
+            <table style="position: absolute; top: 116mm; width: 86%; font-size: 7pt; font-weight: bold;left: 36mm; text-align: center;">
                 <tbody>
 <?php
             while ($relacionados = $consulta_relacionados->fetch_array()) {
