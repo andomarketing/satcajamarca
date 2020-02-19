@@ -45,6 +45,7 @@ $("#buscarHR").submit(function(e){
                     }
                     
                     $(data.HR).each(function(index, HR) {
+                        console.log("Cantidad Filas: " + data.HR.length)
                         fila_tabla = "<tr>"
                                     + "<td class='item'>"               + HR.item                      +"</td>"
                                     + "<td class='direccion_predial'>"  + HR.UbicacionPredio           +"</td>"
@@ -58,10 +59,9 @@ $("#buscarHR").submit(function(e){
                     
                         $("#datosHR tbody").append(fila_tabla);
                     });
-                    var nu = 1;
+
                     $(data.relacionados).each(function(index, relacionados) {
-                        console.log(relacionados)
-                       
+                        console.log("Cantidad Relacionados: " + data.relacionados.length)
                         fila_tabla = "<tr>"
                                     + "<td class='item'>"               + relacionados.item         +"</td>"
                                     + "<td class='relacionado'>"  + relacionados.relacionado  +"</td>"
@@ -70,28 +70,7 @@ $("#buscarHR").submit(function(e){
                                 +"<tr>";
                     
                         $("#datosRelacionados tbody").append(fila_tabla);
-
                     });
-
-                    $(data.relacionados).slice(0,1).each(function(index, relacionados) {
-                        console.log(relacionados)
-                        index += 1;
-                        contenedor = ''
-                        +'<div id="contHR HR_'+index+'">'
-                            +'<img src="../../img/CuponeraFINAL5 CONTORNOS-04.png" alt="HR" class="img img-fluid">'
-                            +'<div class="items"><!-- DATOS DE DB --></div>'
-                            +'<table id="datosRelacionados">'
-                              + ' <tbody>'
-                              
-                              +  '</tbody>'
-                            +'</table>'
-                        +'</div>';
-                    
-                        $("#datosRelacionados tbody").append(contenedor);
-
-                    });
-
-                   
                     
                 }
             });
@@ -134,7 +113,7 @@ $("#consultarPU").submit(function(e){
 
                         contenedor = ''
                         +'<div class="contPU PU_'+npu+'">'
-                            +'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
+                            //+'<img src="../../img/CuponeraFINAL5 CONTORNOS-05.png" alt="HR" class="img img-fluid">'
                             +'<div class="items"><!-- DATOS DE DB --></div>'
                             +'<table class="construcciones">'
                               + ' <tbody>'
@@ -149,32 +128,32 @@ $("#consultarPU").submit(function(e){
 
                         $("#dtsPU").append(contenedor);
 
-                        items = "<span class='persona_id estilos'>"                 + data.persona_id               +"</span>";
-                        items +=  "<span class='determinacion_id estilos'>"         + data.NroDeclaracionJurada     +"</span>";
-                        items += "<span class='emision estilos'>"                   + data.emision                  +"</span>";
-                        items += "<span class='tipo_contribuyente estilos'>"        + data.tipo_Contibuyente        +"</span>";
-                        items += "<span class='apellidos_nombres estilos'>"         + data.apellidos_nombres        +"</span>";
-                        items += "<span class='direccion_completa estilos'>"        + PU.direccion_completa       +"</span>";                        
+                        items = "<span class='persona_id'>"                 + data.persona_id               +"</span>";
+                        items +=  "<span class='determinacion_id'>"         + data.NroDeclaracionJurada     +"</span>";
+                        items += "<span class='emision'>"                   + data.emision                  +"</span>";
+                        items += "<span class='tipo_contribuyente'>"        + data.tipo_Contibuyente        +"</span>";
+                        items += "<span class='apellidos_nombres'>"         + data.apellidos_nombres        +"</span>";
+                        items += "<span class='direccion_completa'>"        + PU.direccion_completa       +"</span>";                        
                         $(".PU_"+npu+" .items").append(items);
 
-                        items = "<span class='predio_id estilos'>"              + PU.predio_id           +"</span>";
-                        items += "<span class='codigoCatastral estilos'>"       + PU.codigoCatastral     +"</span>";
-                        items += "<span class='lugar estilos'>"                 + PU.lugar               +"</span>";
-                        items += "<span class='sector estilos'>"                + PU.sector              +"</span>";
-                        items += "<span class='ubicacion_predio estilos'>"      + PU.ubicacion_predio    +"</span>";
-                        items += "<span class='area_terreno estilos'>"          + PU.area_terreno        +"</span>";
-                        items += "<span class='condicion_propiedad estilos'>"   + PU.condicion_propiedad +"</span>";
-                        items += "<span class='arancel estilos'>"               + PU.arancel             +"</span>";
-                        items += "<span class='porc_participacion estilos'>"    + PU.porc_paticipacion   +"</span>";
-                        items += "<span class='valor_terreno estilos'>"         + PU.valor_terreno       +"</span>";
-                        items += "<span class='valor_construccion estilos'>"    + PU.valor_construccion  +"</span>";
-                        items += "<span class='area_construida estilos'>"       + PU.area_construida     +"</span>";
+                        items = "<span class='predio_id'>"              + PU.predio_id           +"</span>";
+                        items += "<span class='codigoCatastral'>"       + PU.codigoCatastral     +"</span>";
+                        items += "<span class='lugar'>"                 + PU.lugar               +"</span>";
+                        items += "<span class='sector'>"                + PU.sector              +"</span>";
+                        items += "<span class='ubicacion_predio'>"      + PU.ubicacion_predio    +"</span>";
+                        items += "<span class='area_terreno'>"          + PU.area_terreno        +"</span>";
+                        items += "<span class='condicion_propiedad'>"   + PU.condicion_propiedad +"</span>";
+                        items += "<span class='arancel'>"               + PU.arancel             +"</span>";
+                        items += "<span class='porc_participacion'>"    + PU.porc_paticipacion   +"</span>";
+                        items += "<span class='valor_terreno'>"         + PU.valor_terreno       +"</span>";
+                        items += "<span class='valor_construccion'>"    + PU.valor_construccion  +"</span>";
+                        items += "<span class='area_construida'>"       + PU.area_construida     +"</span>";
 
                         //VALOR PRESIO SECCION
-                        items += "<span class='PU_valor_terreno estilos'>"         + PU.valor_terreno       +"</span>";
-                        items += "<span class='PU_valor_construccion estilos'>"    + PU.valor_construccion  +"</span>";
-                        items += "<span class='PU_valor_instalacion estilos'>"     + PU.valor_instalacion   +"</span>";
-                        items += "<span class='PU_base_imponible estilos'>"        + PU.base_imponible      +"</span>";
+                        items += "<span class='PU_valor_terreno'>"         + PU.valor_terreno       +"</span>";
+                        items += "<span class='PU_valor_construccion'>"    + PU.valor_construccion  +"</span>";
+                        items += "<span class='PU_valor_instalacion'>"     + PU.valor_instalacion   +"</span>";
+                        items += "<span class='PU_base_imponible'>"        + PU.base_imponible      +"</span>";
 
                         $(".PU_"+npu+" .items").append(items);
 
