@@ -86,20 +86,51 @@
             border-right: 0.005mm solid blue;
             border-bottom: 0.005mm solid blue;
         }
+        .white-text{
+            color: #FFF !important;
+        }
     </style>
 </head>
 <body>
+
+<?php 
+    //CONEXION BASE DE DATOS
+    include "db.php";
+
+    //EXISTE UN ERROR DE CONEXION
+    if ($mysqli->connect_errno) {
+        $data = array("error" => true, "valor" => "Error: " . $mysqli->connect_error);
+        echo json_encode($data);
+        exit;
+    }
+    //CONSULTAS SQL
+    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 21";
+    //FALLO LA CONSULTA SQL
+    if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
+        $data = array("error" => true, "valor" => "Error consultando el contributyente: " . $mysqli->error);
+        echo json_encode($data);
+        exit;
+    }
+    while ($contribuyente = $consulta_contribuyente->fetch_array()) {
+        $declaracion_jurada = $contribuyente["NroDeclaracionJurada"];
+        $emision = $contribuyente["emision"];
+        $codigo_contribuyente = $contribuyente["persona_id"];
+        $nombre = $contribuyente["apellidos_nombres"];
+    }
+?>
+
 <div style="display: block; width: 100% ; height: 155mm; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
     
+    <!-- DATOS DEL PREDIO -->
     <table class="pre1-table">
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO CONTRIBUYENTE:</span></td>
+            <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO CONTRIBUYENTE: <?php echo $codigo_contribuyente; ?> </span></td>
             <td class="pre1-td pre1-td-rigth"></td>
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">NOMBRE:</span></td>
+            <td class="pre1-td pre1-td-left"><span class="white-text">NOMBRE: <?php echo $nombre; ?> </span></td>
             <td class="pre1-td pre1-td-rigth"></td>
-        </tr>
+        </tr> 
         <tr class="pre1-tr">
             <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO PREDIO:</span></td>
             <td class="pre1-td pre1-td-rigth"><span class="white-text">CÓDIGO CATASTRAL:</span></td>
@@ -109,7 +140,9 @@
             <td class="pre1-td pre1-td-rigth"></td>
         </tr>
     </table>
+    <!-- DATOS DEL PREDIO -->
 
+    <!-- DESCRIPCION DE PROPIEDAD -->
     <table class="pre2-table">
         <tr class="pre2-tr">
             <td class="pre2-td pre2-td-left"><span class="white-text">COND. PROPIEDAD:</span></td>
@@ -122,14 +155,19 @@
             <td class="pre2-td pre2-td-rigth"><span class="white-text">USO:</span></td>
         </tr>
     </table>
+    <!-- DESCRIPCION DE PROPIEDAD -->
+
+    <!-- TITULO X -->
     <table class="pre3-table">
         <tr>
             <td class="pre3-td">
                 <span class="white-text">CONDICIÓN DE PROPIEDAD:</span>
             </td>
         </tr>
-    </table>    
+    </table>
+    <!-- TITULO X -->    
 
+    <!-- DETERMINACION DEL VALOR DEL PRECIO -->
     <table class="pre4-table">
         <tr class="pre4-tr">
             <td class="pre4-td pre4-td-left"><span class="white-text">AREA DEL TERRENO HA:</span></td>
@@ -137,7 +175,9 @@
             <td class="pre4-td pre4-td-rigth"><span class="white-text">VALOR TERNARIO:</span></td>
         </tr>
     </table>
-    
+    <!-- DETERMINACION DEL VALOR DEL PRECIO -->
+
+    <!-- CONSTRUCCIONES -->
     <table class="const-table">
         <tr style="height: 23mm">
             <td style="width: 5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">TN</span></td>
@@ -185,6 +225,7 @@
             <td><span class="vertical-text"></span></td>
             <td><span class="vertical-text"></span></td>
         </tr>
+        <!-- TOTALES -->
         <tr style="height: 5mm">
             <td colspan="15">
             </td>
@@ -195,8 +236,11 @@
             <td></td>
             <td></td>
         </tr>
+        <!-- TOTALES -->
     </table>
+    <!-- CONSTRUCCIONES -->
 
+    <!-- DETERMINACION DEL VALOR DE LAS OBRAS -->
     <table class="comp-table">
         <tr style="height: 6mm">
             <td style="width: 8mm; font-size: 3pt">Item</td>
@@ -210,6 +254,7 @@
             <td style="width: 11mm; font-size: 3pt">VO</td>
             <td style="width: 11mm; font-size: 3pt">Valor Total</td>
         </tr>
+        <!-- DATOS DE INSTALACIONES -->
         <tr style="height: 15mm">
             <td>Item</td>
             <td>Código</td>
@@ -222,6 +267,7 @@
             <td>Valor Oficialzación</td>
             <td>Valor Total</td>
         </tr>
+        <!-- DATOS DE INSTALACIONES -->
         <tr style="height: 2mm">
             <td colspan="10"></td>
         </tr>
@@ -249,6 +295,8 @@
             <td colspan="2"></td>
         </tr>
     </table>
+    <!-- DETERMINACION DEL VALOR DE LAS OBRAS -->
+
 </div>
 </body>
 </html>
