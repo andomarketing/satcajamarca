@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PR</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+        }
+        .main{
             margin-top: 36.5mm; 
             margin-left: 15mm;
+            max-width: 129mm;
         }
         table {            
             border-spacing: 0px;
-            width: 129mm;
+            width: 100%;
             border: 0.005mm solid blue;
         }
         .white-text {
@@ -19,7 +24,7 @@
         }
         .pre1-table {
             font-size: 6pt;
-            height: 18mm;
+            height: 17mm;
             margin-bottom: 1mm;
         }
         .pre1-td {
@@ -33,6 +38,9 @@
             font-size: 5pt;
             height: 11mm;
             margin-bottom: 1mm;
+        }
+        .pre2-table td{
+            position: relative;
         }
         .pre2-td-left {
             padding-left: 3mm;
@@ -86,8 +94,22 @@
             border-right: 0.005mm solid blue;
             border-bottom: 0.005mm solid blue;
         }
-        .white-text{
-            color: #FFF !important;
+        @media print{
+            .white-text{
+                visibility: hidden;
+                color: #FFF !important;
+            }
+            table {            
+                border: none;
+            }
+            .const-table td{
+                border-right: none;
+                border-bottom: none;
+            }
+            .comp-table td{
+                border-right: none;
+                border-bottom: none;
+            }
         }
     </style>
 </head>
@@ -104,7 +126,7 @@
         exit;
     }
     //CONSULTAS SQL
-    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 21";
+    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 31239";
     //FALLO LA CONSULTA SQL
     if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
         $data = array("error" => true, "valor" => "Error consultando el contributyente: " . $mysqli->error);
@@ -112,32 +134,66 @@
         exit;
     }
     while ($contribuyente = $consulta_contribuyente->fetch_array()) {
+        //DATOS DEL CONTRIBUYENTE
         $declaracion_jurada = $contribuyente["NroDeclaracionJurada"];
         $emision = $contribuyente["emision"];
         $codigo_contribuyente = $contribuyente["persona_id"];
         $nombre = $contribuyente["apellidos_nombres"];
-    }
-?>
 
-<div style="display: block; width: 100% ; height: 155mm; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
+        $PR_sql = "SELECT * FROM tempo_pr_2020 WHERE persona_id = '$codigo_contribuyente' ORDER BY predio_id ASC";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_PR = $mysqli->query($PR_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el PR para el contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+
+        while ($PR = $consulta_PR->fetch_array()) {
+
+
+            $construcciones_sql = "SELECT * FROM tempo_construcciones_2020  WHERE persona_id = '$codigo_contribuyente' ORDER BY predio_id ASC";
+            //FALLO LA CONSULTA SQL
+            if (!$consulta_construcciones = $mysqli->query($construcciones_sql)) {
+                $data = array("error" => true, "valor" => "Error consultando contrucciones para el contributyente: " . $mysqli->error);
+                echo json_encode($data);
+                exit;
+            }
+
+            $data_construcciones = array();
+            while ($construcciones = $consulta_construcciones->fetch_array()) {
+                array_push($data_construcciones, $construcciones);
+            }
+
+            $instalaciones_sql  = "SELECT * FROM tempo_instalaciones_2020   WHERE persona_id = '$codigo_contribuyente' ORDER BY predio_id ASC";
+            //FALLO LA CONSULTA SQL
+            if (!$consulta_instalaciones = $mysqli->query($instalaciones_sql)) {
+                $data = array("error" => true, "valor" => "Error consultando instalaciones para el contributyente: " . $mysqli->error);
+                echo json_encode($data);
+                exit;
+            }
+            
+            $data_instalaciones = array();
+            while ($instalaciones = $consulta_instalaciones->fetch_array()) {
+                array_push($data_instalaciones, $instalaciones);
+            }
+
+            ?>
+<div class="main" style="display: block; width: 100% ; height: 155mm; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
     
     <!-- DATOS DEL PREDIO -->
     <table class="pre1-table">
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO CONTRIBUYENTE: <?php echo $codigo_contribuyente; ?> </span></td>
-            <td class="pre1-td pre1-td-rigth"></td>
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">CÓDIGO CONTRIBUYENTE: </span> <?php echo $codigo_contribuyente; ?></td>
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">NOMBRE: <?php echo $nombre; ?> </span></td>
-            <td class="pre1-td pre1-td-rigth"></td>
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">NOMBRE: </span> <?php echo $nombre; ?></td>
         </tr> 
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO PREDIO:</span></td>
-            <td class="pre1-td pre1-td-rigth"><span class="white-text">CÓDIGO CATASTRAL:</span></td>
+            <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO PREDIO: </span> <?php echo $PR["predio_id"]; ?></td>
+            <td class="pre1-td pre1-td-rigth"><span class="white-text">CÓDIGO CATASTRAL: </span> <?php echo $PR["codigoCatastral"]; ?></td>
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">DIRECCIÓN DE PREDIO:</span></td>
-            <td class="pre1-td pre1-td-rigth"></td>
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">DIRECCIÓN DE PREDIO:</span> <span style="font-size: 5pt;"> <?php echo strtoupper( $PR["direccion_completa"] ); ?></span></td>
         </tr>
     </table>
     <!-- DATOS DEL PREDIO -->
@@ -145,14 +201,14 @@
     <!-- DESCRIPCION DE PROPIEDAD -->
     <table class="pre2-table">
         <tr class="pre2-tr">
-            <td class="pre2-td pre2-td-left"><span class="white-text">COND. PROPIEDAD:</span></td>
-            <td class="pre2-td pre2-td-center"><span class="white-text">% DE PARTICIPACIÓN:</span></td>
-            <td class="pre2-td pre2-td-rigth"><span class="white-text">TIPO DE TIERRA:</span></td>
+            <td class="pre2-td pre2-td-left"><span class="white-text">COND. PROPIEDAD: </span> <span style="position: absolute; left: 21mm; top: 2.6mm;"> <?php echo $PR["condicion_propiedad"]; ?></td>
+            <td class="pre2-td pre2-td-center"><span class="white-text">% DE PARTICIPACIÓN: </span> <span style="position: absolute; left: 21mm; top: 2.6mm;"> <?php echo $PR["porc_propiedad"]; ?></td>
+            <td class="pre2-td pre2-td-rigth"><span class="white-text">TIPO DE TIERRA: </span> <span style="position: absolute;right: 10px;width: 53%;font-size: 4.5pt;top: 2.5mm;"> <?php echo $PR["tipo_tierra"]; ?></span></td>
         </tr>
         <tr class="pre2-tr">
-            <td class="pre2-td pre2-td-left"><span class="white-text">ALTITUD:</span></td>
-            <td class="pre2-td pre2-td-center"><span class="white-text">CATEGORIA:</span></td>
-            <td class="pre2-td pre2-td-rigth"><span class="white-text">USO:</span></td>
+            <td class="pre2-td pre2-td-left"><span class="white-text">ALTITUD: </span> <?php echo $PR["altitud"]; ?></td>
+            <td class="pre2-td pre2-td-center"><span class="white-text">CATEGORIA: </span> <?php echo $PR["categoria_rustico"]; ?></td>
+            <td class="pre2-td pre2-td-rigth"><span class="white-text">USO: </span> <?php echo $PR["uso"]; ?></td>
         </tr>
     </table>
     <!-- DESCRIPCION DE PROPIEDAD -->
@@ -170,9 +226,9 @@
     <!-- DETERMINACION DEL VALOR DEL PRECIO -->
     <table class="pre4-table">
         <tr class="pre4-tr">
-            <td class="pre4-td pre4-td-left"><span class="white-text">AREA DEL TERRENO HA:</span></td>
-            <td class="pre4-td pre4-td-center"><span class="white-text">VALOR ARANCELARIO:</span></td>
-            <td class="pre4-td pre4-td-rigth"><span class="white-text">VALOR TERNARIO:</span></td>
+            <td class="pre4-td pre4-td-left"><span class="white-text">AREA DEL TERRENO HA: </span> <?php echo $PR["area"] ?></td>
+            <td class="pre4-td pre4-td-center"><span class="white-text">VALOR ARANCELARIO: </span> <?php echo $PR["arancel"] ?></td>
+            <td class="pre4-td pre4-td-rigth"><span class="white-text">VALOR TERNARIO: </span> <?php echo $PR["valor_terreno"] ?></td>
         </tr>
     </table>
     <!-- DETERMINACION DEL VALOR DEL PRECIO -->
@@ -231,10 +287,10 @@
             </td>
             <td colspan="2">
             </td>
-            <td colspan="2">
+            <td colspan="2"> <?php echo $pr[""] ?>
             </td>
             <td></td>
-            <td></td>
+            <td> <?php echo $pr[""] ?></td>
         </tr>
         <!-- TOTALES -->
     </table>
@@ -298,6 +354,13 @@
     <!-- DETERMINACION DEL VALOR DE LAS OBRAS -->
 
 </div>
+            <?php
+
+        }
+    }
+?>
+
+
 </body>
 </html>
 

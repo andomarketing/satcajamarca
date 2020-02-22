@@ -1,5 +1,10 @@
 <?php
 
+require "../vendor/autoload.php";
+
+$generator = new Picqer\Barcode\BarcodeGeneratorHTML();
+
+
 function render($template, $param){
     ob_start();
     extract($param, EXTR_OVERWRITE);
@@ -9,7 +14,7 @@ function render($template, $param){
 
 define("CARGO_TEMPLATE", "template-cargo.php");
 
-$offset = $_GET["offset"];
+$offset = $_GET["pg"];
 
 //CONEXION BASE DE DATOS
 include "db.php";
@@ -42,6 +47,7 @@ if ($consultaContribuyente->num_rows === 0) {
 while ($contribuyente = $consultaContribuyente->fetch_array()): 
     $params = [
         "declaracionJurada" => $contribuyente["NroDeclaracionJurada"],
+        "codBarra" => $generator->getBarcode( $contribuyente["NroDeclaracionJurada"] , $generator::TYPE_CODE_128),
         "emision" => $contribuyente["emision"],
         "codigoContribuyente" => $contribuyente["persona_id"],
         "dni" => $contribuyente["nro_docu_identidad"],

@@ -1,6 +1,10 @@
 
 <div class="main" style="display: block; width: 100% ; height: 155mm; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
     
+    <span> <?php echo $declaracionJurada ?></span>
+    <span> <?php echo $codBarra ?></span>
+    <span> <?php echo $emision ?></span>
+
     <table class="pre1-table">
         <tr class="pre1-tr">
             <td class="pre1-td pre1-td-left"><span class="white-text">Código Contribuyente&nbsp&nbsp:</span> <?= $codigoContribuyente ?></td>
