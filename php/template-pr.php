@@ -31,7 +31,7 @@
         }
         .pre2-table {
             font-size: 5pt;
-            height: 10mm;
+            height: 11mm;
             margin-bottom: 1mm;
         }
         .pre2-td-left {
@@ -44,7 +44,7 @@
         .pre3-table {
             font-size: 5pt;
             border: none;
-            margin-bottom: 7.5mm;
+            margin-bottom: 6mm;
         }
         .pre3-td {
             padding-left: 1.5mm;
