@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         body {
-            margin-top: 36.5mm; 
+            margin-top: 37.5mm; 
             margin-left: 15mm;
         }
         table {            
@@ -18,8 +18,9 @@
             font-weight: 100;
         }
         .pre1-table {
+            padding-top: 2mm;
             font-size: 6pt;
-            height: 18mm;
+            height: 26mm;
             margin-bottom: 1mm;
         }
         .pre1-td {
@@ -31,8 +32,8 @@
         }
         .pre2-table {
             font-size: 5pt;
-            height: 11mm;
-            margin-bottom: 1mm;
+            height: 6mm;
+            margin-bottom: 5mm;
         }
         .pre2-td-left {
             padding-left: 3mm;
@@ -41,18 +42,10 @@
         .pre2-td-rigth {
             width:30%;
         }
-        .pre3-table {
-            font-size: 5pt;
-            border: none;
-            margin-bottom: 6mm;
-        }
-        .pre3-td {
-            padding-left: 1.5mm;
-        }
         .pre4-table{
             font-size: 4pt;
             height: 6mm;
-            margin-bottom: 6mm;
+            margin-bottom: 8mm;
         }
         .pre4-td-left {
             padding-left: 1mm;
@@ -108,33 +101,29 @@
             <td class="pre1-td pre1-td-left"><span class="white-text">DIRECCIÓN DE PREDIO:</span></td>
             <td class="pre1-td pre1-td-rigth"></td>
         </tr>
+        <tr class="pre1-tr">
+            <td class="pre1-td pre1-td-left"><span class="white-text">LUGAR:</span></td>
+            <td class="pre1-td pre1-td-rigth"></td>
+        </tr>
+        <tr class="pre1-tr">
+            <td class="pre1-td pre1-td-left"><span class="white-text">SECTOR:</span></td>
+            <td class="pre1-td pre1-td-rigth"></td>
+        </tr>
     </table>
 
     <table class="pre2-table">
         <tr class="pre2-tr">
-            <td class="pre2-td pre2-td-left"><span class="white-text">COND. PROPIEDAD:</span></td>
-            <td class="pre2-td pre2-td-center"><span class="white-text">% DE PARTICIPACIÓN:</span></td>
-            <td class="pre2-td pre2-td-rigth"><span class="white-text">TIPO DE TIERRA:</span></td>
-        </tr>
-        <tr class="pre2-tr">
-            <td class="pre2-td pre2-td-left"><span class="white-text">ALTITUD:</span></td>
-            <td class="pre2-td pre2-td-center"><span class="white-text">CATEGORIA:</span></td>
-            <td class="pre2-td pre2-td-rigth"><span class="white-text">USO:</span></td>
+            <td class="pre2-td pre2-td-left"><span class="white-text">UBICACIÓN DEL PREDIO:</span></td>
+            <td class="pre2-td pre2-td-center"><span class="white-text">CONDICIÓN DE PROPIEDAD:</span></td>
+            <td class="pre2-td pre2-td-rigth"><span class="white-text">% DE PARTICIPACIÓN:</span></td>
         </tr>
     </table>
-    <table class="pre3-table">
-        <tr>
-            <td class="pre3-td">
-                <span class="white-text">CONDICIÓN DE PROPIEDAD:</span>
-            </td>
-        </tr>
-    </table>    
 
     <table class="pre4-table">
         <tr class="pre4-tr">
-            <td class="pre4-td pre4-td-left"><span class="white-text">AREA DEL TERRENO HA:</span></td>
+            <td class="pre4-td pre4-td-left"><span class="white-text">AREA DEL TERRENO M2:</span></td>
             <td class="pre4-td pre4-td-center"><span class="white-text">VALOR ARANCELARIO:</span></td>
-            <td class="pre4-td pre4-td-rigth"><span class="white-text">VALOR TERNARIO:</span></td>
+            <td class="pre4-td pre4-td-rigth"><span class="white-text">VALOR TERNARIO M2:</span></td>
         </tr>
     </table>
     
