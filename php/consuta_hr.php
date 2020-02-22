@@ -6,13 +6,14 @@
         <title>HR</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/estilos.css">
     </head>
     <body>
 
 <?php
+
+$pagina_contri = $_GET["pg"];
 
 //CONEXION BASE DE DATOS
 include "db.php";
@@ -25,7 +26,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTAS SQL
-$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id=103872";
+$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 ORDER BY persona_id LIMIT $pagina_contri, 200";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
@@ -70,7 +71,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         echo json_encode($data);
         exit;
     }
-    $nro_registros_hr = 6;
+    $nro_registros_hr = 11;
     $conta_hr = 1;
     $offset_hr =  (1 - 1) * $nro_registros_hr;
 
@@ -78,10 +79,10 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
     $conta_relacionados = 1;
     $offset_relacionados =  (1 - 1) * $nro_registros_relacionados;
 
-    if($cant_hr > 6 || $cant_realacionados > 5){
+    if($cant_hr > 11 || $cant_realacionados > 5){
 
         
-        $n_paginas_hr = ceil($cant_hr / 6);
+        $n_paginas_hr = ceil($cant_hr / 11);
 
         
         $n_paginas_relacionados = ceil($cant_realacionados / 5);
@@ -107,44 +108,44 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
             }
             ?>
 
-            <div style="width:221mm; height: 297mm; position:relative; font-size: 9pt; font-family: Arial; font-weight: bold; page-break-after: always; background: url('../img/CuponeraFINAL5 CONTORNOS-04.png'); background-size: cover;">
-                <span style="position: absolute; top: 53.5mm; left: 148mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
-                <span style="position: absolute; top: 68.8mm; left: 196mm;"><?php echo $contribuyente["emision"]; ?> </span>
-                <span style="position: absolute; top: 81.8mm; left: 84mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-                <span style="position: absolute; top: 88.6mm; left: 60mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-                <span style="position: absolute; top: 81.8mm; left: 170mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
-                <span style="position: absolute; top: 99mm; left: 71mm; width: 67%; font-size: 8pt; line-height: 8pt;" ><?php echo $contribuyente["domicilio_completo"]; ?> </span>
-    
-                <table style="position: absolute; top: 116mm; width: 86%; font-size: 7pt; font-weight: bold;left: 36mm; text-align: center;">
+            <div style="display: block; width: 100% ; height: 1537px; position:relative; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
+            <span style="position: absolute; top: 35mm; left: 101mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
+            <span style="position: absolute; top: 45.5mm; left: 135.2mm;"><?php echo $contribuyente["emision"]; ?> </span>
+            <span style="position: absolute; top: 54.5mm; left: 116.7mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
+            <span style="position: absolute; top: 54.5mm; left: 55.7mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+            <span style="position: absolute; top: 60mm; left: 55.7mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+            <span style="position: absolute; top: 65mm; left: 55.7mm; width: 40%; font-size: 6pt; line-height: 6pt;" ><?php echo $contribuyente["domicilio_completo"]; ?> </span>
+
+            <table style="position: absolute; top: 77.5mm; width: 70.5%; font-size: 6pt; font-weight: bold;left: 25mm; text-align: center;">
                     <tbody>
     <?php
                 while ($xrelacionado = $rela_paginas->fetch_array()) {
                     ?>
                         <tr style="display: flex;">
-                            <td style="width: 10%;"><?php echo $xrelacionado["item"] ?></td>
-                            <td style="width: 40%; text-align: left; padding-left: 0.5%;"><?php echo $xrelacionado["relacionado"] ?> </td>
-                            <td style="width: 25%;"><?php echo $xrelacionado["Tporelacion"] ?> </td>
-                            <td style="width: 25%;"><?php echo $xrelacionado["NroDocumento"] ?> </td>
+                            <td style="width: 6%;"><?php echo $relacionados["item"] ?></td>
+                            <td style="width: 43%; text-align: left; padding-left: 0.5%;"><?php echo $relacionados["relacionado"] ?> </td>
+                            <td style="width: 29.5%;"><?php echo $relacionados["Tporelacion"] ?> </td>
+                            <td style="width: 21.5%;"><?php echo $relacionados["NroDocumento"] ?> </td>
                         </tr>
                     <?php
                 }
     ?>
-                    </tbody>
+                     </tbody>
                 </table>
-    
-                <table style="position: absolute; top: 163mm; width: 86%; font-size: 8pt; font-weight: bold;left: 36mm; text-align: center;">
+
+                <table style="position: absolute; top: 109.5mm; width: 73%; font-size: 6pt; font-weight: bold;left: 23.5mm; text-align: center;">
                     <tbody>
     <?php
                 while ($xHR = $hr_paginas->fetch_array()) {
                     ?>
                         <tr style="display: flex;">
-                            <td style="width: 10%;"><?php echo $xHR["item"] ?></td>
-                            <td style="width: 36%; text-align: left; padding-left: 0.5%;"><?php echo $xHR["UbicacionPredio"] ?> </td>
-                            <td style="width: 11%;"><?php echo $xHR["fecha_adquisicion"] ?> </td>
-                            <td style="width: 11%;"><?php echo $xHR["valor_Predio"] ?> </td>
-                            <td style="width: 11%;"><?php echo $xHR["porc_participacion"] ?> </td>
-                            <td style="width: 11%;"><?php echo $xHR["monto_inafecto"] ?> </td>
-                            <td style="width: 12%;"><?php echo $xHR["valor_afecto"] ?> </td>
+                            <td style="width: 10%;"><?php echo $HR["item"] ?></td>
+                            <td style="width: 38%; text-align: left; padding-left: 0.5%;"><?php echo $HR["UbicacionPredio"] ?> </td>
+                            <td style="width: 12%;"><?php echo $HR["fecha_adquisicion"] ?> </td>
+                            <td style="width: 9%;"><?php echo $HR["valor_Predio"] ?> </td>
+                            <td style="width: 9%;"><?php echo $HR["porc_participacion"] ?> </td>
+                            <td style="width: 10%;"><?php echo $HR["monto_inafecto"] ?> </td>
+                            <td style="width: 10%;"><?php echo $HR["valor_afecto"] ?> </td>
                         </tr>
                     <?php
                 }
@@ -154,11 +155,11 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
     <?php
                 while ($HR = $consulta_pie_hr->fetch_array()) {
                     ?>
-                        <div style="position: relative; top: 276mm; font-size: 10pt;">
-                            <span style="position: absolute; left: 68mm;"><?php echo $HR["cantidadPredios"];?></span>
-                            <span style="position: absolute; left: 108mm;"><?php echo $HR["PrediosAfectos"];?></span>
-                            <span style="position: absolute; left: 155mm;"><?php echo number_format($HR["valor_TotalAfecto"], 2, ',', ' ');?></span>
-                            <span style="position: absolute; left: 203mm;"><?php echo number_format($HR["impuestoPredial"], 2, ',', ' ');?></span>
+                        <div style="position: relative; top: 190.6mm; font-size: 7pt;">
+                            <span style="position: relative; left: 48mm; bottom:5px;"><?php echo $HR["cantidadPredios"];?></span>
+                            <span style="position: relative; left: 76mm; bottom:5px;"><?php echo $HR["PrediosAfectos"];?></span>
+                            <span style="position: relative; left: 103.5mm; bottom:4px;"><?php echo number_format($HR["valor_TotalAfecto"], 2, ',', '.');?></span>
+                            <span style="position: relative; left: 129mm; bottom:4px;"><?php echo number_format($HR["impuestoPredial"], 2, ',', '.');?></span>
                         </div>
                     <?php
                 }
@@ -184,24 +185,24 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 
         ?>
 
-            <div style="width:221mm; height: 297mm; position:relative; font-size: 9pt; font-family: Arial; font-weight: bold; page-break-after: always; background: url('../img/CuponeraFINAL5 CONTORNOS-04.png'); background-size: cover;">
-            <span style="position: absolute; top: 54.5mm; left: 148mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
-            <span style="position: absolute; top: 69.8mm; left: 196mm;"><?php echo $contribuyente["emision"]; ?> </span>
-            <span style="position: absolute; top: 81.8mm; left: 84mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-            <span style="position: absolute; top: 88.6mm; left: 60mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-            <span style="position: absolute; top: 81.8mm; left: 170mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
-            <span style="position: absolute; top: 99mm; left: 71mm; width: 67%; font-size: 8pt; line-height: 8pt;" ><?php echo $contribuyente["domicilio_completo"]; ?> </span>
+            <div style="overflow: hidden; display: block; width: 100% ; height: 290mm; position:relative; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
+            <span style="position: absolute; top: 35mm; left: 101mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
+            <span style="position: absolute; top: 45.5mm; left: 135.2mm;"><?php echo $contribuyente["emision"]; ?> </span>
+            <span style="position: absolute; top: 54.5mm; left: 116.7mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
+            <span style="position: absolute; top: 54.5mm; left: 55.7mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+            <span style="position: absolute; top: 60mm; left: 55.7mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+            <span style="position: absolute; top: 65mm; left: 55.7mm; width: 40%; font-size: 6pt; line-height: 6pt;" ><?php echo $contribuyente["domicilio_completo"]; ?> </span>
 
-            <table style="position: absolute; top: 116mm; width: 86%; font-size: 7pt; font-weight: bold;left: 36mm; text-align: center;">
+            <table style="position: absolute; top: 77.5mm; width: 70.5%; font-size: 6pt; font-weight: bold;left: 25mm; text-align: center;">
                 <tbody>
 <?php
             while ($relacionados = $consulta_relacionados->fetch_array()) {
                 ?>
                     <tr style="display: flex;">
-                        <td style="width: 10%;"><?php echo $relacionados["item"] ?></td>
-                        <td style="width: 40%; text-align: left; padding-left: 0.5%;"><?php echo $relacionados["relacionado"] ?> </td>
-                        <td style="width: 25%;"><?php echo $relacionados["Tporelacion"] ?> </td>
-                        <td style="width: 25%;"><?php echo $relacionados["NroDocumento"] ?> </td>
+                        <td style="width: 6%;"><?php echo $relacionados["item"] ?></td>
+                        <td style="width: 43%; text-align: left; padding-left: 0.5%;"><?php echo $relacionados["relacionado"] ?> </td>
+                        <td style="width: 29.5%;"><?php echo $relacionados["Tporelacion"] ?> </td>
+                        <td style="width: 21.5%;"><?php echo $relacionados["NroDocumento"] ?> </td>
                     </tr>
                 <?php
             }
@@ -209,19 +210,19 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
                 </tbody>
             </table>
 
-            <table style="position: absolute; top: 163mm; width: 86%; font-size: 8pt; font-weight: bold;left: 36mm; text-align: center;">
+            <table style="position: absolute; top: 109.5mm; width: 73%; font-size: 6pt; font-weight: bold;left: 23.5mm; text-align: center;">
                 <tbody>
 <?php
             while ($HR = $consulta_hr->fetch_array()) {
                 ?>
                     <tr style="display: flex;">
                         <td style="width: 10%;"><?php echo $HR["item"] ?></td>
-                        <td style="width: 36%; text-align: left; padding-left: 0.5%;"><?php echo $HR["UbicacionPredio"] ?> </td>
-                        <td style="width: 11%;"><?php echo $HR["fecha_adquisicion"] ?> </td>
-                        <td style="width: 11%;"><?php echo $HR["valor_Predio"] ?> </td>
-                        <td style="width: 11%;"><?php echo $HR["porc_participacion"] ?> </td>
-                        <td style="width: 11%;"><?php echo $HR["monto_inafecto"] ?> </td>
-                        <td style="width: 12%;"><?php echo $HR["valor_afecto"] ?> </td>
+                        <td style="width: 38%; text-align: left; padding-left: 0.5%;"><?php echo $HR["UbicacionPredio"] ?> </td>
+                        <td style="width: 12%;"><?php echo $HR["fecha_adquisicion"] ?> </td>
+                        <td style="width: 9%;"><?php echo $HR["valor_Predio"] ?> </td>
+                        <td style="width: 9%;"><?php echo $HR["porc_participacion"] ?> </td>
+                        <td style="width: 10%;"><?php echo $HR["monto_inafecto"] ?> </td>
+                        <td style="width: 10%;"><?php echo $HR["valor_afecto"] ?> </td>
                     </tr>
                 <?php
             }
@@ -231,11 +232,11 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 <?php
             while ($HR = $consulta_pie_hr->fetch_array()) {
                 ?>
-                    <div style="position: relative; top: 276mm; font-size: 10pt;">
-                        <span style="position: absolute; left: 68mm;"><?php echo $HR["cantidadPredios"];?></span>
-                        <span style="position: absolute; left: 108mm;"><?php echo $HR["PrediosAfectos"];?></span>
-                        <span style="position: absolute; left: 155mm;"><?php echo number_format($HR["valor_TotalAfecto"], 2, ',', ' ');?></span>
-                        <span style="position: absolute; left: 203mm;"><?php echo number_format($HR["impuestoPredial"], 2, ',', ' ');?></span>
+                    <div style="position: relative; top: 190.6mm; font-size: 7pt;">
+                        <span style="position: relative; left: 48mm; bottom:5px;"><?php echo $HR["cantidadPredios"];?></span>
+                        <span style="position: relative; left: 76mm; bottom:5px;"><?php echo $HR["PrediosAfectos"];?></span>
+                        <span style="position: relative; left: 103.5mm; bottom:4px;"><?php echo number_format($HR["valor_TotalAfecto"], 2, ',', '.');?></span>
+                        <span style="position: relative; left: 129mm; bottom:4px;"><?php echo number_format($HR["impuestoPredial"], 2, ',', '.');?></span>
                     </div>
                 <?php
             }
@@ -254,10 +255,11 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
     <script src="/js/funciones.js"></script>
     <style>
         html {
-            margin: 0;
+            margin: 0;  
+            width: 100% ; height: 290mm;     
         }
         body {
-            font-family: "Times New Roman", serif;
+            width: 100% ; height: 290mm;
             margin: 0;
         }
         hr {
@@ -269,6 +271,17 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         table td{
             padding-top: 2px !important;
             padding-bottom: 2px !important;
+        }
+
+        @media print{
+            html {
+                margin: 0;
+                width: 100% ; height: 290mm;
+            }
+            body {
+                width: 100% ; height: 290mm;
+                margin: 0;
+            }
         }
     </style>
 </body>
