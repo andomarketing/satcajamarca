@@ -51,7 +51,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) { ?>
         <span style="position: absolute; bottom: 45.5mm; right: 70mm;"><?php echo $contribuyente["emision"]; ?> </span>
         <span style="position: absolute; bottom: 45.5mm; left: 60mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
         <span style="position: absolute; bottom: 38.5mm; left: 90mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-        <span style="position: absolute; bottom: 32.3mm; left: 75mm; width: 50%;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
+        <span style="position: absolute; bottom: 29.5mm; left: 75mm; width: 50%; font-size: 9pt; line-height: 12pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
         <span style="position: absolute; bottom: 23mm; left: 90mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
         <span style="position: absolute; bottom: 16.5mm; left: 65mm;" ><?php echo $contribuyente["referencia"]; ?> </span>
     </div>

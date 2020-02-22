@@ -27,7 +27,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTAS SQL
-$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 ORDER BY persona_id LIMIT $pagina_contri, 200";
+$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 ORDER BY persona_id LIMIT $pagina_contri, 500";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
@@ -87,13 +87,13 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 
     <div style="width: 100%; height: 370mm;display:block; position:relative; font-size: 10pt; font-family: Arial; font-weight: bold; page-break-after: always;">
         <!-- DATOS DEL CONTRIBUYENTE -->
-        <span style="position: absolute; top: 54.5mm; left: 194.8mm;"><?php echo $emision ?> </span>
-        <span style="position: absolute; top: 69mm; left: 80mm;" ><?php echo $persona_id ?> </span>
-        <span style="position: absolute; top: 81mm; left: 55mm;" ><?php echo $apellidos_nombres ?> </span>
+        <span style="position: absolute; top: 51.8mm; left: 173.5mm;"><?php echo $emision ?> </span>
+        <span style="position: absolute; top: 66.6mm; left: 55mm;" ><?php echo $persona_id ?> </span>
+        <span style="position: absolute; top: 78.8mm; left: 32mm;" ><?php echo $apellidos_nombres ?> </span>
         <!-- DATOS DEL CONTRIBUYENTE -->
    
         <!-- ESTADO DE CUENTAS EC -->
-        <table style="position: absolute; top: 110mm; width: 74%; font-size: 8pt; font-weight: bold; left: 13%; text-align: center;">
+        <table style="position: absolute; top: 110mm; width: 72%; font-size: 10pt; line-height: 10pt; font-weight: bold; left: 6%; text-align: center;">
             <tbody>
         <?php while ($EC = $consulta_EC->fetch_array()) { ?>
                 <tr style="display: flex;">
@@ -119,16 +119,16 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         <!-- TOTALES EC -->
         <?php while ($TEC = $consulta_totales_EC->fetch_array()) { ?>
 
-            <span style="position: absolute; top: 178.5mm; right: 50mm; font-size: 11pt;"><?php echo number_format($TEC["totalDeuda_actual"], 2, ',', '.') ?></span>
-            <span style="position: absolute; top: 200mm; right: 60mm; font-size: 11pt;"><?php echo number_format($TEC["descuento"], 2, ',', '.') ?></span>
-            <span style="position: absolute; top: 212mm; right: 70mm; font-size: 11pt;"><?php echo number_format($TEC["totalConDescuento"], 2, ',', '.') ?></span>
+            <span style="position: absolute; top: 176mm; right: 77mm; font-size: 12pt;"><?php echo number_format($TEC["totalDeuda_actual"], 2, ',', '.') ?></span>
+            <span style="position: absolute; top: 198.5mm; right: 86mm; font-size: 13pt;"><?php echo number_format($TEC["descuento"], 2, ',', '.') ?></span>
+            <span style="position: absolute; top: 209.5mm; right: 96mm; font-size: 13pt;"><?php echo number_format($TEC["totalConDescuento"], 2, ',', '.') ?></span>
 
         <?php } ?>
         <!-- TOTALES EC -->
 
         
         <!-- DEUDAS ANTERIORES -->
-        <table style="position: absolute; top: 256.4mm; width: 74%; font-size: 8pt; font-weight: bold; left: 13%; text-align: center;">
+        <table style="position: absolute; top: 256.4mm; width: 72%; font-size: 9pt; font-weight: bold; left: 5%; text-align: center;">
             <tbody>
         <?php while ($deudas = $consulta_deudas_anteriores->fetch_array()) { ?>
                  <tr style="display: flex;">
@@ -160,13 +160,13 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 
 <div style="width: 100%; height: 370mm;display:block; position:relative; font-size: 10pt; font-family: Arial; font-weight: bold; page-break-after: always;">
         <!-- DATOS DEL CONTRIBUYENTE -->
-        <span style="position: absolute; top: 54.5mm; left: 194.8mm;"><?php echo $contribuyente["emision"]; ?> </span>
-        <span style="position: absolute; top: 69mm; left: 80mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-        <span style="position: absolute; top: 81mm; left: 55mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+        <span style="position: absolute; top: 51.8mm; left: 173.5mm;"><?php echo $contribuyente["emision"]; ?> </span>
+        <span style="position: absolute; top: 66.6mm; left: 55mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+        <span style="position: absolute; top: 78.8mm; left: 32mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
         <!-- DATOS DEL CONTRIBUYENTE -->
    
         <!-- ESTADO DE CUENTAS EC -->
-        <table style="position: absolute; top: 110mm; width: 74%; font-size: 8pt; font-weight: bold; left: 13%; text-align: center;">
+        <table style="position: absolute; top: 110mm; width: 72%; font-size: 10pt; line-height: 10pt; font-weight: bold; left: 6%; text-align: center;">
             <tbody>
         <?php while ($EC = $consulta_EC->fetch_array()) { ?>
                 <tr style="display: flex;">
@@ -185,15 +185,15 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         <!-- TOTALES EC -->
         <?php while ($TEC = $consulta_totales_EC->fetch_array()) { ?>
 
-            <span style="position: absolute; top: 178.5mm; right: 50mm; font-size: 11pt;"><?php echo number_format($TEC["totalDeuda_actual"], 2, ',', '.') ?></span>
-            <span style="position: absolute; top: 200mm; right: 60mm; font-size: 11pt;"><?php echo number_format($TEC["descuento"], 2, ',', '.') ?></span>
-            <span style="position: absolute; top: 212mm; right: 70mm; font-size: 11pt;"><?php echo number_format($TEC["totalConDescuento"], 2, ',', '.') ?></span>
+            <span style="position: absolute; top: 176mm; right: 77mm; font-size: 12pt;"><?php echo number_format($TEC["totalDeuda_actual"], 2, ',', '.') ?></span>
+            <span style="position: absolute; top: 198.5mm; right: 86mm; font-size: 13pt;"><?php echo number_format($TEC["descuento"], 2, ',', '.') ?></span>
+            <span style="position: absolute; top: 209.5mm; right: 96mm; font-size: 13pt;"><?php echo number_format($TEC["totalConDescuento"], 2, ',', '.') ?></span>
 
         <?php } ?>
         <!-- TOTALES EC -->
     
         <!-- DEUDAS ANTERIORES -->
-        <table style="position: absolute; top: 256.4mm; width: 74%; font-size: 8pt; font-weight: bold; left: 13%; text-align: center;">
+        <table style="position: absolute; top: 256.4mm; width: 72%; font-size: 9pt; font-weight: bold; left: 5%; text-align: center;">
             <tbody>
         <?php while ($deudas = $consulta_deudas_anteriores->fetch_array()) { ?>
                  <tr style="display: flex;">
@@ -206,7 +206,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
                     <td style="width: 12.5%; padding: 0.8% !important;"> <?php echo number_format($deudas["interes"], 2, ',', '.') ?> </td>
                     <td style="width: 12.5%; padding: 0.8% !important;"> <?php echo number_format($deudas["emision"], 2, ',', '.') ?> </td>
                 </tr>
-                <span style="position: absolute; bottom: 82mm; right: 50mm; font-size: 11pt;"><?php echo number_format($deudas["TotalDeuda"], 2, ',', '.') ?> </td></span>
+                <span style="position: absolute; bottom: 83.6mm; right: 78mm; font-size: 11pt;"><?php echo number_format($deudas["TotalDeuda"], 2, ',', '.') ?> </td></span>
         <?php } ?>
             </tbody>
         </table>
