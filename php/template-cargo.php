@@ -1,9 +1,9 @@
 
 <div class="main" style="display: block; width: 100% ; height: 155mm; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
     
-    <span> <?php echo $declaracionJurada ?></span>
-    <span> <?php echo $codBarra ?></span>
-    <span> <?php echo $emision ?></span>
+    <span style="position: absolute; right: 10mm; top: 5mm; font-size: 4pt;"> <?php echo $declaracionJurada ?></span>
+    <span style="position: absolute; right: 10mm; top: 15mm; width: 20mm;"> <?php echo $codBarra ?></span>
+    <span style="position: absolute; right: 10mm; top: 20mm; font-size: 4pt;"> <?php echo $emision ?></span>
 
     <table class="pre1-table">
         <tr class="pre1-tr">
