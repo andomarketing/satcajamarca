@@ -83,6 +83,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         <table style="position: absolute; top: 118mm; width: 80%; font-size: 8pt; font-weight: bold; left: 10%; text-align: center;">
             <tbody>
         <?php while ($HLP = $consulta_HLP->fetch_array()) { ?>
+                
                 <tr style="display: flex;">
                     <td style="width: 25%; text-align: center; padding: 5px 0 !important;"> <?php echo number_format($HLP["totalBaseImponibel"], 2, ',', '.') ?></td>
                     <td style="width: 25%; text-align: center; padding: 5px 0 !important;"> <?php echo number_format($HLP["deduccionBaseImponible"], 2, ',', '.') ?></td>
@@ -98,6 +99,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         <table style="position: absolute; top: 144mm; width: 30%; font-size: 9pt; font-weight: bold; left: 150mm; text-align: center;">
             <tbody>
         <?php while ($tramos = $consulta_tramos->fetch_array()) { ?>
+                <span style="position: absolute; top: 153mm; width: 15%; font-size: 10pt; font-weight: bold; left: 15%; text-align: center;"><?php echo $tramos["base_afecta"] ?></span>
                 <tr style="display: flex;">
                     <td style="width: 100%; text-align: center; padding: 2% !important;"> <?php echo $tramos["tramo_1"] ?> </td>
                 </tr>

@@ -108,14 +108,14 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
             ?>
 
             <div style="overflow: hidden; display: block; width: 100% ; height: 250mm; position:relative; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
-            <span style="position: absolute; top: 37.8mm; left: 85.5mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
-            <span style="position: absolute; top: 48.2mm; left: 119.2mm;"><?php echo $contribuyente["emision"]; ?> </span>
-            <span style="position: absolute; top: 57.5mm; left: 100.7mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
-            <span style="position: absolute; top: 57.5mm; left: 39.7mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-            <span style="position: absolute; top: 62.5mm; left: 23mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-            <span style="position: absolute; top: 66.5mm; left: 32mm; width: 50%; font-size: 6pt; line-height: 6pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
+            <span style="position: absolute; top: 35.2mm; left: 85.5mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
+            <span style="position: absolute; top: 45.8mm; left: 119.2mm;"><?php echo $contribuyente["emision"]; ?> </span>
+            <span style="position: absolute; top: 56mm; left: 100.7mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
+            <span style="position: absolute; top: 56mm; left: 39.7mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+            <span style="position: absolute; top: 60.6mm; left: 23mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+            <span style="position: absolute; top: 66mm; left: 32mm; width: 50%; font-size: 6pt; line-height: 6pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
 
-            <table style="position: absolute; top: 79mm; width: 70.5%; font-size: 6pt; font-weight: bold;left: 7.5mm; text-align: center;">
+            <table style="position: absolute; top: 78mm; width: 70.5%; font-size: 6pt; font-weight: bold;left: 7.5mm; text-align: center;">
                     <tbody>
     <?php
                 while ($xrelacionado = $rela_paginas->fetch_array()) {
@@ -132,7 +132,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
                      </tbody>
                 </table>
 
-            <table style="position: absolute; top: 110.2mm; width: 73%; font-size: 6pt; font-weight: bold;left: 6mm; text-align: center;">
+            <table style="position: absolute; top: 109.8mm; width: 73%; font-size: 6pt; font-weight: bold;left: 6mm; text-align: center;">
                     <tbody>
     <?php
                 while ($xHR = $hr_paginas->fetch_array()) {
@@ -154,7 +154,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
     <?php
                 while ($HR = $consulta_pie_hr->fetch_array()) {
                     ?>
-                        <div style="position: relative; top: 194mm; font-size: 7pt;">
+                     <div style="position: relative; top: 191mm; font-size: 7pt;">
                             <span style="position: relative; left: 30mm; bottom:5px;"><?php echo $HR["cantidadPredios"];?></span>
                             <span style="position: relative; left: 58mm; bottom:5px;"><?php echo $HR["PrediosAfectos"];?></span>
                             <span style="position: relative; left: 84mm; bottom:4px;"><?php echo number_format($HR["valor_TotalAfecto"], 2, ',', '.');?></span>
@@ -185,14 +185,14 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         ?>
 
             <div style="overflow: hidden; display: block; width: 100% ; height: 250mm; position:relative; font-size: 6pt; font-family: Arial; font-weight: bold; page-break-after: always;">
-            <span style="position: absolute; top: 37.5mm; left: 85.5mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
-            <span style="position: absolute; top: 48mm; left: 119.2mm;"><?php echo $contribuyente["emision"]; ?> </span>
+            <span style="position: absolute; top: 35.2mm; left: 85.5mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
+            <span style="position: absolute; top: 45.8mm; left: 119.2mm;"><?php echo $contribuyente["emision"]; ?> </span>
             <span style="position: absolute; top: 56mm; left: 100.7mm;" ><?php echo $contribuyente["nro_docu_identidad"]; ?> </span>
             <span style="position: absolute; top: 56mm; left: 39.7mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-            <span style="position: absolute; top: 61.6mm; left: 23mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-            <span style="position: absolute; top: 64mm; left: 32mm; width: 50%; font-size: 6pt; line-height: 6pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
+            <span style="position: absolute; top: 60.6mm; left: 23mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+            <span style="position: absolute; top: 66mm; left: 32mm; width: 50%; font-size: 6pt; line-height: 6pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
 
-            <table style="position: absolute; top: 78.2mm; width: 70.5%; font-size: 6pt; font-weight: bold;left: 7.5mm; text-align: center;">
+            <table style="position: absolute; top: 78mm; width: 70.5%; font-size: 6pt; font-weight: bold;left: 7.5mm; text-align: center;">
                 <tbody>
 <?php
             while ($relacionados = $consulta_relacionados->fetch_array()) {
@@ -209,7 +209,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
                 </tbody>
             </table>
 
-            <table style="position: absolute; top: 110.2mm; width: 73%; font-size: 6pt; font-weight: bold;left: 6mm; text-align: center;">
+            <table style="position: absolute; top: 109.8mm; width: 73%; font-size: 6pt; font-weight: bold;left: 6mm; text-align: center;">
                 <tbody>
 <?php
             while ($HR = $consulta_hr->fetch_array()) {
@@ -231,7 +231,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 <?php
             while ($HR = $consulta_pie_hr->fetch_array()) {
                 ?>
-                     <div style="position: relative; top: 194mm; font-size: 7pt;">
+                     <div style="position: relative; top: 191mm; font-size: 7pt;">
                         <span style="position: relative; left: 30mm; bottom:5px;"><?php echo $HR["cantidadPredios"];?></span>
                         <span style="position: relative; left: 58mm; bottom:5px;"><?php echo $HR["PrediosAfectos"];?></span>
                         <span style="position: relative; left: 84mm; bottom:4px;"><?php echo number_format($HR["valor_TotalAfecto"], 2, ',', '.');?></span>
