@@ -133,7 +133,7 @@
         exit;
     }
     //CONSULTAS SQL
-    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 6673";
+    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 131725";
     //FALLO LA CONSULTA SQL
     if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
         $data = array("error" => true, "valor" => "Error consultando el contributyente: " . $mysqli->error);
@@ -159,7 +159,7 @@
 
             $predio_id = $PR["predio_id"];
 
-            $construcciones_sql = "SELECT * FROM tempo_construcciones_2020 WHERE predio_id = '$predio_id' ORDER BY item";
+            $construcciones_sql = "SELECT * FROM tempo_construcciones_2020  WHERE predio_id = '$predio_id' ORDER BY predio_id ASC";
             //FALLO LA CONSULTA SQL
             if (!$consulta_construcciones = $mysqli->query($construcciones_sql)) {
                 $data = array("error" => true, "valor" => "Error consultando contrucciones para el contributyente: " . $mysqli->error);
@@ -170,7 +170,7 @@
             $contat_contru = 1;
             $offset_contru = 0;
 
-            $instalaciones_sql  = "SELECT * FROM tempo_instalaciones_2020 WHERE predio_id = '$predio_id' ORDER BY item";
+            $instalaciones_sql  = "SELECT * FROM tempo_instalaciones_2020   WHERE predio_id = '$predio_id' ORDER BY predio_id ASC";
             //FALLO LA CONSULTA SQL
             if (!$consulta_instalaciones = $mysqli->query($instalaciones_sql)) {
                 $data = array("error" => true, "valor" => "Error consultando instalaciones para el contributyente: " . $mysqli->error);
@@ -185,7 +185,7 @@
                 echo "Entro al IF :D Holis ---> ";
                 $n_paginas_construcciones = ceil($cantidad_construcciones / 3);
                 $n_paginas_instalaciones = ceil($cantidad_instalaciones / 4);
-                while ($contat_contru <= $n_paginas_construcciones || $contat_insta <= $n_paginas_instalaciones): 
+                while ($contat_contru <= $n_paginas_construcciones || $contat_insta <= $n_paginas_instalaciones) : 
                     echo "Mis contadores son $contat_contru -- $contat_insta Y Mis n Paginas $n_paginas_construcciones -- $contat_insta";
                     $construcciones_sql = "SELECT * FROM tempo_construcciones_2020  WHERE predio_id = '$predio_id' ORDER BY predio_id ASC LIMIT $offset_contru, 3";
                     //FALLO LA CONSULTA SQL
