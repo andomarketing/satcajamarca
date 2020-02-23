@@ -27,7 +27,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTAS SQL
-$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 WHERE persona_id = $pagina_contri";
+$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 LIMIT $pagina_contri, 500";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {

@@ -133,7 +133,7 @@
         exit;
     }
     //CONSULTAS SQL
-    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 131725";
+    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = 6423";
     //FALLO LA CONSULTA SQL
     if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
         $data = array("error" => true, "valor" => "Error consultando el contributyente: " . $mysqli->error);

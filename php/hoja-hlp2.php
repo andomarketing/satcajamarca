@@ -74,13 +74,13 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 ?>
     <div style="width: 100%; height: 370mm;display:block; position:relative; font-size: 10pt; font-family: Arial; font-weight: bold; page-break-after: always;">
         <!-- DATOS DEL CONTRIBUYENTE -->
-        <span style="position: absolute; top: 59.5mm; left: 167mm;"><?php echo $contribuyente["emision"]; ?> </span>
-        <span style="position: absolute; top: 71.5mm; left: 54mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-        <span style="position: absolute; top: 86mm; left: 31mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+        <span style="position: absolute; top: 59.4mm; left: 177mm;"><?php echo $contribuyente["emision"]; ?> </span>
+        <span style="position: absolute; top: 71.5mm; left: 64mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+        <span style="position: absolute; top: 86mm; left: 41mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
         <!-- DATOS DEL CONTRIBUYENTE -->
 
         <!-- DETERMINACION DE BASE IMPONIBLE HLP -->
-        <table style="position: absolute; top: 120mm; width: 80%; font-size: 8pt; font-weight: bold; left: 2%; text-align: center;">
+        <table style="position: absolute; top: 120mm; width: 80%; font-size: 8pt; font-weight: bold; left: 5%; text-align: center;">
             <tbody>
         <?php while ($HLP = $consulta_HLP->fetch_array()) { ?>
                 <tr style="display: flex;">
@@ -95,9 +95,10 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         <!-- DETERMINACION DE BASE IMPONIBLE HLP -->
 
         <!-- DETERMINACION DEL IMPUESTO PREDIAL -->
-        <table style="position: absolute; top: 144.5mm; width: 30%; font-size: 9pt; font-weight: bold; left: 125mm; text-align: center;">
+        <table style="position: absolute; top: 144.5mm; width: 30%; font-size: 9pt; font-weight: bold; left: 140mm; text-align: center;">
             <tbody>
         <?php while ($tramos = $consulta_tramos->fetch_array()) { ?>
+                <span style="position: absolute; top: 153mm; width: 9%; font-size: 10pt; font-weight: bold; left: 15%; text-align: center;"><?php echo $tramos["base_afecta"] ?></span>
                 <tr style="display: flex;">
                     <td style="width: 100%; text-align: center; padding: 2% !important;"> <?php echo $tramos["tramo_1"] ?> </td>
                 </tr>
@@ -116,7 +117,7 @@ while ($contribuyente = $consulta_contribuyente->fetch_array()) {
         <!-- DETERMINACION DEL IMPUESTO PREDIAL -->
     
         <!-- CRONOGRAMA DE PAGOS -->
-        <table style="position: absolute; top: 200mm; width: 76%; font-size: 9pt; font-weight: bold; left: 3%; text-align: center;">
+        <table style="position: absolute; top: 200mm; width: 76%; font-size: 9pt; font-weight: bold; left: 5%; text-align: center;">
             <tbody>
         <?php while ($cronograma = $consulta_cronograma->fetch_array()) { ?>
                  <tr style="display: flex;">
