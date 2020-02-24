@@ -522,7 +522,7 @@
                         ?>
                         <!-- height: 27.5mm -->
                         <tr style="height: 9.1666mm">
-                            <td><span class="horizontal-text"> <?php echo $construcciones["item"] ?></span></td>
+                            <td><span class="horizontal-text" style="padding-right: 0.5mm"> <?php echo $construcciones["item"] ?></span></td>
                             <td><span class="vertical-text"> <?php echo $construcciones["TipoNivel"] ?></span></td>
                             <td><span class="vertical-text"> <?php echo $construcciones["nro_nivel"] ?></span></td>
                             <td><span class="vertical-text"> <?php echo $construcciones["seccion"] ?></span></td>

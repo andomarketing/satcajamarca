@@ -6,23 +6,23 @@
 
     <table class="pre1-table">
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">CÓDIGO CONTRIBUYENTE: </span><?= $contri["persona_id"] ?></td>   
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text" style="margin-right: 2mm">CÓDIGO CONTRIBUYENTE: </span><?= $contri["persona_id"] ?></td>   
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">NOMBRE: </span>  <?= $contri["apellidos_nombres"] ?> </td>   
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text" style="margin-right: 2mm">NOMBRE: </span>  <?= $contri["apellidos_nombres"] ?> </td>   
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left"><span class="white-text">CÓDIGO PREDIO: </span><?= $PU["predio_id"] ?></td>
-            <td class="pre1-td pre1-td-rigth"><span class="white-text">CÓDIGO CATASTRAL: </span><?= $PU["codigoCatastral"] ?></td>
+            <td class="pre1-td pre1-td-left"><span class="white-text"   style="margin-right: 2mm">CÓDIGO PREDIO: </span><?= $PU["predio_id"] ?></td>
+            <td class="pre1-td pre1-td-rigth"><span class="white-text"  style="margin-right: 2mm">CÓDIGO CATASTRAL: </span><?= $PU["codigoCatastral"] ?></td>
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">DIRECCIÓN DE PREDIO: </span><?= strtoupper( $PU["direccion_completa"]) ?></td>  
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text" style="margin-right: 2mm">DIRECCIÓN DE PREDIO: </span><?= strtoupper( $PU["direccion_completa"]) ?></td>  
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">LUGAR: </span><?= strtoupper( $PU["lugar"]) ?></td>    
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text" style="margin-right: 2mm">LUGAR: </span><?= strtoupper( $PU["lugar"]) ?></td>    
         </tr>
         <tr class="pre1-tr">
-            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text">SECTOR: </span><?= strtoupper( $PU["sector"]) ?></td>   
+            <td class="pre1-td pre1-td-left" colspan="2"><span class="white-text" style="margin-right: 2mm">SECTOR: </span><?= strtoupper( $PU["sector"]) ?></td>   
         </tr>
     </table>
 
@@ -36,41 +36,41 @@
 
     <table class="pre4-table">
         <tr class="pre4-tr">
-            <td class="pre4-td pre4-td-left"><span class="white-text">AREA DEL TERRENO M2:</span> <?= $PU["area_terreno"] ?> </td>
-            <td class="pre4-td pre4-td-center"><span class="white-text">VALOR ARANCELARIO:</span><?= $PU["arancel"] ?> </td>
-            <td class="pre4-td pre4-td-rigth"><span class="white-text">VALOR TERNARIO M2:</span><?= $PU["valor_terreno"] ?> </td>
+            <td class="pre4-td pre4-td-left"><span class="white-text" style="margin-right: 1mm">AREA DEL TERRENO M2:</span> <span style="font-size: 6pt"><?= number_format( $PU["area_terreno"], 2, ',', '.') ?></span> </td>
+            <td class="pre4-td pre4-td-center"><span class="white-text" style="margin-right: 1mm">VALOR ARANCELARIO:</span> <span style="font-size: 6pt"><?= number_format( $PU["arancel"], 2, ',', '.') ?></span> </td>
+            <td class="pre4-td pre4-td-rigth"><span class="white-text" style="margin-right: 5mm">VALOR TERNARIO M2:</span>  <span style="font-size: 6pt"><?= number_format( $PU["valor_terreno"], 2, ',', '.') ?></span> </td>
         </tr>
     </table>
     
     <table class="const-table">
         <tr style="height: 23mm">
-            <td style="width: 25mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">TN</span></td>
+            <td style="width: 2.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">TN</span></td>
             <td style="width: 5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">TN</span></td>
             <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">NN</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">SECCIÓN</span></td>
-            <td style="width: 3.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">ANTIGUEDAD</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">MP</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">EDC</span></td>
-            <td style="width: 3.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">MC</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">T</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">P</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">PV</span></td>
-            <td style="width: 3.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">RV</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">B</span></td>
-            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">IE</span></td>
-            <td style="width: 7mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">VUPM2</span></td>
-            <td style="width: 6mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">ID5%</span></td>
-            <td style="width: 9mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">%</span></td>
-            <td style="width: 10mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text">VALOR</span></td>
-            <td style="width: 9mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">VUD</span></td>
-            <td style="width: 8.8mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">ÁC</span></td>
-            <td style="width: 12.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text">ÁCM2</span></td>
-            <td style="width: 18mm; vertical-align: bottom; padding-bottom: 2mm;border-bottom: 0.01mm solid blue"><span class="vertical-text white-text">VDLC</span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 3.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 3.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 3.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 4mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 7mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 6mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 9mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 10mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="horizontal-text white-text"></span></td>
+            <td style="width: 9mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 8.8mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 12.5mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
+            <td style="width: 18mm; vertical-align: bottom; padding-bottom: 2mm;"><span class="vertical-text white-text"></span></td>
         </tr>
         <?php foreach ($constru as $construccion): ?>
             <!-- height: 27.5mm -->
             <tr style="height: 9.1666mm">
-                <td><span class="horizontal-text"> <?php echo $construccion["item"] ?></span></td>
+                <td><span class="horizontal-text"  style="padding-right: 0.5mm"> <?php echo $construccion["item"] ?></span></td>
                 <td><span class="vertical-text"> <?php echo $construccion["TipoNivel"] ?></span></td>
                 <td><span class="vertical-text"> <?php echo $construccion["nro_nivel"] ?></span></td>
                 <td><span class="vertical-text"> <?php echo $construccion["seccion"] ?></span></td>
@@ -91,33 +91,33 @@
                 <td><span class="vertical-text"> <?php echo $construccion["valor_unitario_depre"] ?></span></td>
                 <td><span class="vertical-text"> <?php echo $construccion["valor_unitario_depre"] ?></span></td>
                 <td><span class="vertical-text"> <?php echo $construccion["valor_area_construida"] ?></span></td>
-                <td><span class="vertical-text"> <?php echo $construccion["valor_construccion"] ?></span></td>
+                <td><span class="vertical-text" style="border: none;"> <?php echo $construccion["valor_construccion"] ?></span></td>
             </tr>
         <?php endforeach; ?>
-        <tr style="height: 5mm">
+        <tr style="height: 5mm; vertical-align: bottom; " >
             <td colspan="16">
             </td>
             <td colspan="2">
             </td>
-            <td colspan="2"> <?= $PU["area_construida"] ?>
+            <td colspan="2"> <span style="font-size: 6pt"> <?= number_format($PU["area_construida"], 2, ',', '.') ?> </span>
             </td>
             <td></td>
-            <td> <?= $PU["valor_construccion"] ?></td>
+            <td> <span style="font-size: 6pt;"> <?= number_format($PU["valor_construccion"], 2, ',', '.') ?> </span></td>
         </tr>
     </table>
 
-    <table class="comp-table">
+    <table class="comp-table" style="height: 21mm;">
         <tr style="height: 6mm">
-            <td style="width: 8mm; font-size: 3pt">Item</td>
-            <td style="width: 8mm; font-size: 3pt">Código</td>
-            <td style="width: 31mm; font-size: 3pt">TI</td>
-            <td style="width: 16mm; font-size: 3pt">AI</td>
-            <td style="width: 10mm; font-size: 3pt">Medida</td>
-            <td style="width: 9mm; font-size: 3pt">Tipo</td>
-            <td style="width: 10mm; font-size: 3pt">VU</td>
-            <td style="width: 13mm; font-size: 3pt">VI</td>
-            <td style="width: 11mm; font-size: 3pt">VO</td>
-            <td style="width: 11mm; font-size: 3pt">Valor Total</td>
+            <td style="width: 8mm; font-size: 3pt"></td>
+            <td style="width: 8mm; font-size: 3pt"></td>
+            <td style="width: 31mm; font-size: 3pt"></td>
+            <td style="width: 16mm; font-size: 3pt"></td>
+            <td style="width: 10mm; font-size: 3pt"></td>
+            <td style="width: 9mm; font-size: 3pt"></td>
+            <td style="width: 10mm; font-size: 3pt"></td>
+            <td style="width: 13mm; font-size: 3pt"></td>
+            <td style="width: 11mm; font-size: 3pt"></td>
+            <td style="width: 11mm; font-size: 3pt"></td>
         </tr>
         <?php foreach ($insta as $instalacion): ?>
             <tr style="height: 3mm">
@@ -160,22 +160,22 @@
         <tr style="height: 3.666666666666667mm">
             <td colspan="4"></td>
             <td colspan="4" style="font-size: 3pt; text-align: left; padding: 1mm;"> <span class="white-text">VALOR DE LA CONSTRUCCIÓN</span></td>
-            <td colspan="2" style="font-size: 6pt"><?= $PU["valor_construccion"] ?></td>
+            <td colspan="2" style="font-size: 6pt"><?= number_format($PU["valor_construccion"], 2, ',', '.') ?></td>
         </tr>
         <tr style="height: 3.666666666666667mm">
             <td colspan="4"></td>
             <td colspan="4" style="font-size: 3pt; text-align: left; padding: 1mm"> <span class="white-text">VALOR DE LA CONSTRUCCIÓN</span></td>
-            <td colspan="2" style="font-size: 6pt"><?= $PU["valor_terreno"] ?></td>
+            <td colspan="2" style="font-size: 6pt"><?= number_format($PU["valor_terreno"], 2, ',', '.') ?></td>
         </tr>
         <tr style="height: 3.666666666666667mm">
             <td colspan="4"></td>
             <td colspan="4" style="font-size: 3pt; text-align: left; padding: 1mm"> <span class="white-text">VALOR DE LA CONSTRUCCIÓN</span></td>
-            <td colspan="2" style="font-size: 6pt"><?= $PU["valor_instalacion"] ?></td>
+            <td colspan="2" style="font-size: 6pt"><?= number_format($PU["valor_instalacion"], 2, ',', '.') ?></td>
         </tr>
         <tr style="height: 3.3mm">
             <td colspan="4"></td>
             <td colspan="4" style="font-size: 3pt; text-align: left; padding: 1mm"> <span class="white-text">VALOR DE LA CONSTRUCCIÓN</span></td>
-            <td colspan="2" style="font-size: 6pt"><?= $PU["base_imponible"] ?></td>
+            <td colspan="2" style="font-size: 6pt"><?= number_format($PU["base_imponible"], 2, ',', '.') ?></td>
         </tr>
     </table>
 </div>

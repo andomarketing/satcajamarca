@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PU !AL FIN!</title>
+    <title>PR</title>
     <style>
         body {
             margin: 0;
             padding: 0;
         }
         .main{
-            margin-top: 37.5mm; 
+            margin-top: 36.5mm; 
             margin-left: 15mm;
             max-width: 129mm;
         }
@@ -23,9 +23,8 @@
             font-weight: 100;
         }
         .pre1-table {
-            padding-top: 2mm;
             font-size: 6pt;
-            height: 26mm;
+            height: 17mm;
             margin-bottom: 1mm;
         }
         .pre1-td {
@@ -37,8 +36,11 @@
         }
         .pre2-table {
             font-size: 5pt;
-            height: 6mm;
-            margin-bottom: 5mm;
+            height: 11mm;
+            margin-bottom: 1mm;
+        }
+        .pre2-table td{
+            position: relative;
         }
         .pre2-td-left {
             padding-left: 3mm;
@@ -47,13 +49,21 @@
         .pre2-td-rigth {
             width:30%;
         }
+        .pre3-table {
+            font-size: 5pt;
+            border: none;
+            margin-bottom: 6mm;
+        }
+        .pre3-td {
+            padding-left: 1.5mm;
+        }
         .pre4-table{
             font-size: 4pt;
             height: 6mm;
-            margin-bottom: 8mm;
+            margin-bottom: 6mm;
         }
         .pre4-table td{
-            padding-top: 0.5mm;
+            position: relative;
         }
         .pre4-td-left {
             padding-left: 1mm;
@@ -67,26 +77,21 @@
             transform: rotate(180deg);
         }
         .horizontal-text {
-            font-size: 4.5pt;
+            font-size: 3pt;
         }
         .const-table {
-            font-size: 4.5pt;
+            font-size: 4pt;
             text-align: center;
             vertical-align: bottom;
-            margin-left: -1mm;
+            margin-left: -2.5mm;
             margin-bottom: 8mm;
-            height: 55.5mm;
-        }
-        .const-table tr{
-            vertical-align: top;
         }
         .const-table td{
-            padding-left: 0.5mm;
             border-right: 0.005mm solid blue;
             border-bottom: 0.005mm solid blue;
         }
         .comp-table {
-            font-size: 5pt;
+            font-size: 4pt;
             text-align: center;
         }
         .comp-table tr{
@@ -120,7 +125,7 @@
 //CONEXION BASE DE DATOS
 include "db.php";
 
-define("PU_TEMPLATE", "plantilla-pu.php");
+define("PR_TEMPLATE", "plantilla-pr.php");
 $pg = $_GET["pg"];
 
 
@@ -140,7 +145,7 @@ if ($mysqli->connect_errno) {
 
 //TRAER LOS PREDIOS ORDENADOS POR EL ID CONTRIBUYENTE
 //CONSULTAS SQL
-$prediosSQL  = "SELECT * FROM tempo_pu_2020 ORDER BY persona_id LIMIT $pg, 500";
+$prediosSQL  = "SELECT * FROM tempo_pr_2020 WHERE predio_id = 29612";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_predio = $mysqli->query($prediosSQL)) {
@@ -150,30 +155,30 @@ if (!$consulta_predio = $mysqli->query($prediosSQL)) {
 }
 
 //RECORRER EL ARRAY DE PREDIOS OBTENIDOS DE BASE DE DATOS
-while ($PU = $consulta_predio->fetch_array()) {
+while ($PR = $consulta_predio->fetch_array()) {
     
     //CONTRIBUYENTES DATOS
-    $contribuSQL  = "SELECT * FROM  tempo_contribuyentes_2020 WHERE persona_id = ". $PU["persona_id"];
+    $contribuSQL  = "SELECT * FROM  tempo_contribuyentes_2020 WHERE persona_id = ". $PR["persona_id"];
     //FALLO LA CONSULTA SQL
     if (!$consultaContri = $mysqli->query($contribuSQL)) { echo "Error en consulta SQL Contribuyente";}
     
     //POR CADA PREDIO TRAER TODAS LAS CONSTRUCCIONES
-    $construSQL  = "SELECT * FROM  tempo_construcciones_2020 WHERE predio_id = ". $PU["predio_id"];
+    $construSQL  = "SELECT * FROM  tempo_construcciones_2020 WHERE predio_id = ". $PR["predio_id"];
     //FALLO LA CONSULTA SQL
     if (!$consulta_constru = $mysqli->query($construSQL)) { echo "Error en consulta SQL Construccion";}
     //POR CADA PREDIO TRAER TODAS LAS INSTALACIONES
-    $instaSQL  = "SELECT * FROM  tempo_instalaciones_2020 WHERE predio_id = ". $PU["predio_id"];
+    $instaSQL  = "SELECT * FROM  tempo_instalaciones_2020 WHERE predio_id = ". $PR["predio_id"];
     //FALLO LA CONSULTA SQL
     if (!$consulta_insta = $mysqli->query($instaSQL)) { echo "Error en consulta SQL Instalacion";}
     
     $info = array();
-    $info["PU"] = $PU;
+    $info["PR"] = $PR;
     $info["contri"] = $consultaContri->fetch_all(MYSQLI_ASSOC)[0];
     $allConstru = $consulta_constru->fetch_all(MYSQLI_ASSOC);
     $allInsta = $consulta_insta->fetch_all(MYSQLI_ASSOC);
 
     $max_constru = 3;
-    $max_insta = 3;
+    $max_insta = 4;
     
     //CASO EN QUE SUPEREN EL TAMAÑO DEL CUADRO.
     if (count($allConstru) > $max_constru || count($allInsta) > $max_insta ) {
@@ -216,14 +221,14 @@ while ($PU = $consulta_predio->fetch_array()) {
             } else {
                 $info["insta"] = [];
             }
-            echo render(PU_TEMPLATE, $info);
+            echo render(PR_TEMPLATE, $info);
         }
 
 
     }else{
         $info["constru"] = $allConstru;
         $info["insta"] = $allInsta;
-        echo render(PU_TEMPLATE, $info);
+        echo render(PR_TEMPLATE, $info);
     }
 }
 ?>
