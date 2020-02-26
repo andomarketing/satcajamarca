@@ -142,7 +142,7 @@ if ($mysqli->connect_errno) {
 
 //TRAER LOS PREDIOS ORDENADOS POR EL ID CONTRIBUYENTE
 //CONSULTAS SQL
-$prediosSQL  = "SELECT * FROM tempo_pu_2020 where persona_id BETWEEN 6779 AND 6817 ORDER BY persona_id";
+$prediosSQL  = "SELECT * FROM tempo_pu_2020 where persona_id BETWEEN 7249 AND 7594 ORDER BY persona_id";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_predio = $mysqli->query($prediosSQL)) {
