@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PR</title>
+    <title>PR !AL FIN x2!</title>
     <style>
         body {
             margin: 0;
             padding: 0;
         }
         .main{
-            margin-top: 36.5mm; 
-            margin-left: 15mm;
+
+            /** DIFERENCIAS DE ALTURA ES 2.5mm y 1mm IZQUIERDA */
+            margin-top: 38mm; 
+            margin-left: 15.5mm;
             max-width: 129mm;
         }
         table {            
@@ -77,14 +79,15 @@
             transform: rotate(180deg);
         }
         .horizontal-text {
-            font-size: 3pt;
+            font-size: 4.5pt;
         }
         .const-table {
-            font-size: 4pt;
+            font-size: 4.5pt;
             text-align: center;
             vertical-align: bottom;
-            margin-left: -2.5mm;
+            margin-left: -1mm;
             margin-bottom: 8mm;
+            height: 55.5mm;
         }
         .const-table td{
             border-right: 0.005mm solid blue;
@@ -145,7 +148,8 @@ if ($mysqli->connect_errno) {
 
 //TRAER LOS PREDIOS ORDENADOS POR EL ID CONTRIBUYENTE
 //CONSULTAS SQL
-$prediosSQL  = "SELECT * FROM tempo_pr_2020 WHERE predio_id = 29612";
+//$prediosSQL  = "SELECT * FROM tempo_pr_2020 WHERE predio_id = 29612";
+$prediosSQL  = "SELECT * FROM tempo_pr_2020 ORDER BY persona_id LIMIT $pg, 500";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_predio = $mysqli->query($prediosSQL)) {
@@ -178,7 +182,7 @@ while ($PR = $consulta_predio->fetch_array()) {
     $allInsta = $consulta_insta->fetch_all(MYSQLI_ASSOC);
 
     $max_constru = 3;
-    $max_insta = 4;
+    $max_insta = 3;
     
     //CASO EN QUE SUPEREN EL TAMAÑO DEL CUADRO.
     if (count($allConstru) > $max_constru || count($allInsta) > $max_insta ) {

@@ -1,17 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <td style="border: 1px solid; padding: 0 1em;">Cod.</td>
+                <td style="border: 1px solid; padding: 0 1em;">Apellidos Nombres</td>
+                <td style="border: 1px solid; padding: 0 1em;">HR</td>
+                <td style="border: 1px solid; padding: 0 1em;">PU</td>
+                <td style="border: 1px solid; padding: 0 1em;">PR</td>
+                <td style="border: 1px solid; padding: 0 1em;">HLP</td>
+                <td style="border: 1px solid; padding: 0 1em;">HLA</td>
+                <td style="border: 1px solid; padding: 0 1em;">EC</td>
+            </tr>
+        </thead>
+        <tbody>
+        
     <?php
 
-    if (isset($_POST["codigo"])) {
-        if ($_POST["codigo"] != "" || $_POST["codigo"] != null) {
-            $codigo = $_POST["codigo"];
-        } else {
-            $codigo = "";
-        }
-    } else {
-        $codigo = "";
-    }
-
     //SE ESTABLECE COMO JSON EL HEADER
-    header('Content-Type: application/json');
     $data = array();
 
     //CONEXION BASE DE DATOS
@@ -23,9 +36,15 @@
         echo json_encode($data);
         exit;
     }
+    
+    if (isset($_GET["pg"])) {
+        $pg = $_GET["pg"];
+    }else{
+        $pg = 0;
+    }
 
     //CONSULTAS SQL
-    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020  WHERE persona_id = '$codigo'";
+    $contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 ORDER BY persona_id LIMIT $pg, 500";
     //FALLO LA CONSULTA SQL
     if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
         $data = array("error" => true, "valor" => "Error consultando el contributyente: " . $mysqli->error);
@@ -40,221 +59,128 @@
         exit;
     }
 
-    $hr_sql             = "SELECT * FROM tempo_hr_2020              WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_hr = $mysqli->query($hr_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el HR contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $hr_pie_sql         = "SELECT * FROM tempo_hr_pie_2020          WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_pie_hr = $mysqli->query($hr_pie_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $relacionados_sql   = "SELECT * FROM tempo_relacionados_2020    WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_relacionados = $mysqli->query($relacionados_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $PU_sql             = "SELECT * FROM tempo_pu_2020              WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_PU = $mysqli->query($PU_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el PU para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $construcciones_sql = "SELECT * FROM tempo_construcciones_2020  WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_construcciones = $mysqli->query($construcciones_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando contrucciones para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $instalaciones_sql  = "SELECT * FROM tempo_instalaciones_2020   WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_instalaciones = $mysqli->query($instalaciones_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando instalaciones para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $PR_sql             = "SELECT * FROM tempo_pr_2020              WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_PR = $mysqli->query($PR_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $HLP_sql            = "SELECT * FROM tempo_hlp_cabecera_2020    WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_HLP = $mysqli->query($HLP_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $HLP_tramos_sql     = "SELECT * FROM tempo_hlp_tramos_2020      WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_tramos = $mysqli->query($HLP_tramos_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $HLP_cronograma_sql = "SELECT * FROM tempo_hlp_cronograma_2020  WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_cronograma = $mysqli->query($HLP_cronograma_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $arbitrios_sql      = "SELECT * FROM tempo_arbitrios_2020       WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_arbitrios = $mysqli->query($arbitrios_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $EC_sql             = "SELECT * FROM tempo_ec_2020              WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_EC = $mysqli->query($EC_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $EC_totales_sql     = "SELECT * FROM tempo_ec_totales_2020      WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_totales_EC = $mysqli->query($EC_totales_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-    $deudas_anteriores_sql  = "SELECT * FROM tempo_deudas_anteriores_2020 WHERE persona_id = '$codigo'";
-    //FALLO LA CONSULTA SQL
-    if (!$consulta_deudas_anteriores = $mysqli->query($deudas_anteriores_sql)) {
-        $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
-        echo json_encode($data);
-        exit;
-    }
-
-
-
-
-
-
-    $data_HR = array();
-    while ($HR = $consulta_hr->fetch_array()) {
-        array_push($data_HR, $HR);
-    }
-    $pie_HR = array();
-    while ($HR = $consulta_pie_hr->fetch_array()) {
-        array_push($pie_HR, $HR);
-    }
-    $data_relacionados = array();
-    while ($relacionados = $consulta_relacionados->fetch_array()) {
-        array_push($data_relacionados, $relacionados);
-    }
     
-    $data_construcciones = array();
-    while ($construcciones = $consulta_construcciones->fetch_array()) {
-        array_push($data_construcciones, $construcciones);
-    }
-    $data_instalaciones = array();
-    while ($instalaciones = $consulta_instalaciones->fetch_array()) {
-        array_push($data_instalaciones, $instalaciones);
-    }
-    
-    $data_PR = array();
-    while ($PR = $consulta_PR->fetch_array()) {
-        array_push($data_PR, $PR);
-    }
-    $data_HLP = array();
-    while ($HLP = $consulta_HLP->fetch_array()) {
-        array_push($data_HLP, $HLP);
-    }
-    $data_tramos = array();
-    while ($tramos = $consulta_tramos->fetch_array()) {
-        array_push($data_tramos, $tramos);
-    }
-    $data_cronograma = array();
-    while ($cronograma = $consulta_cronograma->fetch_array()) {
-        array_push($data_cronograma, $cronograma);
-    }
-    $data_arbitrios = array();
-    while ($arbitrios = $consulta_arbitrios->fetch_array()) {
-        array_push($data_arbitrios, $arbitrios);
-    }
-    $data_EC = array();
-    while ($EC = $consulta_EC->fetch_array()) {
-        array_push($data_EC, $EC);
-    }
-    
-    $data_TEC = array();
-    while ($TEC = $consulta_totales_EC->fetch_array()) {
-        array_push($data_TEC, $TEC);
-    }
-    $data_deudas = array();
-    while ($deudas = $consulta_deudas_anteriores->fetch_array()) {
-        array_push($data_deudas, $deudas);
-    }
-    $data_PU = array();
-    while ($PU = $consulta_PU->fetch_array()) {
-        array_push($data_PU, $PU);
-    }
-    
+
     //GUARDAR CONSULTA EN ARRAY
     while ($contribuyente = $consulta_contribuyente->fetch_array()) {
 
-        $temp = array(
-            "error"                     => false,
-            "fechaEmision_completa"     => date_format(date_create($contribuyente["fechaEmision_completa"]), 'd-m-Y'),
-            "emision"                   => $contribuyente["emision"],
-            "NroDeclaracionJurada"      => $contribuyente["NroDeclaracionJurada"],
-            "persona_id"                => $contribuyente["persona_id"],
-            "apellidos_nombres"         => $contribuyente["apellidos_nombres"],
-            "tipo_Contribuyente"        => $contribuyente["tipo_Contribuyente"],
-            "tipo_documento_identidad"  => $contribuyente["tipo_documento_identidad"],
-            "nro_docu_identidad"        => $contribuyente["nro_docu_identidad"],
-            "domicilio_completo"        => $contribuyente["domicilio_completo"],
-            "referencia"                => $contribuyente["referencia"],
-            "ManCatastral"              => $contribuyente["ManCatastral"],
-            "HR"                        => $data_HR,
-            "pie_HR"                    => $pie_HR,
-            "relacionados"              => $data_relacionados,
-            "PU"                        => $data_PU,
-            "construcciones"            => $data_construcciones,
-            "instalaciones"             => $data_instalaciones,
-            "PR"                        => $data_PR,
-            "HLP"                       => $data_HLP,
-            "HLP_tramos"                => $data_tramos,
-            "HLP_cronograma"            => $data_cronograma,
-            "arbitrios"                 => $data_arbitrios,
-            "EC"                        => $data_EC,
-            "EC_totales"                => $data_TEC,
-            "deudas_anteriores"         => $data_deudas,
-        );
+        $codigo = $contribuyente["persona_id"];
 
-        array_push($data, $temp);
+        $hr_sql = "SELECT * FROM tempo_hr_2020 WHERE persona_id = '$codigo'";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_hr = $mysqli->query($hr_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el HR contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+
+        $HR = "";
+        //NO SE ENCONTRARON REGISTROS
+        if ($consulta_hr->num_rows === 0) {
+            $HR = "No";
+        } else {
+            $HR = "Si [$consulta_hr->num_rows]";
+        }
+
+
+        $PU_sql = "SELECT * FROM tempo_pu_2020 WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_PU = $mysqli->query($PU_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el PU para el contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+        $PU = "";
+        //NO SE ENCONTRARON REGISTROS
+        if ($consulta_PU->num_rows === 0) {
+            $PU = "No";
+        } else {
+            $PU = "Si [$consulta_PU->num_rows]";
+        }
+
+        $PR_sql = "SELECT * FROM tempo_pr_2020 WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_PR = $mysqli->query($PR_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+        $PR = "";
+        //NO SE ENCONTRARON REGISTROS
+        if ($consulta_PR->num_rows === 0) {
+            $PR = "No";
+        } else {
+            $PR = "Si [$consulta_PR->num_rows]";
+        }
+
+        $HLP_sql            = "SELECT * FROM tempo_hlp_cabecera_2020    WHERE persona_id = '$codigo'";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_HLP = $mysqli->query($HLP_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+        $HLP = "";
+        //NO SE ENCONTRARON REGISTROS
+        if ($consulta_HLP->num_rows === 0) {
+            $HLP = "No";
+        } else {
+            $HLP = "Si [$consulta_HLP->num_rows]";
+        }
+
+        $arbitrios_sql = "SELECT * FROM tempo_arbitrios_2020 WHERE persona_id = '$codigo' ORDER BY predio_id ASC";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_arbitrios = $mysqli->query($arbitrios_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+        $arbitrios = "";
+        //NO SE ENCONTRARON REGISTROS
+        if ($consulta_arbitrios->num_rows === 0) {
+            $arbitrios = "No";
+        } else {
+            $arbitrios = "Si [". ( ceil((int)$consulta_arbitrios->num_rows / 4 ))."]";
+        }
+
+        $EC_sql             = "SELECT * FROM tempo_ec_2020              WHERE persona_id = '$codigo'";
+        //FALLO LA CONSULTA SQL
+        if (!$consulta_EC = $mysqli->query($EC_sql)) {
+            $data = array("error" => true, "valor" => "Error consultando el Relacionados para el contributyente: " . $mysqli->error);
+            echo json_encode($data);
+            exit;
+        }
+        $EC = "";
+        //NO SE ENCONTRARON REGISTROS
+        if ($consulta_EC->num_rows === 0) {
+            $EC = "No";
+        } else {
+            $EC = "Si";
+        }
+
+        ?>
+
+            <tr>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $codigo ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $contribuyente["apellidos_nombres"] ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $HR ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $PU ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $PR ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $HLP ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $arbitrios ?></td>
+                <td style="border: 1px solid; padding: 0 1em;"><?= $EC ?></td>
+            </tr>
+
+        <?php
     }
-
-    echo json_encode($data);
-
     // El script automáticamente liberará el resultado y cerrará la conexión
     // a MySQL cuando finalice, aunque aquí lo vamos a hacer nostros mismos
     //$resultado->free();
     $mysqli->close();
+?>
+        </tbody>
+    </table>
+
+</body>
+</html>    
+    

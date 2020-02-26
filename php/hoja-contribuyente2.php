@@ -14,7 +14,7 @@
 
 <?php
 
-//$pagina_contri = $_GET["pg"];
+$pagina_contri = $_GET["pg"];
 
 //CONEXION BASE DE DATOS
 include "db.php";
@@ -27,7 +27,7 @@ if ($mysqli->connect_errno) {
 }
 
 //CONSULTAS SQL
-$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 WHERE persona_id BETWEEN 5088 AND 5120 ORDER BY persona_id";
+$contribuyente_sql  = "SELECT * FROM tempo_contribuyentes_2020 ORDER BY persona_id LIMIT $pagina_contri, 200";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_contribuyente = $mysqli->query($contribuyente_sql)) {
@@ -48,12 +48,12 @@ if ($consulta_contribuyente->num_rows === 0) {
 while ($contribuyente = $consulta_contribuyente->fetch_array()) { ?>
 
     <div style="width: 100%; height: 370mm;display:block; position:relative; font-size: 10pt; font-family: Arial; font-weight: bold; page-break-after: always;">
-        <span style="position: absolute; bottom: 45.5mm; right: 70mm;"><?php echo $contribuyente["emision"]; ?> </span>
-        <span style="position: absolute; bottom: 45.5mm; left: 60mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
-        <span style="position: absolute; bottom: 38.5mm; left: 90mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
-        <span style="position: absolute; bottom: 29.5mm; left: 75mm; width: 50%; font-size: 9pt; line-height: 12pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
-        <span style="position: absolute; bottom: 23mm; left: 90mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
-        <span style="position: absolute; bottom: 16.5mm; left: 65mm;" ><?php echo $contribuyente["referencia"]; ?> </span>
+        <span style="position: absolute; bottom: 45.5mm; right: 92mm;"><?php echo $contribuyente["emision"]; ?> </span>
+        <span style="position: absolute; bottom: 45.5mm; left: 38mm;" ><?php echo $contribuyente["persona_id"]; ?> </span>
+        <span style="position: absolute; bottom: 38.5mm; left: 72mm;" ><?php echo $contribuyente["apellidos_nombres"]; ?> </span>
+        <span style="position: absolute; bottom: 29.5mm; left: 72mm; width: 50%; font-size: 9pt; line-height: 12pt;" ><?php echo strtoupper($contribuyente["domicilio_completo"]); ?> </span>
+        <span style="position: absolute; bottom: 23mm; left: 72mm;"> <?php echo $contribuyente["NroDeclaracionJurada"]; ?> </span>
+        <span style="position: absolute; bottom: 16.5mm; left: 42mm;" ><?php echo $contribuyente["referencia"]; ?> </span>
     </div>
 
 <?php } ?>

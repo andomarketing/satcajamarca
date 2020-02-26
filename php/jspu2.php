@@ -10,8 +10,8 @@
             padding: 0;
         }
         .main{
-            margin-top: 38.5mm; 
-            margin-left: 15mm;
+            margin-top: 37mm; 
+            margin-left: -1.5mm;
             max-width: 129mm;
         }
         table {            
@@ -67,16 +67,15 @@
             transform: rotate(180deg);
         }
         .horizontal-text {
-            font-size: 4.4pt;
+            font-size: 4.5pt;
         }
         .const-table {
-            font-size: 4.4pt;
+            font-size: 4.5pt;
             text-align: center;
             vertical-align: bottom;
             margin-left: -1mm;
             margin-bottom: 8mm;
             height: 55.5mm;
-            font-weight: normal;
         }
         .const-table tr{
             vertical-align: top;
@@ -87,8 +86,7 @@
             border-bottom: 0.005mm solid blue;
         }
         .comp-table {
-            font-size: 4.5pt;
-            font-weight: normal;
+            font-size: 5pt;
             text-align: center;
         }
         .comp-table tr{

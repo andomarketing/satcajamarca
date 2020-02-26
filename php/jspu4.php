@@ -10,7 +10,7 @@
             padding: 0;
         }
         .main{
-            margin-top: 38.5mm; 
+            margin-top: 34.5mm; 
             margin-left: 15mm;
             max-width: 129mm;
         }
@@ -122,7 +122,7 @@
 //CONEXION BASE DE DATOS
 include "db.php";
 
-define("PU_TEMPLATE", "plantilla-pu.php");
+define("PU_TEMPLATE", "plantilla2-pu.php");
 $pg = $_GET["pg"];
 
 
@@ -142,7 +142,7 @@ if ($mysqli->connect_errno) {
 
 //TRAER LOS PREDIOS ORDENADOS POR EL ID CONTRIBUYENTE
 //CONSULTAS SQL
-$prediosSQL  = "SELECT * FROM tempo_pu_2020 ORDER BY persona_id LIMIT $pg, 500";
+$prediosSQL  = "SELECT * FROM tempo_pu_2020 where persona_id BETWEEN 6779 AND 6817 ORDER BY persona_id";
 
 //FALLO LA CONSULTA SQL
 if (!$consulta_predio = $mysqli->query($prediosSQL)) {
